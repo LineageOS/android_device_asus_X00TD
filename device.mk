@@ -321,6 +321,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
+# Properties
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.am.reschedule_service=true
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
