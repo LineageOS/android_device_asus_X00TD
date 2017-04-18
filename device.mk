@@ -27,5 +27,5 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     X00TDWifiOverlay
 
-# Inherit proprietary files
-$(call inherit-product-if-exists, vendor/asus/X00TD/X00TD-vendor.mk)
+# Inherit the proprietary files
+$(call inherit-product, vendor/asus/X00TD/X00TD-vendor.mk)
