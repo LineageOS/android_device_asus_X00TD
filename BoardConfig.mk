@@ -262,5 +262,8 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 WIFI_DRIVER_OPERSTATE_PATH := "/sys/class/net/wlan0/operstate"
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 
+# Pre-opt SystemUI
+PRODUCT_DEXPREOPT_SPEED_APPS += SystemUI
+
 # inherit from the proprietary version
 -include vendor/asus/X00TD/BoardConfigVendor.mk
