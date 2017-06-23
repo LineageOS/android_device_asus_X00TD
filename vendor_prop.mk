@@ -11,6 +11,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.vendor.audio.hifi.int_codec=true \
 	persist.vendor.audio.ras.enabled=false \
 	ro.af.client_heap_size_kbyte=7168 \
+	ro.config.media_vol_steps=25 \
 	ro.config.vc_call_vol_steps=7 \
 	ro.vendor.audio.sdk.fluencetype=fluence  \
 	ro.vendor.audio.sdk.ssr=false \
