@@ -10,6 +10,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.vendor.audio.hw.binder.size_kbyte=1024 \
 	persist.vendor.audio.hifi.int_codec=true \
 	persist.vendor.audio.ras.enabled=false \
+	ro.af.client_heap_size_kbyte=7168 \
 	ro.vendor.audio.sdk.fluencetype=fluence  \
 	ro.vendor.audio.sdk.ssr=false \
 	vendor.audio.dolby.ds2.enabled=false \
