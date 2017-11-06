@@ -45,7 +45,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
     android.hardware.bluetooth@1.0-service-qti \
-    libbt-vendor
+    libbt-vendor \
+    libbthost_if
 
 # Configs
 PRODUCT_COPY_FILES += \
