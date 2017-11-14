@@ -423,7 +423,7 @@ on post-fs-data
     mkdir /data/nfc/param 0770 nfc nfc
 
     #Create IOP  deamon related dirs
-    mkdir /data/vendor/iop 0770 root system
+    mkdir /data/vendor/iop 0700 root system
 
     # Create /data/vendor/time folder for time-services
     mkdir /data/vendor/time/ 0700 system system
