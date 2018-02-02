@@ -158,6 +158,9 @@ USE_OPENGL_RENDERER := true
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 
+# DRM
+TARGET_ENABLE_MEDIADRM_64 := true
+
 # Enable dexpreopt to speed boot time
 ifeq ($(HOST_OS),linux)
   ifneq ($(TARGET_BUILD_VARIANT),eng)
