@@ -133,7 +133,6 @@ on boot
 #Huaqin add for sensors permission-ZQL1650-141 by chenyijun5 at 2018/2/1 end
 
 #Load WLAN driver
-   insmod /vendor/lib/modules/qca_cld3/qca_cld3_wlan.ko
    setprop wlan.driver.status "ok"
    chown wifi wifi /sys/module/wlan/parameters/fwpath
 
