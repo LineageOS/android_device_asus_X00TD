@@ -205,6 +205,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
+# Power
+TARGET_USES_INTERACTION_BOOST := true
+
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 
