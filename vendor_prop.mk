@@ -188,6 +188,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.data.df.mux_count=8 \
 	persist.data.df.iwlan_mux=9 \
 	persist.data.df.dev_name=rmnet_usb0
+	persist.vendor.radio.add_power_save=1
 
 # Sensor
 PRODUCT_PROPERTY_OVERRIDES += \
