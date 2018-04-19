@@ -457,6 +457,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vndk-sp
 
+# WFD
+PRODUCT_BOOT_JARS += \
+    WfdCommon
+
 # WiFi
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
