@@ -2840,3 +2840,8 @@ vendor/firmware/widevine.mdt
 vendor/lib/libwvhidl.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/mediadrm/libwvdrmengine.so
+
+# WiFi
+vendor/bin/cnss_diag
+vendor/bin/cnss-daemon
+vendor/bin/fstman
