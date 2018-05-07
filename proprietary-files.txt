@@ -1903,3 +1903,6 @@ vendor/firmware/cpp_firmware_v1_8_0.fw
 # Camera OIS
 vendor/lib/libois_bu63165.so
 vendor/lib/libois_lc898122.so
+
+# Charger
+vendor/bin/hvdcp_opti
