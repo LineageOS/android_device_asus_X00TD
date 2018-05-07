@@ -1969,3 +1969,29 @@ vendor/lib64/vendor.qti.hardware.data.latency@1.0_vendor.so
 
 # Content Adaptive Backlight Settings
 -vendor/app/CABLService/CABLService.apk
+
+# Display calibration
+etc/permissions/com.qti.snapdragon.sdk.display.xml
+-framework/com.qti.snapdragon.sdk.display.jar
+lib/libsd_sdk_display.so
+lib/libsdm-disp-apis.so
+lib/vendor.display.color@1.0.so
+lib/vendor.display.postproc@1.0.so
+lib/vendor.qti.hardware.qdutils_disp@1.0.so
+lib64/libsd_sdk_display.so
+lib64/libsdm-disp-apis.so
+lib64/vendor.display.color@1.0.so
+lib64/vendor.display.postproc@1.0.so
+lib64/vendor.qti.hardware.qdutils_disp@1.0.so
+-vendor/app/colorservice/colorservice.apk
+vendor/bin/hw/vendor.display.color@1.0-service
+vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti
+vendor/etc/init/vendor.display.color@1.0-service.rc
+vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc
+vendor/etc/qdcm_calib_data_nt36672_1080p_video_mode_dsi_txd_panel.xml
+vendor/lib/libsdm-color.so
+vendor/lib/libsdm-diag.so
+vendor/lib/libsdmextension.so
+vendor/lib64/libsdm-color.so
+vendor/lib64/libsdm-diag.so
+vendor/lib64/libsdmextension.so
