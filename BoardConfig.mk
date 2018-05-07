@@ -51,5 +51,8 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 
 TARGET_USES_64_BIT_BINDER := true
 
+# Recovery
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
+
 # inherit from the proprietary version
 -include vendor/asus/X00TD/BoardConfigVendor.mk
