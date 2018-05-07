@@ -2737,3 +2737,14 @@ vendor/lib64/hw/android.hardware.sensors@1.0-impl.so
 vendor/etc/calmodule.cfg
 vendor/lib/libcalmodule_common.so
 vendor/lib64/libcalmodule_common.so
+
+# Signed graphics firmware
+vendor/firmware/cppf.b00
+vendor/firmware/cppf.b01
+vendor/firmware/cppf.b02
+vendor/firmware/cppf.b03
+vendor/firmware/cppf.b04
+vendor/firmware/cppf.b05
+vendor/firmware/cppf.b06
+vendor/firmware/cppf.b07
+vendor/firmware/cppf.mdt
