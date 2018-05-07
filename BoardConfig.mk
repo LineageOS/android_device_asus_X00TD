@@ -180,6 +180,9 @@ DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
 
+# Keystore
+TARGET_PROVIDES_KEYMASTER := true
+
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
 
