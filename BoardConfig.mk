@@ -152,6 +152,14 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 2000000
 # Extended Filesystem Support
 TARGET_EXFAT_DRIVER := exfat
 
+# Enable dexpreopt to speed boot time
+ifeq ($(HOST_OS),linux)
+  ifneq ($(TARGET_BUILD_VARIANT),eng)
+    WITH_DEXPREOPT := true
+  endif
+endif
+WITH_DEXPREOPT_BOOT_IMG_AND_SYSTEM_SERVER_ONLY := true
+
 # GPS
 TARGET_NO_RPC := true
 USE_DEVICE_SPECIFIC_GPS := true
