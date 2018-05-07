@@ -2100,3 +2100,13 @@ vendor/lib/libsdsprpc.so
 vendor/lib64/libsdsprpc.so
 lib/libsdsprpc_system.so
 lib64/libsdsprpc_system.so
+
+# ESE-Powermanager
+vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
+vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc
+lib/vendor.qti.esepowermanager@1.0.so
+lib64/vendor.qti.esepowermanager@1.0.so
+vendor/lib/vendor.qti.esepowermanager@1.0_vendor.so
+vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so
+vendor/lib64/vendor.qti.esepowermanager@1.0_vendor.so
+vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so
