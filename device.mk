@@ -379,6 +379,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     librecovery_updater_X00TD
 
+# RIL
+PRODUCT_PACKAGES += \
+    rild \
+    librmnetctl \
+    libxml2 \
+    libprotobuf-cpp-full
+
+PRODUCT_BOOT_JARS += \
+    qcrilhook
+
 # QCOM
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-qti.xml
