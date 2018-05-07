@@ -231,6 +231,9 @@ PROTOBUF_SUPPORTED := true
 # Seccomp
 BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp
 
+# SELinux
+include device/qcom/sepolicy/sepolicy.mk
+
 # Vendor init
 TARGET_INIT_VENDOR_LIB := libinit_X00TD
 TARGET_RECOVERY_DEVICE_MODULES := libinit_X00TD
