@@ -2120,3 +2120,13 @@ vendor/etc/permissions/vendor.qti.hardware.factory.xml
 -vendor/framework/vendor.qti.hardware.factory-V1.0-java.jar
 vendor/lib/hw/vendor.qti.hardware.factory@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.factory@1.0-impl.so
+
+# Fido
+lib/libFidoCryptoJNI.so
+lib/libFidoCrypto_system.so
+lib64/libFidoCryptoJNI.so
+lib64/libFidoCrypto_system.so
+vendor/lib/libFidoCrypto_vendor.so
+vendor/lib64/libFidoCrypto_vendor.so
+vendor/lib/libFIDOKeyProvisioning.so
+vendor/lib64/libFIDOKeyProvisioning.so
