@@ -533,3 +533,27 @@ vendor/etc/qvr/ov9282_stereo_2560x800_cam_config.xml
 vendor/etc/qvr/qvrservice_6dof_config_stereo.xml
 vendor/etc/qvr/qvrservice_6dof_config.xml
 vendor/etc/qvr/qvrservice_config.txt
+
+# Camera actuators
+vendor/lib/libactuator_ad5816g.so
+vendor/lib/libactuator_ad5823.so
+vendor/lib/libactuator_ak7345.so
+vendor/lib/libactuator_ak7371.so
+vendor/lib/libactuator_bu64244gwz.so
+vendor/lib/libactuator_bu64297.so
+vendor/lib/libactuator_dw9714.so
+vendor/lib/libactuator_dw9716.so
+vendor/lib/libactuator_dw9761b.so
+vendor/lib/libactuator_dw9763b.so
+vendor/lib/libactuator_dw9763.so
+vendor/lib/libactuator_dw9790a.so
+vendor/lib/libactuator_dw9800.so
+vendor/lib/libactuator_hi1333_ofilm_dw9714v.so
+vendor/lib/libactuator_lc898122.so
+vendor/lib/libactuator_lc898212xd_qc2002.so
+vendor/lib/libactuator_lc898212xd.so
+vendor/lib/libactuator_lc898217xc.so
+vendor/lib/libactuator_ov13855_chicony_rear_s2034.so
+vendor/lib/libactuator_ov13855_holitech_fp5510a.so
+vendor/lib/libactuator_pseudo.so
+vendor/lib/libactuator_rohm_bu64243gwz.so
