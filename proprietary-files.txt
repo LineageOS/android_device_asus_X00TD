@@ -1899,3 +1899,7 @@ vendor/firmware/cpp_firmware_v1_5_1.fw
 vendor/firmware/cpp_firmware_v1_5_2.fw
 vendor/firmware/cpp_firmware_v1_6_0.fw
 vendor/firmware/cpp_firmware_v1_8_0.fw
+
+# Camera OIS
+vendor/lib/libois_bu63165.so
+vendor/lib/libois_lc898122.so
