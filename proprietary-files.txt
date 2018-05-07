@@ -2487,3 +2487,14 @@ vendor/bin/pm-proxy
 vendor/bin/pm-service
 vendor/lib/libperipheral_client.so
 vendor/lib64/libperipheral_client.so
+
+# Postprocessing
+vendor/bin/mm-pp-dpps
+vendor/lib/libdisp-aba.so
+vendor/lib64/libdisp-aba.so
+vendor/lib/vendor.display.color@1.0_vendor.so
+vendor/lib/vendor.display.postproc@1.0_vendor.so
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
+vendor/lib64/vendor.display.color@1.0_vendor.so
+vendor/lib64/vendor.display.postproc@1.0_vendor.so
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
