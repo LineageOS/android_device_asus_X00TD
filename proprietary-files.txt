@@ -2348,3 +2348,7 @@ vendor/lib64/libkeymasterdeviceutils.so
 # Keystore
 vendor/lib/hw/keystore.sdm660.so
 vendor/lib64/hw/keystore.sdm660.so
+
+# Lights
+framework/android.hardware.light-V2.0-java.jar
+vendor/etc/permissions/android.hardware.light.xml
