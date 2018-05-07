@@ -65,7 +65,4 @@ ro.vendor.sdk.sensors.gestures=false
 rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
 ro.control_privapp_permissions=log
 ro.opa.eligible_device=true
-ro.setupwizard.mode=OPTIONAL
-ro.setupwizard.suppress_d2d=false
-ro.setupwizard.suppress_d2d_nfc=true
 drm.service.enabled=true
