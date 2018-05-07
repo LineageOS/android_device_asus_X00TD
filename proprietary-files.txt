@@ -2732,3 +2732,8 @@ vendor/bin/hw/android.hardware.sensors@1.0-service
 vendor/etc/init/android.hardware.sensors@1.0-service.rc
 vendor/lib/hw/android.hardware.sensors@1.0-impl.so
 vendor/lib64/hw/android.hardware.sensors@1.0-impl.so
+
+# Sensors calibration
+vendor/etc/calmodule.cfg
+vendor/lib/libcalmodule_common.so
+vendor/lib64/libcalmodule_common.so
