@@ -20,4 +20,8 @@ ifeq ($(TARGET_DEVICE),X00TD)
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
+$(shell mkdir -p $(TARGET_OUT_VENDOR)/firmware; \
+    ln -sf /dev/block/bootdevice/by-name/msadp \
+        $(TARGET_OUT_VENDOR)/firmware/msadp)
+
 endif
