@@ -2542,3 +2542,14 @@ vendor/lib64/libqmi.so
 vendor/lib64/libqmiservices.so
 vendor/lib64/libsmemlog.so
 vendor/lib64/libUserAgent.so
+
+# QTI log kit
+vendor/etc/qti-logkit/scenarios/bluetooth.png
+vendor/etc/qti-logkit/scenarios/default.png
+vendor/etc/qti-logkit/scenarios/IMS.png
+vendor/etc/qti-logkit/audiobasic.dmc
+vendor/etc/qti-logkit/gnsslocationlogging.dmc
+vendor/etc/qti-logkit/goldenlogmask.dmc
+vendor/etc/qti-logkit/IMS.dmc
+vendor/etc/qti-logkit/qti_logkit_command.xml
+vendor/etc/qti-logkit/qti_logkit_config.xml
