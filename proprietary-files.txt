@@ -2748,3 +2748,7 @@ vendor/firmware/cppf.b05
 vendor/firmware/cppf.b06
 vendor/firmware/cppf.b07
 vendor/firmware/cppf.mdt
+
+# Subsystem restart
+vendor/bin/ssr_diag
+vendor/bin/ssr_setup
