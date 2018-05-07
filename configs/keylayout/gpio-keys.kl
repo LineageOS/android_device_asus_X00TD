@@ -1,0 +1,62 @@
+# Copyright (c) 2013, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+key 115   VOLUME_UP
+key 114   VOLUME_DOWN
+key 102   HOME
+key 528   FOCUS
+key 766   CAMERA
+# Huaqin add for ZQL1650 by fangxianpeng at 2018/03/08 start
+key 746   SAR_SENSOR_IN
+key 747   SAR_SENSOR_OUT
+# Huaqin add for ZQL1650 by fangxianpeng at 2018/03/08 end
+
+#Huaqin add for 1161528 by chenlingyu at 2017.3.1 start
+key 603   SYSTEM_NAVIGATION_UP
+key 602   SYSTEM_NAVIGATION_DOWN
+key 600   SYSTEM_NAVIGATION_LEFT
+key 601   SYSTEM_NAVIGATION_RIGHT
+#Huaqin add for ZQL1650-250 by chenlingyu at 2017.3.1 end
+
+# Huaqin add for ZQL1650 by fangxianpeng at 2018/03/08 start
+key 746   SAR_SENSOR_IN
+key 747   SAR_SENSOR_OUT
+# Huaqin add for ZQL1650 by fangxianpeng at 2018/03/08 end
+
+# Huaqin add for TT1176710 by liunianliang at 2018/03/30 start
+key 748   GESTURE_W
+key 749   GESTURE_E
+key 750   GESTURE_S
+key 751   GESTURE_Z
+key 752   GESTURE_C
+key 753   GESTURE_V
+# Huaqin add for TT1176710 by liunianliang at 2018/03/30 end
+
+# Huaqin modify for ZQL1650-420 by chengming at 2018/03/07 start
+key 758   GESTURE_SWIPE_UP
+key 759   GESTURE_DOUBLE_CLICK
+# Huaqin modify for ZQL1650-420 by chengming at 2018/03/07 end
