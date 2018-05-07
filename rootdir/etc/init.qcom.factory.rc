@@ -1,0 +1,238 @@
+#
+# Copyright (c) 2009-2016, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#     * Neither the name of The Linux Foundation nor
+#       the names of its contributors may be used to endorse or promote
+#       products derived from this software without specific prior written
+#       permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NON-INFRINGEMENT ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+
+# Define fastmmi
+service fastmmi /vendor/bin/mmi
+    user root
+    group root
+    disabled
+
+service mmid /vendor/bin/mmid
+    user root
+    group root
+    disabled
+
+on property:sys.boot_mode=ffbm
+    write ${persist.vendor.mmi.misc_dev_path} "ffbm-01"
+
+on property:sys.boot_mode=qmmi
+    write ${persist.vendor.mmi.misc_dev_path} "ffbm-02"
+
+on property:sys.boot_mode=normal
+    write ${persist.vendor.mmi.misc_dev_path} "normal"
+
+# Creating a scratch storage on /data for factory testing.
+on factory-fs && property:ro.bootmode=ffbm-00
+    mount tmpfs tmpfs /data
+
+on factory-fs && property:ro.bootmode=ffbm-01
+    mount tmpfs tmpfs /data
+
+on post-fs-data
+# aligned the usb port with system standard, otherwise if only diag be added
+# Then in QMMI mode, the whole Andoid be booted, but due to the ro.bootmode is
+# not normal/unknow, then when it apply the default funcs, it will turn to MTP
+# which cause the diag/Wwan/modem port all be lost in qmmi mode. Details:
+# UsbDeviceManager.java---->getDefaultFunctions and trySetEnabledFunctions
+
+    setprop persist.sys.usb.ffbm-00.func ${persist.sys.usb.config}
+    setprop persist.sys.usb.ffbm-01.func ${persist.sys.usb.config}
+    setprop persist.sys.usb.ffbm-02.func ${persist.sys.usb.config}
+
+on mmi && property:ro.bootmode=ffbm-00
+    # ========================================================
+    #              This is FFBM only settings.
+    # ========================================================
+    #mkdir for factory data files.
+    mkdir /persist/FTM_AP 0750 root root
+
+    start fastmmi
+    # start qcom-post-boot to set the misc partition path property value
+    start qcom-post-boot
+
+on mmi && property:ro.bootmode=ffbm-01
+    # ========================================================
+    #              This is FFBM only settings.
+    # ========================================================
+    #mkdir for factory data files.
+    mkdir /persist/FTM_AP 0750 root root
+
+    start fastmmi
+    ## start qcom-post-boot to set the misc partition path property value
+    start qcom-post-boot
+
+on ffbm
+    trigger early-fs
+    trigger factory-fs
+    trigger fs
+    trigger post-fs
+
+    # Mount fstab in init.{$device}.rc by mount_all with '--late' parameter
+    # to only mount entries with 'latemount'. This is needed if '--early' is
+    # specified in the previous mount_all command on the fs stage.
+    # With /system mounted and properties form /system + /factory available,
+    # some services can be started.
+    trigger late-fs
+
+    # Now we can mount /data. File encryption requires keymaster to decrypt
+    # /data, which in turn can only be loaded when system properties are present.
+    trigger post-fs-data
+
+    # Now we can start zygote for devices with file based encryption
+    trigger zygote-start
+
+    # Load persist properties and override properties (if enabled) from /data.
+    trigger load_persist_props_action
+
+    # Remove a file to wake up anything waiting for firmware.
+    trigger firmware_mounts_complete
+
+    trigger early-boot
+    trigger boot
+    trigger mmi
+
+# Huaqin midify hwdiag selinux by zhangjingzhi at 20180211 For bsp/rom start
+service hwdiag /system/bin/hwdiag
+    class main
+    user root
+    group root
+
+on boot
+    start hwdiag
+# Huaqin midify hwdiag selinux by zhangjingzhi at 20180211 For bsp/rom start
+
+
+
+#Huaqin modiy for log sepolicy to system by zhangjingzhi at 20180306 start
+setprop debug.charger.on 1
+
+service  getaplog /system/bin/getlog -c
+    disabled
+    user root
+    oneshot
+    seclabel u:r:logoem:s0
+
+service  stopaplog /system/bin/getlog -s
+    disabled
+    user root
+    oneshot
+    seclabel u:r:logoem:s0
+
+on property:persist.sys.debug.getaplog=1
+    restart getaplog
+on property:persist.sys.debug.getaplog=0
+    start stopaplog
+
+service  getqxdmlog /system/bin/getlog -q
+    disabled
+    user root
+    oneshot
+    seclabel u:r:logoem:s0
+
+service  stopqxdmlog /system/bin/getlog -x
+    disabled
+    user root
+    oneshot
+    seclabel u:r:logoem:s0
+
+on property:persist.sys.debug.getqxdmlog=1
+    restart getqxdmlog
+on property:persist.sys.debug.getqxdmlog=0
+    start stopqxdmlog
+
+service  cpanrlog  /vendor/bin/sh /vendor/etc/cpanrlog.sh
+    disabled
+    user root
+    oneshot
+    seclabel u:r:logoem:s0
+
+service  cptomblog  /vendor/bin/sh /vendor/etc/cptomblog.sh
+    disabled
+    user root
+    oneshot
+    seclabel u:r:logoem:s0
+
+service  gettcpdumplog /system/bin/getlog -t
+    disabled
+    user root
+    oneshot
+    seclabel u:r:logoem:s0
+
+service  stoptcpdumplog /system/bin/getlog -p
+    disabled
+    user root
+    oneshot
+    seclabel u:r:logoem:s0
+
+#huaqin modify to fix user image log auto start by zhangjingzhi at 20180327 for rom start
+service  getpersistlog /system/bin/getpersistlog
+    disabled
+    class main
+    user root
+    oneshot
+    seclabel u:r:logoem:s0
+#huaqin modify to fix user image log auto start by zhangjingzhi at 20180327 for rom end
+
+on property:persist.sys.debug.gettcpdump=1
+    restart gettcpdumplog
+on property:persist.sys.debug.gettcpdump=0
+    start stoptcpdumplog
+
+service getalllog /vendor/bin/sh /vendor/etc/getalllog.sh
+    disabled
+    user root
+    oneshot
+    seclabel u:r:logoem:s0
+on property:persist.sys.debug.getalllog=1
+    restart getalllog
+on property:persist.sys.debug.getalllog=0
+    stop getalllog
+
+
+#huaqin modiy to close default log by zhangjingzhi at 20180326 for rom start
+#on boot
+#    start getpersistlog
+#    setprop persist.sys.debug.getaplog 1
+#huaqin modiy to close default log by zhangjingzhi at 20180326 for rom end
+#Huaqin modiy for log sepolicy to system by zhangjingzhi at 20180306 end
+
+#Huaqin add for control charge by zhangjingzhi at 20180129 start
+on boot
+    chown system system /sys/class/power_supply/battery/charging_enabled
+    chmod 0666 /sys/class/power_supply/battery/charging_enabled
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chmod 0666 /sys/class/power_supply/battery/input_suspend
+#Huaqin add for control charge by zhangjingzhi at 20180129 end
+
+#Huaqin modify for enable diag by zhangjingzhi at 20180130 for rom start
+on property:gsm.diag.enable=1
+    setprop sys.diag.enable 1
+on property:sys.diag.enable=1
+    setprop sys.usb.config ${ro.usb.firstboot.config}
+
+#Huaqin modify for enable diag by zhangjingzhi at 20180130 for rom end

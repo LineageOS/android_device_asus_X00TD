@@ -116,6 +116,13 @@ PRODUCT_PACKAGES += \
     init.qti.ims.sh \
     init.qti.qseecomd.sh \
     qca6234-service.sh \
+    fstab.qcom \
+    init.msm.usb.configfs.rc \
+    init.qcom.factory.rc \
+    init.qcom.rc \
+    init.qcom.usb.rc \
+    init.target.rc \
+    ueventd.qcom.rc
 
 # QCOM
 PRODUCT_COPY_FILES += \
