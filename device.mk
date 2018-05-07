@@ -94,6 +94,29 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    emmc_prop_init.sh \
+    init.class_main.sh \
+    init.crda.sh \
+    init.mdm.sh \
+    init.qcom.class_core.sh \
+    init.qcom.coex.sh \
+    init.qcom.crashdata.sh \
+    init.qcom.early_boot.sh \
+    init.qcom.efs.sync.sh \
+    init.qcom.post_boot.sh \
+    init.qcom.sdio.sh \
+    init.qcom.sensors.sh \
+    init.qcom.sh \
+    init.qcom.syspart_fixup.sh \
+    init.qcom.usb.sh \
+    init.qcom.wifi.sh \
+    init.qti.fm.sh \
+    init.qti.ims.sh \
+    init.qti.qseecomd.sh \
+    qca6234-service.sh \
+
 # QCOM
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/privapp-permissions-qti.xml
