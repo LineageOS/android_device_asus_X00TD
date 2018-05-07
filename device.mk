@@ -323,7 +323,8 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
 
 # Properties
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.am.reschedule_service=true
+    ro.am.reschedule_service=true \
+    ro.sys.fw.use_trim_settings=true
 
 # Power
 PRODUCT_PACKAGES += \
