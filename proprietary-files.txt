@@ -2110,3 +2110,13 @@ vendor/lib/vendor.qti.esepowermanager@1.0_vendor.so
 vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so
 vendor/lib64/vendor.qti.esepowermanager@1.0_vendor.so
 vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so
+
+# Factory
+lib/vendor.qti.hardware.factory@1.0.so
+lib64/vendor.qti.hardware.factory@1.0.so
+vendor/bin/hw/vendor.qti.hardware.factory@1.0-service
+vendor/etc/init/vendor.qti.hardware.factory@1.0-service.rc
+vendor/etc/permissions/vendor.qti.hardware.factory.xml
+-vendor/framework/vendor.qti.hardware.factory-V1.0-java.jar
+vendor/lib/hw/vendor.qti.hardware.factory@1.0-impl.so
+vendor/lib64/hw/vendor.qti.hardware.factory@1.0-impl.so
