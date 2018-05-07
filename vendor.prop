@@ -68,7 +68,4 @@ ro.opa.eligible_device=true
 ro.setupwizard.mode=OPTIONAL
 ro.setupwizard.suppress_d2d=false
 ro.setupwizard.suppress_d2d_nfc=true
-ro.com.google.gmsversion=8.1_r3
-ro.com.google.clientidbase=android-asus
-ro.com.google.clientidbase.ms=android-asus-tpin
 drm.service.enabled=true
