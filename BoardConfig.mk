@@ -54,5 +54,9 @@ TARGET_USES_64_BIT_BINDER := true
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/recovery.fstab
 
+# Vendor init
+TARGET_INIT_VENDOR_LIB := libinit_X00TD
+TARGET_RECOVERY_DEVICE_MODULES := libinit_X00TD
+
 # inherit from the proprietary version
 -include vendor/asus/X00TD/BoardConfigVendor.mk
