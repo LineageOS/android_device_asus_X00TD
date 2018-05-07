@@ -2726,3 +2726,9 @@ vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 -vendor/framework/vendor.qti.hardware.sensorscalibrate-V1.0-java.jar
 vendor/lib/sensors.native.so
 vendor/lib64/sensors.native.so
+
+# Sensors HIDL
+vendor/bin/hw/android.hardware.sensors@1.0-service
+vendor/etc/init/android.hardware.sensors@1.0-service.rc
+vendor/lib/hw/android.hardware.sensors@1.0-impl.so
+vendor/lib64/hw/android.hardware.sensors@1.0-impl.so
