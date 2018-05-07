@@ -18,6 +18,15 @@
      for different hardware and product builds.  Do not translate. -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Whether camera shutter sound is forced or not  (country specific). -->
+    <bool name="config_camera_sound_forced">false</bool>
+
+    <!--  Maximum number of supported users -->
+    <integer name="config_multiuserMaximumUsers">4</integer>
+
+    <!--  Whether Multiuser UI should be shown -->
+    <bool name="config_enableMultiUserUI">true</bool>
+
     <!-- Default value for led color when battery is low on charge -->
     <integer name="config_notificationsBatteryLowARGB">0xFFFF0000</integer>
 
@@ -326,6 +335,7 @@
 
     <!-- Flag specifying whether WFC over IMS is available on device -->
     <bool name="config_device_wfc_ims_available">true</bool>
+    <bool name="config_device_vt_available">true</bool>
 
     <!-- Flag specifying whether WFC over IMS should be available for carrier: independent of
          carrier provisioning. If false: hard disabled. If true: then depends on carrier
