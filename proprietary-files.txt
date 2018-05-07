@@ -1995,3 +1995,7 @@ vendor/lib/libsdmextension.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
 vendor/lib64/libsdmextension.so
+
+# Display firmware NVT
+vendor/firmware/novatek_ts_fw_dj.bin
+vendor/firmware/novatek_ts_fw_txd.bin
