@@ -450,7 +450,8 @@ PRODUCT_BOOT_JARS += \
 
 # Telephony
 PRODUCT_PACKAGES += \
-    telephony-ext
+    telephony-ext \
+    qti-telephony-common
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
