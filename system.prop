@@ -197,7 +197,7 @@ ro.usb.firstboot.config=diag,serial_cdev,rmnet,adb
 #Huaqin add for config default usb function as diag by zhangjingzhi  at 20180130 for rom end
 
 #Huaqin add for Video call function by wangjunkai at 20180316 for rom start
-persist.camera.HAL3.enabled=0
+persist.camera.HAL3.enabled=1
 persist.radio.VT_CAM_INTERFACE=1
 persist.vendor.qti.telephony.vt_cam_interface=1
 #Huaqin add for Video call function by wangjunkai at 20180316 for rom end
