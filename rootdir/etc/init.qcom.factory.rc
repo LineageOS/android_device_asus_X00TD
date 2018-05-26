@@ -165,6 +165,13 @@ on property:persist.sys.debug.getqxdmlog=1
 on property:persist.sys.debug.getqxdmlog=0
     start stopqxdmlog
 
+#Huaqin modiy to getqxdm when test smart_pa by zhangjingzhi at 20180312 start
+on property:sys.debug.getqxdmlog=1
+    restart getqxdmlog
+on property:sys.debug.getqxdmlog=0
+    start stopqxdmlog
+#Huaqin modiy to getqxdm when test smart_pa by zhangjingzhi at 20180312 end
+
 service  cpanrlog  /vendor/bin/sh /vendor/etc/cpanrlog.sh
     disabled
     user root
@@ -189,14 +196,13 @@ service  stoptcpdumplog /system/bin/getlog -p
     oneshot
     seclabel u:r:logoem:s0
 
-#huaqin modify to fix user image log auto start by zhangjingzhi at 20180327 for rom start
-service  getpersistlog /system/bin/getpersistlog
-    disabled
-    class main
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-#huaqin modify to fix user image log auto start by zhangjingzhi at 20180327 for rom end
+#huaqin modiy to close default log by taohuipeng at 20180504 for rom start
+#service  getpersistlog /system/bin/getpersistlog
+#    class main
+#    user root
+#    oneshot
+#    seclabel u:r:logoem:s0
+#huaqin modiy to close default log by taohuipeng at 20180504 for rom end
 
 on property:persist.sys.debug.gettcpdump=1
     restart gettcpdumplog
@@ -214,11 +220,11 @@ on property:persist.sys.debug.getalllog=0
     stop getalllog
 
 
-#huaqin modiy to close default log by zhangjingzhi at 20180326 for rom start
+#huaqin modiy to close default log by taohuipeng at 20180504 for rom start
 #on boot
 #    start getpersistlog
 #    setprop persist.sys.debug.getaplog 1
-#huaqin modiy to close default log by zhangjingzhi at 20180326 for rom end
+#huaqin modiy to close default log by taohuipeng at 20180504 for rom end
 #Huaqin modiy for log sepolicy to system by zhangjingzhi at 20180306 end
 
 #Huaqin add for control charge by zhangjingzhi at 20180129 start

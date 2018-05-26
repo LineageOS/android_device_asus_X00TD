@@ -204,3 +204,6 @@ persist.vendor.qti.telephony.vt_cam_interface=1
 #Huaqin add for VoWifi function by zhangbin6 at 20180319 for rom start
 persist.data.iwlan.enable=true
 #Huaqin add for VoWifi function by zhangbin6 at 20180319 for rom end
+#Huaqin add for ZQL1650-1008 by banxiaokun at 2018/4/27  start
+persist.asus.led.on=1
+#Huaqin add for ZQL1650-1008 by banxiaokun at 2018/4/27  end

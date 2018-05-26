@@ -131,6 +131,10 @@ on boot
     chown system system /sys/class/sensors/stk3x1x-light/sensors_flush
 #Huaqin add for sensors permission-ZQL1650-141 by chenyijun5 at 2018/2/1 end
 
+#Huaqin add or ZQL1650-1072 by zhuqiang at 2018/04/23 start
+    chown radio radio sys/module/stk3x1x/parameters/call_status_flag
+#Huaqin add for ZQL1650-1072 by zhuqiang at 2018/04/23 end
+
 #Load WLAN driver
    setprop wlan.driver.status "ok"
    chown wifi wifi /sys/module/wlan/parameters/fwpath
@@ -138,7 +142,8 @@ on boot
 #Peripheral manager
 service per_mgr /system/vendor/bin/pm-service
     class core
-    user root
+    user system
+    group system
     ioprio rt 4
 
 service per_proxy /system/vendor/bin/pm-proxy
@@ -495,4 +500,10 @@ service emmc_prop_init /vendor/bin/sh /vendor/bin/emmc_prop_init.sh
 #Huaqin modify for disable sar in Indonesia by chenyijun5 at 2018/03/20 start
 on property:ro.config.versatility=ID
     write /sys/module/sx9310/parameters/sar_switcher 1
+
 #Huaqin modify for disable sar in Indonesia by chenyijun5 at 2018/03/20 end
+#Huaqin porting nfc for ZQL1650-1157 by daiweiwei at 2018/4/17 start
+on boot
+    chmod 0666 /dev/nq-nci
+    chown system system /dev/nq-nci
+#Huaqin porting nfc for ZQL1650-1157 by daiweiwei at 2018/4/17 end

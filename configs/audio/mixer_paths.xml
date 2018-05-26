@@ -1460,6 +1460,13 @@
         <ctl name="INT0_MI2S_RX_DL_HL Switch" value="1" />
     </path>
 
+    <!-- Huaqin add for play fm through bt function by xudayi at 2018/03/30 start -->
+    <path name="play-fm bt-a2dp">
+        <ctl name="SLIMBUS_8 LOOPBACK Volume" value="1" />
+        <path name="bt-a2dp" />
+    </path>
+    <!-- Huaqin add for play fm through bt function by xudayi at 2018/03/30 end -->
+
     <path name="incall-rec-uplink">
         <ctl name="MultiMedia1 Mixer VOC_REC_UL" value="1" />
     </path>

@@ -88,4 +88,22 @@ It allows additional grants on top of privapp-permissions-platform.xml
 	<permission name="android.permission.PACKAGE_USAGE_STATS"/>
     </privapp-permissions>
     <!--Huaqin add for ZQL1650-362 by chenlingyu at 2017.3.22 end-->
+
+    <!--Huaqin add for ZQL1650-1066  by yangzhiyuan at 2018/04/17 start-->
+    <privapp-permissions package="com.asus.sysmonitor">
+         <permission name="android.permission.BATTERY_STATS"/>
+         <permission name="android.permission.DUMP"/>
+         <permission name="android.permission.PACKAGE_USAGE_STATS"/>
+         <permission name="android.permission.READ_LOGS"/>
+         <permission name="android.permission.UPDATE_DEVICE_STATS"/>
+         <permission name="android.permission.WRITE_SECURE_SETTINGS"/>
+    </privapp-permissions>
+    <!--Huaqin add for ZQL1650-1066  by yangzhiyuan at 2018/04/17 end-->
+
+    <!--Huaqin add for ASUS-3430  by yangzhiyuan at 2018/05/11 start-->
+    <privapp-permissions package="com.asus.sysdiagnostic">
+         <permission name="android.permission.CONTROL_LOCATION_UPDATES"/>
+    </privapp-permissions>
+    <!--Huaqin add for ASUS-3430  by yangzhiyuan at 2018/05/11 end-->
+
 </permissions>
