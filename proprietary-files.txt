@@ -2617,6 +2617,19 @@ vendor/lib64/vendor.qti.hardware.vpp@1.1_vendor.so
 vendor/media/LMspeed_508.emd
 vendor/media/PFFprec_600.emd
 
+# NFC 
+vendor/ext_xml/android.hardware.nfc.hcef.xml:vendor/etc/permissions/android.hardware.nfc.hcef.xml
+etc/permissions/com.nxp.nfc.xml
+-framework/com.nxp.nfc.jar
+vendor/bin/hw/vendor.nxp.nxpnfc@1.0-service
+vendor/etc/init/vendor.nxp.nxpnfc@1.0-service.rc
+vendor/lib/hw/nfc_nci.pn54x.default.so
+vendor/lib/hw/vendor.nxp.nxpnfc@1.0-impl.so
+vendor/lib/vendor.nxp.nxpnfc@1.0.so
+vendor/lib64/hw/nfc_nci.pn54x.default.so
+vendor/lib64/hw/vendor.nxp.nxpnfc@1.0-impl.so
+vendor/lib64/vendor.nxp.nxpnfc@1.0.so
+
 # Perf
 lib/libqti-at.so
 lib/libqti_performance.so
