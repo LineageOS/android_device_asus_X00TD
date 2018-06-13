@@ -14,6 +14,15 @@ vendor/lib64/libfastcvopt.so
 vendor/lib64/libmdsprpc.so
 
 # ADSP modules
+lib/rfsa/adsp/libapps_mem_heap.so
+lib/rfsa/adsp/libdspCV_skel.so
+lib/rfsa/adsp/libfastcvadsp.so
+lib/rfsa/adsp/libfastcvadsp_skel.so
+lib/rfsa/adsp/libhvxMathVIO.so
+lib/rfsa/adsp/libqvr_adsp_driver_skel.so
+lib/rfsa/adsp/libscveBlobDescriptor_skel.so
+lib/rfsa/adsp/libscveFaceLandmark_skel.so
+lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so
@@ -53,6 +62,9 @@ vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # Audio
+lib/libavenhancements.so
+lib64/libavenhancements.so
+lib/libqct_resampler.so
 vendor/bin/audioflacapp
 vendor/etc/drc/drc_cfg_5.1.txt
 vendor/etc/drc/drc_cfg_AZ.txt
@@ -2421,6 +2433,10 @@ framework/android.hardware.light-V2.0-java.jar
 vendor/etc/permissions/android.hardware.light.xml
 
 # Listen
+lib/liblistenjni.so
+lib/liblistensoundmodel2.so
+lib64/liblistenjni.so
+lib64/liblistensoundmodel2.so
 vendor/lib/hw/sound_trigger.primary.sdm660.so
 vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
@@ -2503,9 +2519,11 @@ vendor/media/LMspeed_508.emd
 vendor/media/PFFprec_600.emd
 
 # Perf
+lib/libqti-at.so
 lib/libqti_performance.so
 lib/vendor.qti.hardware.perf@1.0.so
 lib/libqti-perfd-client_system.so
+lib64/libqti-at.so
 lib64/libqti_performance.so
 lib64/vendor.qti.hardware.perf@1.0.so
 lib64/libqti-perfd-client_system.so
@@ -2758,6 +2776,10 @@ vendor/lib/vendor.qti.imsrtpservice@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so
 
 # Sensors
+lib64/libsensor1.so
+lib64/libsensor_reg.so
+lib/libsensor1.so
+lib/libsensor_reg.so
 vendor/bin/sensors.qcom
 vendor/etc/sensors/sensor_def_qcomdev.conf
 vendor/lib/hw/activity_recognition.sdm660.so
@@ -2876,6 +2898,16 @@ vendor/etc/qvop/poc_64_hmm.gmm
 vendor/lib/libqvop-service.so
 vendor/lib64/libqvop-service.so
 
+# VR
+lib/libvr_amb_engine.so
+lib/libvraudio.so
+lib/libvr_object_engine.so
+lib/libvr_sam_wrapper.so
+lib64/libvr_amb_engine.so
+lib64/libvraudio.so
+lib64/libvr_object_engine.so
+lib64/libvr_sam_wrapper.so
+
 # WideWine
 vendor/firmware/widevine.b00
 vendor/firmware/widevine.b01
@@ -2901,6 +2933,7 @@ bin/wfdservice
 etc/init/wfdservice.rc
 etc/wfdconfig.xml
 etc/wfdconfigsink.xml
+framework/WfdCommon.jar
 lib/libFileMux.so
 lib/libExtendedExtractor.so
 lib/libmmparser_lite.so
