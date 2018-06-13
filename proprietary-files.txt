@@ -2557,7 +2557,6 @@ vendor/etc/qti-logkit/qti_logkit_config.xml
 # Radio
 -app/datastatusnotification/datastatusnotification.apk
 -app/embms/embms.apk
--app/QtiSystemService/QtiSystemService.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/ipacm-diag
@@ -2572,7 +2571,6 @@ etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
 framework/embmslibrary.jar
 -framework/qcrilhook.jar
-framework/qti-telephony-common.jar
 framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -vendor/app/SVIService/SVIService.apk
@@ -2640,13 +2638,8 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS
-lib64/librcc.so
-lib/librcc.so
 lib64/lib-imsvtutils.so
-lib/lib-imsvtutils.so
 lib64/lib-imsvideocodec.so
-lib/lib-imsvideocodec.so
-lib/lib-imsvt.so
 lib64/lib-imsvt.so
 vendor/lib64/lib-uceservice.so
 vendor/lib/lib-uceservice.so
@@ -2667,11 +2660,6 @@ lib64/lib-imscamera.so
 lib64/libimscamera_jni.so
 lib64/lib-imsvtextutils.so
 lib64/libimsmedia_jni.so
-lib/libimsmedia_jni.so
-lib/lib-imscamera.so
-lib/lib-imsvtutils.so
-lib/libimscamera_jni.so
-lib/lib-imsvtextutils.so
 vendor/lib64/lib-imsdpl.so
 vendor/lib/lib-imsdpl.so
 vendor/lib64/lib-imsqimf.so
@@ -2682,17 +2670,11 @@ vendor/lib64/lib-rtpcommon.so
 vendor/lib64/lib-rtpcore.so
 vendor/lib64/lib-rtpdaemoninterface.so
 vendor/lib64/lib-rtpsl.so
-lib64/libmmrtpdecoder.so
-lib64/libmmrtpencoder.so
 vendor/lib/lib-rtpcore.so
 vendor/lib/lib-rtpsl.so
 vendor/lib/lib-rtpdaemoninterface.so
-lib/libmmrtpdecoder.so
-lib/libmmrtpencoder.so
 vendor/lib64/lib-imscmservice.so
 vendor/lib/lib-imscmservice.so
-lib/com.qualcomm.qti.imscmservice@1.0.so
-lib/vendor.qti.imsrtpservice@1.0.so
 lib64/vendor.qti.imsrtpservice@1.0.so
 lib64/com.qualcomm.qti.imscmservice@1.0.so
 vendor/lib/lib-rtpcommon.so
