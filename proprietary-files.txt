@@ -139,9 +139,11 @@ lib/libaptXHD_encoder.so|974c486e4ca03faa0713553d9dfe2995ac93e01c
 
 # camera blobs in /system 
 etc/scve/facereco/gModel.dat
+lib/libblurbuster.so
 lib/libchromaflash.so
 lib/libdualcameraddm.so
 lib/libFaceDetectCA.so
+lib/libfiltergenerator.so
 lib/libjni_blurbuster.so
 lib/libjni_chromaflash.so
 lib/libjni_dualcamera.so
@@ -163,6 +165,7 @@ lib/libjni_ubifocus.so
 lib/libmmcamera_faceproc2.so
 lib/libmmcamera_faceproc.so
 lib/liboptizoom.so
+lib/libseemore.so
 lib/libscveBlobDescriptor.so
 lib/libscveBlobDescriptor_stub.so
 lib/libscveCommon.so
@@ -176,12 +179,16 @@ lib/libscveObjectTracker.so
 lib/libscveObjectTracker_stub.so
 lib/libscvePanorama_lite.so
 lib/libscvePanorama.so
+lib/libtruescanner.so
 lib/libts_detected_face_jni.so
 lib/libts_face_beautify_hal.so
 lib/libts_face_beautify_jni.so
+lib/libubifocus.so
+lib64/libblurbuster.so
 lib64/libchromaflash.so
 lib64/libdualcameraddm.so
 lib64/libFaceDetectCA.so
+lib64/libfiltergenerator.so
 lib64/libjni_blurbuster.so
 lib64/libjni_chromaflash.so
 lib64/libjni_clearsight.so
@@ -204,6 +211,7 @@ lib64/libjni_ubifocus.so
 lib64/libmmcamera_faceproc2.so
 lib64/libmmcamera_faceproc.so
 lib64/liboptizoom.so
+lib64/libseemore.so
 lib64/libscveBlobDescriptor.so
 lib64/libscveBlobDescriptor_stub.so
 lib64/libscveCommon.so
@@ -217,6 +225,7 @@ lib64/libscveObjectTracker.so
 lib64/libscveObjectTracker_stub.so
 lib64/libscvePanorama_lite.so
 lib64/libscvePanorama.so
+lib64/libtruescanner.so
 lib64/libts_detected_face_jni.so
 lib64/libts_face_beautify_hal.so
 lib64/libts_face_beautify_jni.so
@@ -2011,9 +2020,9 @@ etc/cne/andsfCne.xml
 etc/cne/SwimConfig.xml
 etc/permissions/cneapiclient.xml
 etc/permissions/com.quicinc.cne.xml
-framework/cneapiclient.jar
-framework/com.quicinc.cne.jar
-framework/com.quicinc.cne.api-V1.0-java.jar
+-framework/cneapiclient.jar
+-framework/com.quicinc.cne.jar
+-framework/com.quicinc.cne.api-V1.0-java.jar
 -priv-app/CNEService/CNEService.apk
 lib/libvendorconn.so
 lib/vendor.qti.hardware.data.latency@1.0.so
@@ -2086,9 +2095,9 @@ etc/dpm/nsrm/NsrmConfiguration.xml
 etc/init/dpmd.rc
 etc/permissions/com.qti.dpmframework.xml
 etc/permissions/dpmapi.xml
-framework/com.qti.dpmframework.jar
-framework/dpmapi.jar
-framework/tcmclient.jar
+-framework/com.qti.dpmframework.jar
+-framework/dpmapi.jar
+-framework/tcmclient.jar
 -priv-app/dpmserviceapp/dpmserviceapp.apk
 lib/com.qualcomm.qti.dpm.api@1.0.so
 lib/libdiag_system.so
@@ -2211,6 +2220,7 @@ vendor/lib/libFIDOKeyProvisioning.so
 vendor/lib64/libFIDOKeyProvisioning.so
 
 # Fingerprint sensor
+-framework/vendor.qti.hardware.fingerprint-V1.0-java.jar
 -vendor/app/QFingerprintService/QFingerprintService.apk
 vendor/bin/qfp-daemon
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
@@ -2245,14 +2255,19 @@ vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/gatekeeper.sdm660.so
 
 # GPS
+etc/permissions/com.qualcomm.location.xml
 etc/permissions/com.qti.location.sdk.xml
 etc/permissions/izat.xt.srv.xml
-framework/com.qti.location.sdk.jar
-framework/izat.xt.srv.jar
+etc/permissions/privapp-permissions-com.qualcomm.location.xml
+-framework/com.qti.location.sdk.jar
+-framework/izat.xt.srv.jar
+lib/liblocationservice_jni.so
 lib/vendor.qti.gnss@1.0.so
 lib/libxt_native.so
+lib64/liblocationservice_jni.so
 lib64/vendor.qti.gnss@1.0.so
 lib64/libxt_native.so
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk
 vendor/bin/hw/vendor.qti.gnss@1.0-service
 vendor/bin/DR_AP_Service
 vendor/bin/garden_app
@@ -2264,6 +2279,7 @@ vendor/bin/xtwifi-inet-agent
 vendor/etc/cacert_location.pem
 vendor/etc/init/vendor.qti.gnss@1.0-service.rc
 vendor/etc/xtra_root_cert.pem
+-vendor/lib/libloc_api_v02.so
 -vendor/lib64/libloc_api_v02.so
 vendor/lib64/libloc_ds_api.so
 vendor/bin/slim_daemon
@@ -2428,10 +2444,6 @@ vendor/lib64/libkeymasterdeviceutils.so
 vendor/lib/hw/keystore.sdm660.so
 vendor/lib64/hw/keystore.sdm660.so
 
-# Lights
-framework/android.hardware.light-V2.0-java.jar
-vendor/etc/permissions/android.hardware.light.xml
-
 # Listen
 lib/liblistenjni.so
 lib/liblistensoundmodel2.so
@@ -2523,10 +2535,12 @@ lib/libqti-at.so
 lib/libqti_performance.so
 lib/vendor.qti.hardware.perf@1.0.so
 lib/libqti-perfd-client_system.so
+lib64/libqti-util_system.so
 lib64/libqti-at.so
 lib64/libqti_performance.so
 lib64/vendor.qti.hardware.perf@1.0.so
 lib64/libqti-perfd-client_system.so
+lib64/libqti-util_system.so
 lib/vendor.qti.hardware.iop@1.0.so
 lib/vendor.qti.hardware.iop@2.0.so
 lib64/vendor.qti.hardware.iop@1.0.so
@@ -2654,9 +2668,9 @@ vendor/etc/data/netmgr_config.xml
 etc/permissions/embms.xml
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
-framework/embmslibrary.jar
+-framework/embmslibrary.jar
 -framework/qcrilhook.jar
-framework/QtiTelephonyServicelibrary.jar
+-framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -vendor/app/SVIService/SVIService.apk
 vendor/bin/diag_callback_sample
@@ -2736,7 +2750,7 @@ vendor/bin/imsrcsd
 -app/imssettings/imssettings.apk
 -app/uceShimService/uceShimService.apk
 etc/permissions/qti-vzw-ims-internal.xml
-vendor/framework/qti-vzw-ims-internal.jar
+-vendor/framework/qti-vzw-ims-internal.jar
 vendor/lib64/lib-dplmedia.so
 vendor/lib/lib-dplmedia.so
 vendor/lib64/lib-imsrcs-v2.so
@@ -2926,6 +2940,7 @@ vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/bin/cnss_diag
 vendor/bin/cnss-daemon
 vendor/bin/fstman
+vendor/lib64/vendor.qti.hardware.wifi.supplicant@1.0_vendor.so
 
 # Wi-Fi Display
 -app/WfdService/WfdService.apk
@@ -2933,7 +2948,7 @@ bin/wfdservice
 etc/init/wfdservice.rc
 etc/wfdconfig.xml
 etc/wfdconfigsink.xml
-framework/WfdCommon.jar
+-framework/WfdCommon.jar
 lib/libFileMux.so
 lib/libExtendedExtractor.so
 lib/libmmparser_lite.so
