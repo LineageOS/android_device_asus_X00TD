@@ -17,7 +17,7 @@ DEVICE_PROVISIONED=1
 # Set network mode to (T/L/G/W/1X/EVDO, T/G/W/L) for 7+5 mode device on DSDS mode
 #
 # Huaqin add for TT-1159174 by dujie at 2018/04/10 start
-ro.telephony.default_network=22,22
+ro.telephony.default_network=20,20
 # Huaqin add for TT-1159174 by dujie at 2018/04/10 end
 
 debug.sf.enable_hwc_vds=1

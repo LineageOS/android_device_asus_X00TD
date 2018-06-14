@@ -454,15 +454,14 @@ on post-fs-data
 
 # Huaqin add for ZQL1650-126 CountryCode by yangzhiyuan at 2018/01/24 start
 # Huaqin add for bt/wifi prop by zhouyingchen at 2018/03/23 start
+# Huaqin add for change class core  by xudayi at 2018/05/28 start
 service nvram_country /vendor/bin/nvram_country
+    class core
     user root
     group system
     chmod 0644 /vendor/bin/nvram_country
     oneshot
-    disabled
-
-on property:persist.sys.nvinit=Ready
-start nvram_country
+# Huaqin add for change class core  by xudayi at 2018/05/28 end
 
 service nvram_btwifi /vendor/bin/nvram_btwifi
     user root
