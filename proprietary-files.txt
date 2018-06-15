@@ -2640,7 +2640,6 @@ lib64/libqti-at.so
 lib64/libqti_performance.so
 lib64/vendor.qti.hardware.perf@1.0.so
 lib64/libqti-perfd-client_system.so
-lib64/libqti-util_system.so
 lib/vendor.qti.hardware.iop@1.0.so
 lib/vendor.qti.hardware.iop@2.0.so
 lib64/vendor.qti.hardware.iop@1.0.so
@@ -2849,8 +2848,6 @@ vendor/bin/imsrcsd
 -app/ims/ims.apk
 -app/imssettings/imssettings.apk
 -app/uceShimService/uceShimService.apk
-etc/permissions/qti-vzw-ims-internal.xml
--vendor/framework/qti-vzw-ims-internal.jar
 vendor/lib64/lib-dplmedia.so
 vendor/lib/lib-dplmedia.so
 vendor/lib64/lib-imsrcs-v2.so
@@ -2877,7 +2874,6 @@ vendor/lib/lib-imscmservice.so
 lib64/vendor.qti.imsrtpservice@1.0.so
 lib64/com.qualcomm.qti.imscmservice@1.0.so
 vendor/lib/lib-rtpcommon.so
-vendor/lib64/lib-rtpcommon.so
 vendor/lib64/com.qualcomm.qti.imscmservice@1.0_vendor.so
 vendor/lib64/com.qualcomm.qti.imscmservice@1.1_vendor.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
@@ -3101,9 +3097,7 @@ vendor/lib/libhdcp2p2prov.so
 vendor/lib/libmmosal_proprietary.so
 vendor/lib/libwfdmodulehdcpsession.so
 vendor/lib/libwfdhaldsmanager.so
-vendor/lib/libwfdhdcpcp.so
 vendor/lib/libwfdcommonutils_proprietary.so
-vendor/lib/libwfdmodulehdcpsession.so
 vendor/lib/libwfdmmservice.so
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0_vendor.so
 vendor/lib/com.qualcomm.qti.wifidisplayhal@1.0-impl.so
@@ -3114,9 +3108,7 @@ vendor/lib64/libhdcp2p2prov.so
 vendor/lib64/libmmosal_proprietary.so
 vendor/lib64/libwfdmodulehdcpsession.so
 vendor/lib64/libwfdhaldsmanager.so
-vendor/lib64/libwfdhdcpcp.so
 vendor/lib64/libwfdcommonutils_proprietary.so
-vendor/lib64/libwfdmodulehdcpsession.so
 vendor/lib64/libwfdmmservice.so
 vendor/lib64/com.qualcomm.qti.wifidisplayhal@1.0_vendor.so
 vendor/lib64/com.qualcomm.qti.wifidisplayhal@1.0-impl.so
