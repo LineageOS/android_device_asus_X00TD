@@ -1,4 +1,3 @@
-libunlock.so
 libqti-perfd-client.so
 libadsprpc.so
 libcdsprpc.so
