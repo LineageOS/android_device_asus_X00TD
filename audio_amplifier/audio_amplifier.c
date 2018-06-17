@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "amplifier_oneplus5"
+#define LOG_TAG "amplifier_X00TD"
 //#define LOG_NDEBUG 0
 
 #include <stdint.h>
@@ -150,7 +150,7 @@ amplifier_module_t HAL_MODULE_INFO_SYM = {
         .module_api_version = AMPLIFIER_MODULE_API_VERSION_0_1,
         .hal_api_version = HARDWARE_HAL_API_VERSION,
         .id = AMPLIFIER_HARDWARE_MODULE_ID,
-        .name = "OnePlus5 audio amplifier HAL",
+        .name = "Zenfone Max Pro M1 audio amplifier HAL",
         .author = "The LineageOS Project",
         .methods = &hal_module_methods,
     },
