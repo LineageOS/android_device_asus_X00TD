@@ -2105,9 +2105,9 @@ etc/cne/andsfCne.xml
 etc/cne/SwimConfig.xml
 etc/permissions/cneapiclient.xml
 etc/permissions/com.quicinc.cne.xml
--framework/cneapiclient.jar
--framework/com.quicinc.cne.jar
--framework/com.quicinc.cne.api-V1.0-java.jar
+framework/cneapiclient.jar
+framework/com.quicinc.cne.jar
+framework/com.quicinc.cne.api-V1.0-java.jar
 -priv-app/CNEService/CNEService.apk
 lib/libvendorconn.so
 lib/vendor.qti.hardware.data.latency@1.0.so
@@ -2182,9 +2182,9 @@ etc/dpm/nsrm/NsrmConfiguration.xml
 etc/init/dpmd.rc
 etc/permissions/com.qti.dpmframework.xml
 etc/permissions/dpmapi.xml
--framework/com.qti.dpmframework.jar
--framework/dpmapi.jar
--framework/tcmclient.jar
+framework/com.qti.dpmframework.jar
+framework/dpmapi.jar
+framework/tcmclient.jar
 -priv-app/dpmserviceapp/dpmserviceapp.apk
 lib/com.qualcomm.qti.dpm.api@1.0.so
 lib/libdiag_system.so
@@ -2307,7 +2307,7 @@ vendor/lib/libFIDOKeyProvisioning.so
 vendor/lib64/libFIDOKeyProvisioning.so
 
 # Fingerprint sensor
--framework/vendor.qti.hardware.fingerprint-V1.0-java.jar
+framework/vendor.qti.hardware.fingerprint-V1.0-java.jar
 -vendor/app/QFingerprintService/QFingerprintService.apk
 vendor/bin/qfp-daemon
 vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
@@ -2342,19 +2342,14 @@ vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
 vendor/lib64/hw/gatekeeper.sdm660.so
 
 # GPS
-etc/permissions/com.qualcomm.location.xml
 etc/permissions/com.qti.location.sdk.xml
 etc/permissions/izat.xt.srv.xml
-etc/permissions/privapp-permissions-com.qualcomm.location.xml
--framework/com.qti.location.sdk.jar
--framework/izat.xt.srv.jar
-lib/liblocationservice_jni.so
+framework/com.qti.location.sdk.jar
+framework/izat.xt.srv.jar
 lib/vendor.qti.gnss@1.0.so
 lib/libxt_native.so
-lib64/liblocationservice_jni.so
 lib64/vendor.qti.gnss@1.0.so
 lib64/libxt_native.so
--priv-app/com.qualcomm.location/com.qualcomm.location.apk
 vendor/bin/hw/vendor.qti.gnss@1.0-service
 vendor/bin/DR_AP_Service
 vendor/bin/garden_app
@@ -2366,7 +2361,6 @@ vendor/bin/xtwifi-inet-agent
 vendor/etc/cacert_location.pem
 vendor/etc/init/vendor.qti.gnss@1.0-service.rc
 vendor/etc/xtra_root_cert.pem
--vendor/lib/libloc_api_v02.so
 -vendor/lib64/libloc_api_v02.so
 vendor/lib64/libloc_ds_api.so
 vendor/bin/slim_daemon
@@ -2755,6 +2749,7 @@ vendor/etc/qti-logkit/qti_logkit_config.xml
 # Radio
 -app/datastatusnotification/datastatusnotification.apk
 -app/embms/embms.apk
+#-app/QtiSystemService/QtiSystemService.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/ipacm-diag
@@ -2767,9 +2762,10 @@ vendor/etc/data/netmgr_config.xml
 etc/permissions/embms.xml
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
--framework/embmslibrary.jar
+framework/embmslibrary.jar
 -framework/qcrilhook.jar
--framework/QtiTelephonyServicelibrary.jar
+#framework/qti-telephony-common.jar
+framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -vendor/app/SVIService/SVIService.apk
 vendor/bin/diag_callback_sample
@@ -2836,8 +2832,13 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS
+#lib64/librcc.so
+#lib/librcc.so
 lib64/lib-imsvtutils.so
+#lib/lib-imsvtutils.so
 lib64/lib-imsvideocodec.so
+#lib/lib-imsvideocodec.so
+#lib/lib-imsvt.so
 lib64/lib-imsvt.so
 vendor/lib64/lib-uceservice.so
 vendor/lib/lib-uceservice.so
@@ -2848,6 +2849,8 @@ vendor/bin/imsrcsd
 -app/ims/ims.apk
 -app/imssettings/imssettings.apk
 -app/uceShimService/uceShimService.apk
+etc/permissions/qti-vzw-ims-internal.xml
+vendor/framework/qti-vzw-ims-internal.jar
 vendor/lib64/lib-dplmedia.so
 vendor/lib/lib-dplmedia.so
 vendor/lib64/lib-imsrcs-v2.so
@@ -2856,6 +2859,11 @@ lib64/lib-imscamera.so
 lib64/libimscamera_jni.so
 lib64/lib-imsvtextutils.so
 lib64/libimsmedia_jni.so
+#lib/libimsmedia_jni.so
+#lib/lib-imscamera.so
+#lib/lib-imsvtutils.so
+#lib/libimscamera_jni.so
+#lib/lib-imsvtextutils.so
 vendor/lib64/lib-imsdpl.so
 vendor/lib/lib-imsdpl.so
 vendor/lib64/lib-imsqimf.so
@@ -2866,14 +2874,21 @@ vendor/lib64/lib-rtpcommon.so
 vendor/lib64/lib-rtpcore.so
 vendor/lib64/lib-rtpdaemoninterface.so
 vendor/lib64/lib-rtpsl.so
+#lib64/libmmrtpdecoder.so
+#lib64/libmmrtpencoder.so
 vendor/lib/lib-rtpcore.so
 vendor/lib/lib-rtpsl.so
 vendor/lib/lib-rtpdaemoninterface.so
+#lib/libmmrtpdecoder.so
+#lib/libmmrtpencoder.so
 vendor/lib64/lib-imscmservice.so
 vendor/lib/lib-imscmservice.so
+#lib/com.qualcomm.qti.imscmservice@1.0.so
+#lib/vendor.qti.imsrtpservice@1.0.so
 lib64/vendor.qti.imsrtpservice@1.0.so
 lib64/com.qualcomm.qti.imscmservice@1.0.so
 vendor/lib/lib-rtpcommon.so
+vendor/lib64/lib-rtpcommon.so
 vendor/lib64/com.qualcomm.qti.imscmservice@1.0_vendor.so
 vendor/lib64/com.qualcomm.qti.imscmservice@1.1_vendor.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
@@ -3044,7 +3059,7 @@ bin/wfdservice
 etc/init/wfdservice.rc
 etc/wfdconfig.xml
 etc/wfdconfigsink.xml
--framework/WfdCommon.jar
+framework/WfdCommon.jar
 lib/libFileMux.so
 lib/libExtendedExtractor.so
 lib/libmmparser_lite.so
