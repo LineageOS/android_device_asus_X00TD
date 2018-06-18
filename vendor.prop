@@ -235,6 +235,7 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 ro.opengles.version=196610
 qcom.bluetooth.soc=cherokee
 af.fast_track_multiplier=1
+ro.config.vc_call_vol_steps=11
 vendor.audio_hal.period_size=192
 ro.vendor.audio.sdk.fluencetype=fluence
 persist.vendor.audio.fluence.voicecall=true
