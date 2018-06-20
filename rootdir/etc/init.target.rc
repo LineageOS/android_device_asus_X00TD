@@ -107,6 +107,24 @@ on boot
     chown system system /persist/speccfg/submask
     chown system system /persist/speccfg/partition
 
+    # Lights
+    chown system system /sys/class/leds/blue/brightness
+    chown system system /sys/class/leds/green/blink
+    chown system system /sys/class/leds/green/duty_pcts
+    chown system system /sys/class/leds/green/pause_hi
+    chown system system /sys/class/leds/green/pause_lo
+    chown system system /sys/class/leds/green/ramp_step_ms
+    chown system system /sys/class/leds/green/start_idx
+    chown system system /sys/class/leds/red/blink
+    chown system system /sys/class/leds/red/duty_pcts
+    chown system system /sys/class/leds/red/pause_hi
+    chown system system /sys/class/leds/red/pause_lo
+    chown system system /sys/class/leds/red/ramp_step_ms
+    chown system system /sys/class/leds/red/start_idx
+
+    # Button backlight
+    chown system system /sys/class/leds/lcd-backlight/brightness
+
 #Huaqin add for sensors permission-ZQL1650-141 by chenyijun5 at 2018/2/1 start
     chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_enable
     chmod 0644 /sys/class/sensors/stk3x1x-proximity/sensors_delay
