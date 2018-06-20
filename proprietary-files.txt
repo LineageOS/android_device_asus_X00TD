@@ -154,8 +154,6 @@ lib/libjni_optizoom.so
 lib/libjni_panorama.so
 lib/libjni_seestraight.so
 lib/libjni_sharpshooter.so
-lib/libjni_snapcammosaic.so
-lib/libjni_snapcamtinyplanet.so
 lib/libjni_stillmore.so
 lib/libjni_trackingfocus.so
 lib/libjni_trueportrait.so
@@ -200,8 +198,6 @@ lib64/libjni_optizoom.so
 lib64/libjni_panorama.so
 lib64/libjni_seestraight.so
 lib64/libjni_sharpshooter.so
-lib64/libjni_snapcammosaic.so
-lib64/libjni_snapcamtinyplanet.so
 lib64/libjni_stillmore.so
 lib64/libjni_trackingfocus.so
 lib64/libjni_trueportrait.so
