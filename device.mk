@@ -27,7 +27,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Dalvik & HWUI overrides
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-3072-hwui-memory.mk)
 
 # default is nosdcard, S/W button enabled in resource
 PRODUCT_CHARACTERISTICS := nosdcard
