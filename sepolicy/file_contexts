@@ -7,3 +7,6 @@
 # Keylayout
 /(vendor|system/vendor)/usr/keylayout/gpio-keys\.kl                     u:object_r:keylayout_file:s0
 
+# NFC
+/(vendor|system/vendor)/bin/hw/vendor\.nxp\.nxpnfc@1\.0-service		u:object_r:nxpnfc_hal_svc_exec:s0
+
