@@ -1,0 +1,1 @@
+genfscon debugfs /wlan0/power_stats    u:object_r:debugfs_power_stats:s0
