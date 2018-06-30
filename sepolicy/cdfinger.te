@@ -1,0 +1,11 @@
+type cdfinger;
+file_type_auto_trans(cdfinger,system_data_file,cdfinger_data_file);
+binder_use(cdfinger);
+binder_call(cdfinger, hal_fingerprint_default);
+add_service(cdfinger, cdfinger_service);
+allow cdfinger cdfinger_device:chr_file { rw_file_perms };
+r_dir_file(cdfinger, cdfinger_data_file);
+allow cdfinger cdfinger_data_file:dir rw_dir_perms;
+allow cdfinger cdfinger_data_file:file create_file_perms;
+set_prop(cdfinger, cdfinger_prop);
+set_prop(cdfinger, system_prop);
