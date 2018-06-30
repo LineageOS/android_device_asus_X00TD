@@ -1,3 +1,5 @@
+asus.storage.primary.              u:object_r:system_prop:s0
+ro.sf.lcd_density                  u:object_r:sf_lcd_density_prop:s0
 persist.cdfinger.ready             u:object_r:cdfinger_prop:s0
 property.cdfinger.enablesave       u:object_r:cdfinger_prop:s0
 persist.vendor.runin.fp            u:object_r:system_prop:s0
