@@ -1,0 +1,2 @@
+persist.cdfinger.ready             u:object_r:cdfinger_prop:s0
+property.cdfinger.enablesave       u:object_r:cdfinger_prop:s0
