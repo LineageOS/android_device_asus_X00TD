@@ -1,0 +1,9 @@
+# Radio
+/(vendor|system/vendor)/radio/qcril_database/qcril.db			u:object_r:rild_file:s0
+
+# Goodix Fingerprint
+/dev/goodix_fp                                                          u:object_r:fingerprintd_device:s0
+
+# Keylayout
+/(vendor|system/vendor)/usr/keylayout/gpio-keys\.kl                     u:object_r:keylayout_file:s0
+
