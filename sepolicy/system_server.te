@@ -1,0 +1,1 @@
+allow system_server keylayout_file:file r_file_perms;
