@@ -1,12 +1,16 @@
 # Radio
-/(vendor|system/vendor)/radio/qcril_database/qcril.db			u:object_r:rild_file:s0
+/(vendor|system/vendor)/radio/qcril_database/qcril.db			    u:object_r:rild_file:s0
 
 # Goodix Fingerprint
-/dev/goodix_fp                                                          u:object_r:fingerprintd_device:s0
+/dev/goodix_fp                                                      u:object_r:fingerprintd_device:s0
 
 # Keylayout
-/(vendor|system/vendor)/usr/keylayout/gpio-keys\.kl                     u:object_r:keylayout_file:s0
+/(vendor|system/vendor)/usr/keylayout/gpio-keys\.kl                 u:object_r:keylayout_file:s0
 
 # NFC
 /(vendor|system/vendor)/bin/hw/vendor\.nxp\.nxpnfc@1\.0-service		u:object_r:nxpnfc_hal_svc_exec:s0
 /(vendor|system/vendor)/manifest_no_nfc.xml                         u:object_r:vendor_configs_file:s0
+
+# cdfinger Fingerprint
+/dev/fpsdev0	                                                    u:object_r:cdfinger_device:s0
+/data/system/cdfinger(/.*)?		                                    u:object_r:cdfinger_data_file:s0
