@@ -341,7 +341,6 @@ PRODUCT_PACKAGES += \
     init.mdm.sh \
     init.qcom.class_core.sh \
     init.qcom.coex.sh \
-    init.qcom.crashdata.sh \
     init.qcom.efs.sync.sh \
     init.qcom.post_boot.sh \
     init.qcom.sdio.sh \
