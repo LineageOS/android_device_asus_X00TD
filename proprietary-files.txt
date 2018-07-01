@@ -14,15 +14,6 @@ vendor/lib64/libfastcvopt.so
 vendor/lib64/libmdsprpc.so
 
 # ADSP modules
-lib/rfsa/adsp/libapps_mem_heap.so
-lib/rfsa/adsp/libdspCV_skel.so
-lib/rfsa/adsp/libfastcvadsp.so
-lib/rfsa/adsp/libfastcvadsp_skel.so
-lib/rfsa/adsp/libhvxMathVIO.so
-lib/rfsa/adsp/libqvr_adsp_driver_skel.so
-lib/rfsa/adsp/libscveBlobDescriptor_skel.so
-lib/rfsa/adsp/libscveFaceLandmark_skel.so
-lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so
@@ -61,9 +52,6 @@ vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # Audio
-lib/libavenhancements.so
-lib64/libavenhancements.so
-lib/libqct_resampler.so
 vendor/bin/audioflacapp
 vendor/etc/drc/drc_cfg_5.1.txt
 vendor/etc/drc/drc_cfg_AZ.txt
@@ -136,13 +124,9 @@ lib64/libaptXHD_encoder.so|90f47f10af28b3ead143200cb4370b847c513127
 lib/libaptX_encoder.so|984739a0bc968e18f75ced205733fe3f51c2d4f0
 lib/libaptXHD_encoder.so|974c486e4ca03faa0713553d9dfe2995ac93e01c
 
-# camera blobs in /system 
-etc/scve/facereco/gModel.dat
-lib/libblurbuster.so
+# Camera
 lib/libchromaflash.so
 lib/libdualcameraddm.so
-lib/libFaceDetectCA.so
-lib/libfiltergenerator.so
 lib/libjni_blurbuster.so
 lib/libjni_chromaflash.so
 lib/libjni_dualcamera.so
@@ -176,16 +160,14 @@ lib/libscveObjectTracker.so
 lib/libscveObjectTracker_stub.so
 lib/libscvePanorama_lite.so
 lib/libscvePanorama.so
+lib/libtrueportrait.so
 lib/libtruescanner.so
 lib/libts_detected_face_jni.so
 lib/libts_face_beautify_hal.so
 lib/libts_face_beautify_jni.so
 lib/libubifocus.so
-lib64/libblurbuster.so
 lib64/libchromaflash.so
 lib64/libdualcameraddm.so
-lib64/libFaceDetectCA.so
-lib64/libfiltergenerator.so
 lib64/libjni_blurbuster.so
 lib64/libjni_chromaflash.so
 lib64/libjni_clearsight.so
@@ -220,16 +202,12 @@ lib64/libscveObjectTracker.so
 lib64/libscveObjectTracker_stub.so
 lib64/libscvePanorama_lite.so
 lib64/libscvePanorama.so
+lib64/libtrueportrait.so
 lib64/libtruescanner.so
 lib64/libts_detected_face_jni.so
 lib64/libts_face_beautify_hal.so
 lib64/libts_face_beautify_jni.so
 lib64/libubifocus.so
-
-# Camera
-bin/mm-qcamera-daemon
-lib/libtrueportrait.so
-lib64/libtrueportrait.so
 vendor/lib/hw/camera.sdm660.so
 vendor/lib/libmmcamera_interface.so
 vendor/lib/libmmjpeg_interface.so
@@ -2330,8 +2308,6 @@ vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so
 
 # Gatekeeper
-bin/gatekeeperd:vendor/bin/gatekeeperd
-etc/init/gatekeeperd.rc:vendor/etc/init/gatekeeperd.rc
 lib/libgatekeeper.so:vendor/lib/libgatekeeper.so
 lib64/libgatekeeper.so:vendor/lib64/libgatekeeper.so
 lib64/android.hardware.gatekeeper@1.0.so:vendor/lib64/android.hardware.gatekeeper@1.0.so
@@ -2608,16 +2584,13 @@ vendor/lib64/libvpphvx.so
 vendor/lib64/libvpptestutils.so
 vendor/lib64/vendor.qti.hardware.vpp@1.1_vendor.so
 
-# media emd
-vendor/media/LMspeed_508.emd
-vendor/media/PFFprec_600.emd
-
-# NFC 
+# NFC
 vendor/ext_xml/android.hardware.nfc.hcef.xml:vendor/etc/permissions/android.hardware.nfc.hcef.xml|c36aa6ea34b8f7f06162409e037628f07632a646
 etc/permissions/com.nxp.nfc.xml
 -framework/com.nxp.nfc.jar
 vendor/bin/hw/vendor.nxp.nxpnfc@1.0-service
 vendor/etc/init/vendor.nxp.nxpnfc@1.0-service.rc
+vendor/firmware/libpn553_fw.so
 vendor/lib/hw/nfc_nci.pn54x.default.so
 vendor/lib/hw/vendor.nxp.nxpnfc@1.0-impl.so
 vendor/lib/vendor.nxp.nxpnfc@1.0.so
@@ -2736,21 +2709,10 @@ vendor/lib64/libqmiservices.so
 vendor/lib64/libsmemlog.so
 vendor/lib64/libUserAgent.so
 
-# QTI log kit
-vendor/etc/qti-logkit/scenarios/bluetooth.png
-vendor/etc/qti-logkit/scenarios/default.png
-vendor/etc/qti-logkit/scenarios/IMS.png
-vendor/etc/qti-logkit/audiobasic.dmc
-vendor/etc/qti-logkit/gnsslocationlogging.dmc
-vendor/etc/qti-logkit/goldenlogmask.dmc
-vendor/etc/qti-logkit/IMS.dmc
-vendor/etc/qti-logkit/qti_logkit_command.xml
-vendor/etc/qti-logkit/qti_logkit_config.xml
-
 # Radio
+-app/CallFeaturesSetting/CallFeaturesSetting.apk
 -app/datastatusnotification/datastatusnotification.apk
 -app/embms/embms.apk
-#-app/QtiSystemService/QtiSystemService.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/ipacm-diag
@@ -2765,7 +2727,6 @@ etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
 framework/embmslibrary.jar
 -framework/qcrilhook.jar
-#framework/qti-telephony-common.jar
 framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 -vendor/app/SVIService/SVIService.apk
@@ -2833,13 +2794,8 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS
-#lib64/librcc.so
-#lib/librcc.so
 lib64/lib-imsvtutils.so
-#lib/lib-imsvtutils.so
 lib64/lib-imsvideocodec.so
-#lib/lib-imsvideocodec.so
-#lib/lib-imsvt.so
 lib64/lib-imsvt.so
 vendor/lib64/lib-uceservice.so
 vendor/lib/lib-uceservice.so
@@ -2850,7 +2806,6 @@ vendor/bin/imsrcsd
 -app/ims/ims.apk
 -app/imssettings/imssettings.apk
 -app/uceShimService/uceShimService.apk
-etc/permissions/qti-vzw-ims-internal.xml
 vendor/framework/qti-vzw-ims-internal.jar
 vendor/lib64/lib-dplmedia.so
 vendor/lib/lib-dplmedia.so
@@ -2860,11 +2815,6 @@ lib64/lib-imscamera.so
 lib64/libimscamera_jni.so
 lib64/lib-imsvtextutils.so
 lib64/libimsmedia_jni.so
-#lib/libimsmedia_jni.so
-#lib/lib-imscamera.so
-#lib/lib-imsvtutils.so
-#lib/libimscamera_jni.so
-#lib/lib-imsvtextutils.so
 vendor/lib64/lib-imsdpl.so
 vendor/lib/lib-imsdpl.so
 vendor/lib64/lib-imsqimf.so
@@ -2875,21 +2825,14 @@ vendor/lib64/lib-rtpcommon.so
 vendor/lib64/lib-rtpcore.so
 vendor/lib64/lib-rtpdaemoninterface.so
 vendor/lib64/lib-rtpsl.so
-#lib64/libmmrtpdecoder.so
-#lib64/libmmrtpencoder.so
 vendor/lib/lib-rtpcore.so
 vendor/lib/lib-rtpsl.so
 vendor/lib/lib-rtpdaemoninterface.so
-#lib/libmmrtpdecoder.so
-#lib/libmmrtpencoder.so
 vendor/lib64/lib-imscmservice.so
 vendor/lib/lib-imscmservice.so
-#lib/com.qualcomm.qti.imscmservice@1.0.so
-#lib/vendor.qti.imsrtpservice@1.0.so
 lib64/vendor.qti.imsrtpservice@1.0.so
 lib64/com.qualcomm.qti.imscmservice@1.0.so
 vendor/lib/lib-rtpcommon.so
-vendor/lib64/lib-rtpcommon.so
 vendor/lib64/com.qualcomm.qti.imscmservice@1.0_vendor.so
 vendor/lib64/com.qualcomm.qti.imscmservice@1.1_vendor.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
@@ -2925,6 +2868,8 @@ vendor/lib/sensors.native.so
 vendor/lib64/sensors.native.so
 
 # Sensors HIDL
+lib/android.hardware.sensors@1.0.so
+lib64/android.hardware.sensors@1.0.so
 vendor/bin/hw/android.hardware.sensors@1.0-service
 vendor/etc/init/android.hardware.sensors@1.0-service.rc
 vendor/lib/hw/android.hardware.sensors@1.0-impl.so
@@ -3161,10 +3106,8 @@ vendor/bin/toolbox_vendor
 vendor/bin/vendor_cmd_tool
 vendor/bin/wdsdaemon
 vendor/bin/WifiLogger_app
-vendor/etc/permissions/android.software.verified_boot.xml
 vendor/etc/ftm_test_config
 vendor/firmware/aw87339_kspk.bin
-vendor/firmware/libpn553_fw.so
 vendor/firmware/mono.cnt
 vendor/firmware/startup_fw_update.img
 vendor/lib/libcsm_data.so
@@ -3185,4 +3128,3 @@ vendor/lib64/libstreamparser.so
 vendor/lib64/libUBWC.so
 vendor/lib64/libvraudio_client.so
 vendor/lib64/libwvhidl.so
-vendor/speccfg/switch_spec.sh
