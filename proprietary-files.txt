@@ -361,6 +361,7 @@ vendor/lib/libmmcamera_ov16880_qtech_front_fm24c64d_eeprom.so
 vendor/lib/libmmcamera_ov16880_qtech_rear.so
 vendor/lib/libmmcamera_ov16885_ofilm_16m.so
 vendor/lib/libmmcamera_ov16885_holitech_16m.so
+vendor/lib/libmmcamera_ov16885_holitech_16m_fm24c64d_eeprom.so
 vendor/lib/libmmcamera_ov16885_ofilm_16m_fm24c64d_eeprom.so
 vendor/lib/libmmcamera_ov2281.so
 vendor/lib/libmmcamera_ov2680.so
@@ -376,6 +377,7 @@ vendor/lib/libmmcamera_ov7251.so
 vendor/lib/libmmcamera_ov8856_chicony_front_eeprom.so
 vendor/lib/libmmcamera_ov8856_chicony_front.so
 vendor/lib/libmmcamera_ov8856.so
+vendor/lib/libmmcamera_ov8856b_chicony_front.so
 vendor/lib/libmmcamera_ov8858.so
 vendor/lib/libmmcamera_ov8865.so
 vendor/lib/libmmcamera_paaf_lib.so
@@ -2590,6 +2592,7 @@ vendor/lib64/vendor.qti.hardware.vpp@1.1_vendor.so
 vendor/ext_xml/android.hardware.nfc.hcef.xml:vendor/etc/permissions/android.hardware.nfc.hcef.xml|c36aa6ea34b8f7f06162409e037628f07632a646
 etc/permissions/com.nxp.nfc.xml
 -framework/com.nxp.nfc.jar
+-vendor/app/SmartcardService/SmartcardService.apk
 vendor/bin/hw/vendor.nxp.nxpnfc@1.0-service
 vendor/etc/init/vendor.nxp.nxpnfc@1.0-service.rc
 vendor/firmware/libpn553_fw.so
@@ -2599,6 +2602,10 @@ vendor/lib/vendor.nxp.nxpnfc@1.0.so
 vendor/lib64/hw/nfc_nci.pn54x.default.so
 vendor/lib64/hw/vendor.nxp.nxpnfc@1.0-impl.so
 vendor/lib64/vendor.nxp.nxpnfc@1.0.so
+
+# Open mobile API
+etc/permissions/org.simalliance.openmobileapi.xml
+framework/org.simalliance.openmobileapi.jar
 
 # Perf
 lib/libqti-at.so
