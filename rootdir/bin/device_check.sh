@@ -25,6 +25,7 @@ if [ $RAW_ID == 204 ]; then
     rm -rf /system/lib/*nfc*
     rm -rf /system/lib64/*nfc*
     rm -rf /system/priv-app/Tag
+    rm -rf /vendor/app/SmartcardService
     rm -rf /vendor/bin/*nfc*
     rm -rf /vendor/bin/hw/*nfc*
     rm -rf /vendor/etc/*nfc*
