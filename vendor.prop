@@ -1,5 +1,3 @@
-#rild.libpath=/system/lib/libreference-ril.so
-#rild.libargs=-d /dev/smd0
 persist.rild.nitz_plmn=
 persist.rild.nitz_long_ons_0=
 persist.rild.nitz_long_ons_1=
@@ -42,8 +40,6 @@ media.stagefright.enable-scan=true
 mmp.enable.3g2=true
 media.aac_51_output_enabled=true
 mm.enable.smoothstreaming=true
-#media.settings.xml=/vendor/etc/media_profiles_vendor.xml
-#codecs:(PARSER_)AAC AC3 AMR_NB AMR_WB ASF AVI DTS FLV 3GP 3G2 MKV MP2PS MP2TS MP3 OGG QCP WAV FLAC AIFF APE DSD
 mm.enable.qcom_parser=13631487
 persist.mm.enable.prefetch=true
 
@@ -61,12 +57,6 @@ vidc.enc.dcvs.extra-buff-count=2
 #Netflix custom property
 ro.netflix.bsp_rev=Q660-13149-1
 
-#
-# system props for the data modules
-#
-ro.use_data_netmgrd=true
-persist.data.netmgrd.qos.enable=true
-persist.data.mode=concurrent
 #system props for time-services
 persist.timed.enable=true
 
@@ -167,6 +157,9 @@ ro.vendor.qti.config.zram=true
 #set maximum supported adapter voltage
 persist.chg.max_volt_mv=9000
 
+# Lcd density
+ro.sf.lcd_density=480
+
 #Property to enable display default color mode
 vendor.display.enable_default_color_mode=1
 
@@ -201,6 +194,7 @@ ro.hardware.nfc_nci=nqx.default
 ro.additionalbutton.operation=0
 persist.radio.multisim.config=dsds
 persist.vendor.qcomsysd.enabled=1
+persist.nfc.smartcard.config=SIM1
 keyguard.no_require_sim=true
 ro.com.android.dataroaming=false
 ro.carrier=unknown

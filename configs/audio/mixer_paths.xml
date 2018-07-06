@@ -1998,17 +1998,18 @@
     <path name="anc-handset">
     </path>
 
+	<!-- Huaqin add for improve hp out voltage to 800mv by xudayi at 2018/06/15 start -->
     <path name="headphones">
         <ctl name="INT0_MI2S_RX Channels" value="Two" />
         <ctl name="RX1 MIX1 INP1" value="RX1" />
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="RDAC2 MUX" value="RX2" />
         <ctl name="RX HPH Mode" value="HD2" />
-        <ctl name="COMP0 RX1" value="1" />
-        <ctl name="COMP0 RX2" value="1" />
         <ctl name="HPHL" value="Switch" />
         <ctl name="HPHR" value="Switch" />
+        <ctl name="EAR PA Gain" value="POS_6_DB" />
     </path>
+	<!-- Huaqin add for improve hp out voltage to 800mv by xudayi at 2018/06/15 end -->
 
     <path name="headphones-44.1">
         <path name="headphones" />
