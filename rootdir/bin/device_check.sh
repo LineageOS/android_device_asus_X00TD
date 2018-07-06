@@ -14,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+# Check if device supports NFC
 if grep -q NFC /dev/block/platform/soc/c0c4000.sdhci/by-name/version; then
     echo "Device supports NFC"
 else
@@ -38,3 +39,7 @@ else
     rm -rf /vendor/lib64/hw/*nfc*
 fi
 
+# Delete Goodix FP data on clean flash
+if [ ! -f /data/system/users/0/settings_fingerprint.xml ]; then
+    rm -rf /persist/data/finger_*
+fi

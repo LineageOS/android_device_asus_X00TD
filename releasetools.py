@@ -20,11 +20,14 @@ import re
 def FullOTA_InstallEnd(info):
   info.script.AppendExtra('ifelse(is_mounted("/system"), unmount("/system"));');
   info.script.AppendExtra('ifelse(is_mounted("/vendor"), unmount("/vendor"));');
+  info.script.AppendExtra('ifelse(is_mounted("/persist"), unmount("/persist"));');
   info.script.Mount("/system")
   info.script.Mount("/vendor")
+  info.script.Mount("/persist")
   RunCustomScript(info, "device_check.sh", "")
   info.script.Unmount("/system")
   info.script.Unmount("/vendor")
+  info.script.Unmount("/persist")
   return
 
 def RunCustomScript(info, name, arg):
