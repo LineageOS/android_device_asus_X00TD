@@ -271,9 +271,8 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service
 
-# Manifest Hack for Indian variant
+# Remove NFC for non 6GB RAM variant
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest_no_nfc.xml:$(TARGET_COPY_OUT_VENDOR)/manifest_no_nfc.xml \
     $(LOCAL_PATH)/rootdir/bin/device_check.sh:$(TARGET_COPY_OUT_VENDOR)/bin/device_check.sh
 
 # LiveDisplay native
