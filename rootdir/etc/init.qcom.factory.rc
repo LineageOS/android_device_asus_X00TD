@@ -116,116 +116,8 @@ on ffbm
     trigger boot
     trigger mmi
 
-# Huaqin midify hwdiag selinux by zhangjingzhi at 20180211 For bsp/rom start
-service hwdiag /system/bin/hwdiag
-    class main
-    user root
-    group root
-
-on boot
-    start hwdiag
-# Huaqin midify hwdiag selinux by zhangjingzhi at 20180211 For bsp/rom start
-
-
-
 #Huaqin modiy for log sepolicy to system by zhangjingzhi at 20180306 start
 setprop debug.charger.on 1
-
-service  getaplog /system/bin/getlog -c
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-service  stopaplog /system/bin/getlog -s
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-on property:persist.sys.debug.getaplog=1
-    restart getaplog
-on property:persist.sys.debug.getaplog=0
-    start stopaplog
-
-service  getqxdmlog /system/bin/getlog -q
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-service  stopqxdmlog /system/bin/getlog -x
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-on property:persist.sys.debug.getqxdmlog=1
-    restart getqxdmlog
-on property:persist.sys.debug.getqxdmlog=0
-    start stopqxdmlog
-
-#Huaqin modiy to getqxdm when test smart_pa by zhangjingzhi at 20180312 start
-on property:sys.debug.getqxdmlog=1
-    restart getqxdmlog
-on property:sys.debug.getqxdmlog=0
-    start stopqxdmlog
-#Huaqin modiy to getqxdm when test smart_pa by zhangjingzhi at 20180312 end
-
-service  cpanrlog  /vendor/bin/sh /vendor/etc/cpanrlog.sh
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-service  cptomblog  /vendor/bin/sh /vendor/etc/cptomblog.sh
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-service  gettcpdumplog /system/bin/getlog -t
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-service  stoptcpdumplog /system/bin/getlog -p
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-
-#huaqin modiy to close default log by taohuipeng at 20180504 for rom start
-#service  getpersistlog /system/bin/getpersistlog
-#    class main
-#    user root
-#    oneshot
-#    seclabel u:r:logoem:s0
-#huaqin modiy to close default log by taohuipeng at 20180504 for rom end
-
-on property:persist.sys.debug.gettcpdump=1
-    restart gettcpdumplog
-on property:persist.sys.debug.gettcpdump=0
-    start stoptcpdumplog
-
-service getalllog /vendor/bin/sh /vendor/etc/getalllog.sh
-    disabled
-    user root
-    oneshot
-    seclabel u:r:logoem:s0
-on property:persist.sys.debug.getalllog=1
-    restart getalllog
-on property:persist.sys.debug.getalllog=0
-    stop getalllog
-
-
-#huaqin modiy to close default log by taohuipeng at 20180504 for rom start
-#on boot
-#    start getpersistlog
-#    setprop persist.sys.debug.getaplog 1
-#huaqin modiy to close default log by taohuipeng at 20180504 for rom end
-#Huaqin modiy for log sepolicy to system by zhangjingzhi at 20180306 end
 
 #Huaqin add for control charge by zhangjingzhi at 20180129 start
 on boot
@@ -240,5 +132,4 @@ on property:gsm.diag.enable=1
     setprop sys.diag.enable 1
 on property:sys.diag.enable=1
     setprop sys.usb.config ${ro.usb.firstboot.config}
-
 #Huaqin modify for enable diag by zhangjingzhi at 20180130 for rom end
