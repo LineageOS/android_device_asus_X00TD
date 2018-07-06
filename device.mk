@@ -189,14 +189,9 @@ PRODUCT_COPY_FILES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    FMRadio \
-    libfmjni
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.fm.transmitter=false
-
-PRODUCT_PACKAGES += \
-    fs_config_files
+    FM2 \
+    libqcomfm_jni \
+    qcom.fmradio
 
 PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl
@@ -271,11 +266,6 @@ PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
     android.hardware.light@2.0-service
 
-# Manifest Hack for Indian variant
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest_no_nfc.xml:$(TARGET_COPY_OUT_VENDOR)/manifest_no_nfc.xml \
-    $(LOCAL_PATH)/rootdir/bin/device_check.sh:$(TARGET_COPY_OUT_VENDOR)/bin/device_check.sh
-
 # LiveDisplay native
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@1.0-service-sdm
@@ -283,6 +273,11 @@ PRODUCT_PACKAGES += \
 # Low power Whitelist
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
+
+# Manifest replacement for non NFC variant
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/manifest_no_nfc.xml:$(TARGET_COPY_OUT_VENDOR)/manifest_no_nfc.xml \
+    $(LOCAL_PATH)/rootdir/bin/device_check.sh:install/bin/device_check.sh
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -322,11 +317,16 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.0-impl \
-    android.hardware.nfc@1.0-service \
     com.android.nfc_extras \
-    nfc_nci.sdm660 \
-    NfcNci \
-    Tag
+    com.nxp.nfc.nq \
+    com.nxp.nfc.nq.xml \
+    libnqnfc-nci \
+    libnqp61-jcop-kit \
+    nfc_nci.nqx.default \
+    NQNfcNci \
+    Tag \
+    vendor.nxp.hardware.nfc@1.0-impl \
+    vendor.nxp.hardware.nfc@1.0-service
 
 # OMX
 PRODUCT_PACKAGES += \

@@ -486,29 +486,6 @@ on property:sys.nvram.wifimac=*
 # Huaqin add for bt/wifi prop by zhouyingchen at 2018/03/23 end
 # Huaqin add for ZQL1650-126 CountryCode by yangzhiyuan at 2018/01/24 end
 
-# Huaqin add for ZQL1650-132 BugReporter by yangzhiyuan at 2018/02/02 start
-service savelogs /system/bin/sh /system/etc/savelogs.sh
-    class late_start
-    user root
-    group sdcard_rw
-    oneshot
-    disable
-    seclabel u:r:savelogs:s0
-
-on property:persist.asus.savelogs=*
-    start savelogs
-
-service savelogscomplete /system/bin/sh /system/etc/savelogs_complete.sh
-    user root
-    group root
-    oneshot
-    disabled
-    seclabel u:r:zygote:s0
-
-on property:persist.asus.savelogs=0
-    start savelogscomplete
-# Huaqin add for ZQL1650-132 BugReporter by yangzhiyuan at 2018/02/02 end
-
 service nqnfcinfo /vendor/bin/nqnfcinfo
     class late_start
     group nfc
@@ -1256,13 +1233,6 @@ service vppservice /vendor/bin/vppservice
     class main
     user media
     group camera
-
-service chre /vendor/bin/chre
-    class late_start
-    user system
-    group system
-    socket chre seqpacket 0660 root system
-    shutdown critical
 
 # Set vendor-ril lib path based on Meta version
 on property:vendor.rild.libpath=*
