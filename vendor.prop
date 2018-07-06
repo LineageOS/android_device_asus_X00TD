@@ -201,6 +201,7 @@ ro.hardware.nfc_nci=nqx.default
 ro.additionalbutton.operation=0
 persist.radio.multisim.config=dsds
 persist.vendor.qcomsysd.enabled=1
+persist.nfc.smartcard.config=SIM1
 keyguard.no_require_sim=true
 ro.com.android.dataroaming=false
 ro.carrier=unknown
