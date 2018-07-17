@@ -1,0 +1,441 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b1f175f0_8950bdb3",
+        "filename": "sepolicy/file_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "unnecessary",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 79
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "89c65873_87cca0f5",
+        "filename": "sepolicy/file_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "tabs -\u003e spaces",
+      "range": {
+        "startLine": 2,
+        "startChar": 53,
+        "endLine": 2,
+        "endChar": 56
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0e05a8b3_58a4dc4c",
+        "filename": "sepolicy/file_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "/(vendor|system/vendor)/usr/keylayout(/.*)?",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 51
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "715e374e_f2df3274",
+        "filename": "sepolicy/hal_cas_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "remove \u0027;\u0027",
+      "range": {
+        "startLine": 1,
+        "startChar": 30,
+        "endLine": 1,
+        "endChar": 31
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "77edf336_517f230c",
+        "filename": "sepolicy/hal_fingerprint_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "remove \u0027;\u0027",
+      "range": {
+        "startLine": 1,
+        "startChar": 38,
+        "endLine": 1,
+        "endChar": 39
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2b250388_b460caa1",
+        "filename": "sepolicy/hal_fingerprint_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "remove \u0027;\u0027",
+      "range": {
+        "startLine": 3,
+        "startChar": 54,
+        "endLine": 3,
+        "endChar": 55
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "903e12c4_747d3692",
+        "filename": "sepolicy/hal_fingerprint_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "remove \u0027{ \u0027",
+      "range": {
+        "startLine": 5,
+        "startChar": 50,
+        "endLine": 5,
+        "endChar": 52
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "24374b7c_0c42a485",
+        "filename": "sepolicy/hal_fingerprint_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "remove \u0027 }\u0027",
+      "range": {
+        "startLine": 5,
+        "startChar": 65,
+        "endLine": 5,
+        "endChar": 67
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "22be1fa3_66c7d885",
+        "filename": "sepolicy/hal_fingerprint_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "use set_prop macro",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 62
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "47997753_095c0479",
+        "filename": "sepolicy/hal_graphics_composer_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "remove \u0027 }\u0027",
+      "range": {
+        "startLine": 1,
+        "startChar": 61,
+        "endLine": 1,
+        "endChar": 63
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1314780a_a6fdef32",
+        "filename": "sepolicy/hal_graphics_composer_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "label your sysfs",
+      "range": {
+        "startLine": 1,
+        "startChar": 36,
+        "endLine": 1,
+        "endChar": 41
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "24d2a93f_1b070569",
+        "filename": "sepolicy/hal_graphics_composer_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "remove \u0027{ \u0027",
+      "range": {
+        "startLine": 1,
+        "startChar": 47,
+        "endLine": 1,
+        "endChar": 49
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e7d79bcb_79fa638b",
+        "filename": "sepolicy/hal_sensors_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "label your sysfs",
+      "range": {
+        "startLine": 1,
+        "startChar": 26,
+        "endLine": 1,
+        "endChar": 31
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0c569ec7_1e014bc0",
+        "filename": "sepolicy/hal_sensors_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "remove \u0027{ \u0027",
+      "range": {
+        "startLine": 1,
+        "startChar": 37,
+        "endLine": 1,
+        "endChar": 39
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "cbd3d3c3_533266d4",
+        "filename": "sepolicy/hal_sensors_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "remove \u0027 }\u0027",
+      "range": {
+        "startLine": 1,
+        "startChar": 52,
+        "endLine": 1,
+        "endChar": 54
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4bf13382_cd0489e2",
+        "filename": "sepolicy/hostapd.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "are you sure that is required at all?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 48
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f32b3c71_8971425e",
+        "filename": "sepolicy/rild.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "unnecessary",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 39
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "24249688_38235601",
+        "filename": "sepolicy/system_server.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "Google uses `r_dir_file(system_server, keylayout_file)`",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 53
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "de7b548a_2f1b31f0",
+        "filename": "sepolicy/tee.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:01Z",
+      "side": 1,
+      "message": "looks like you forgot to label something?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 48
+      },
+      "revId": "7e352e7a8a4142825f03167fcbe08e9f4dbe9f6b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
