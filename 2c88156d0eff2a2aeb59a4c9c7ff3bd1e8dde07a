@@ -1,0 +1,119 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f18e1046_e96815a4",
+        "filename": "sepolicy/file_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:59Z",
+      "side": 1,
+      "message": "tabs -\u003e spaces",
+      "range": {
+        "startLine": 11,
+        "startChar": 63,
+        "endLine": 11,
+        "endChar": 65
+      },
+      "revId": "2c88156d0eff2a2aeb59a4c9c7ff3bd1e8dde07a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3559ac3d_d210a5bb",
+        "filename": "sepolicy/file_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:59Z",
+      "side": 1,
+      "message": "escape \u0027.\u0027",
+      "range": {
+        "startLine": 12,
+        "startChar": 39,
+        "endLine": 12,
+        "endChar": 40
+      },
+      "revId": "2c88156d0eff2a2aeb59a4c9c7ff3bd1e8dde07a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "141bfda7_8786b666",
+        "filename": "sepolicy/nxpnfc_hal_svc.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:59Z",
+      "side": 1,
+      "message": "remove \u0027;\u0027",
+      "range": {
+        "startLine": 4,
+        "startChar": 34,
+        "endLine": 4,
+        "endChar": 35
+      },
+      "revId": "2c88156d0eff2a2aeb59a4c9c7ff3bd1e8dde07a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0da1eda7_062f3e11",
+        "filename": "sepolicy/nxpnfc_hal_svc.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:59Z",
+      "side": 1,
+      "message": "remove \u0027;\u0027",
+      "range": {
+        "startLine": 5,
+        "startChar": 47,
+        "endLine": 5,
+        "endChar": 48
+      },
+      "revId": "2c88156d0eff2a2aeb59a4c9c7ff3bd1e8dde07a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d1dbcf66_9e30094b",
+        "filename": "sepolicy/nxpnfc_hal_svc.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:54:59Z",
+      "side": 1,
+      "message": "remove \u0027;\u0027",
+      "range": {
+        "startLine": 6,
+        "startChar": 45,
+        "endLine": 6,
+        "endChar": 46
+      },
+      "revId": "2c88156d0eff2a2aeb59a4c9c7ff3bd1e8dde07a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
