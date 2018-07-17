@@ -1,0 +1,165 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2437d13a_a9a178f9",
+        "filename": "sepolicy/hal_fingerprint_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:56:26Z",
+      "side": 1,
+      "message": "remove \u0027 }\u0027",
+      "range": {
+        "startLine": 6,
+        "startChar": 70,
+        "endLine": 6,
+        "endChar": 72
+      },
+      "revId": "65d2cc94205c9ed10baf1cb48dc10ff5bbe923eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1cbfbedf_ecfd8bd3",
+        "filename": "sepolicy/hal_fingerprint_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:56:26Z",
+      "side": 1,
+      "message": "remove \u0027{ \u0027",
+      "range": {
+        "startLine": 6,
+        "startChar": 55,
+        "endLine": 6,
+        "endChar": 57
+      },
+      "revId": "65d2cc94205c9ed10baf1cb48dc10ff5bbe923eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dc0ee43c_ca6aac95",
+        "filename": "sepolicy/hal_fingerprint_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:56:26Z",
+      "side": 1,
+      "message": "remove \u0027{ \u0027",
+      "range": {
+        "startLine": 13,
+        "startChar": 53,
+        "endLine": 13,
+        "endChar": 55
+      },
+      "revId": "65d2cc94205c9ed10baf1cb48dc10ff5bbe923eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9bfed6fe_682fd252",
+        "filename": "sepolicy/hal_fingerprint_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:56:26Z",
+      "side": 1,
+      "message": "remove \u0027 }\u0027",
+      "range": {
+        "startLine": 13,
+        "startChar": 67,
+        "endLine": 13,
+        "endChar": 69
+      },
+      "revId": "65d2cc94205c9ed10baf1cb48dc10ff5bbe923eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5bf63b3e_f212ad26",
+        "filename": "sepolicy/hal_fingerprint_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:56:26Z",
+      "side": 1,
+      "message": "remove \u0027 }\u0027",
+      "range": {
+        "startLine": 14,
+        "startChar": 69,
+        "endLine": 14,
+        "endChar": 71
+      },
+      "revId": "65d2cc94205c9ed10baf1cb48dc10ff5bbe923eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "084882b8_afc51261",
+        "filename": "sepolicy/hal_fingerprint_default.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:56:26Z",
+      "side": 1,
+      "message": "remove \u0027{ \u0027",
+      "range": {
+        "startLine": 14,
+        "startChar": 54,
+        "endLine": 14,
+        "endChar": 56
+      },
+      "revId": "65d2cc94205c9ed10baf1cb48dc10ff5bbe923eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2dd876ae_8d7705ce",
+        "filename": "sepolicy/property_contexts",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-17T17:56:26Z",
+      "side": 1,
+      "message": "property? Are you sure it wasn\u0027t persist too?",
+      "range": {
+        "startLine": 2,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 8
+      },
+      "revId": "65d2cc94205c9ed10baf1cb48dc10ff5bbe923eb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
