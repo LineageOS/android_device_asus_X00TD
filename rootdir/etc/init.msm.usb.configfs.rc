@@ -136,7 +136,7 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,serial_cdev,rmne
     write /config/usb_gadget/g1/idProduct 0x9091
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/cser.dun.0 /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.rmnet /config/usb_gadget/g1/configs/b.1/f3
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.${sys.usb.rmnet.inst.name} /config/usb_gadget/g1/configs/b.1/f3
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f4
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
@@ -155,7 +155,7 @@ on property:sys.usb.config=diag,serial_cdev,rmnet && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/idProduct 0x9092
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/cser.dun.0 /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.rmnet /config/usb_gadget/g1/configs/b.1/f3
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.${sys.usb.rmnet.inst.name} /config/usb_gadget/g1/configs/b.1/f3
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
@@ -413,7 +413,7 @@ on property:sys.usb.config=diag,qdss,rmnet && property:sys.usb.configfs=1
     write /config/usb_gadget/g1/functions/qdss.qdss/enable_debug_inface 1
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/qdss.qdss /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.rmnet /config/usb_gadget/g1/configs/b.1/f3
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.${sys.usb.rmnet.inst.name} /config/usb_gadget/g1/configs/b.1/f3
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
@@ -436,7 +436,7 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,qdss,rmnet,adb &
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/qdss.qdss /config/usb_gadget/g1/configs/b.1/f2
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f3
-    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.rmnet /config/usb_gadget/g1/configs/b.1/f4
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.${sys.usb.rmnet.inst.name} /config/usb_gadget/g1/configs/b.1/f4
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
@@ -570,8 +570,8 @@ on property:sys.usb.config=diag,serial_cdev,rmnet,dpl && property:sys.usb.config
     write /config/usb_gadget/g1/idProduct 0x90b7
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/cser.dun.0 /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.rmnet /config/usb_gadget/g1/configs/b.1/f3
-    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.dpl /config/usb_gadget/g1/configs/b.1/f4
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.${sys.usb.rmnet.inst.name} /config/usb_gadget/g1/configs/b.1/f3
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.${sys.usb.dpl.inst.name} /config/usb_gadget/g1/configs/b.1/f4
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
@@ -592,8 +592,8 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,serial_cdev,rmne
     write /config/usb_gadget/g1/idProduct 0x90b8
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/cser.dun.0 /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.rmnet /config/usb_gadget/g1/configs/b.1/f3
-    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.dpl /config/usb_gadget/g1/configs/b.1/f4
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.${sys.usb.rmnet.inst.name} /config/usb_gadget/g1/configs/b.1/f3
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.${sys.usb.dpl.inst.name} /config/usb_gadget/g1/configs/b.1/f4
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f5
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
@@ -610,9 +610,9 @@ on property:sys.usb.config=rndis,diag,dpl && property:sys.usb.configfs=1
     rm /config/usb_gadget/g1/configs/b.1/f8
     write /config/usb_gadget/g1/idVendor 0x05C6
     write /config/usb_gadget/g1/idProduct 0x90bf
-    symlink /config/usb_gadget/g1/functions/gsi.rndis /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rndis.func.name}.rndis /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.dpl /config/usb_gadget/g1/configs/b.1/f3
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.${sys.usb.dpl.inst.name} /config/usb_gadget/g1/configs/b.1/f3
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state rndis
 
@@ -631,9 +631,9 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=rndis,diag,dpl,adb &&
     rm /config/usb_gadget/g1/configs/b.1/f8
     write /config/usb_gadget/g1/idVendor 0x05C6
     write /config/usb_gadget/g1/idProduct 0x90c0
-    symlink /config/usb_gadget/g1/functions/gsi.rndis /config/usb_gadget/g1/configs/b.1/f1
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rndis.func.name}.rndis /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.dpl /config/usb_gadget/g1/configs/b.1/f3
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.${sys.usb.dpl.inst.name} /config/usb_gadget/g1/configs/b.1/f3
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f4
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state rndis,adb
@@ -726,7 +726,7 @@ on property:sys.usb.config=diag,serial_cdev,rmnet,ccid && property:sys.usb.confi
     write /config/usb_gadget/g1/idProduct 0x90D2
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/cser.dun.0 /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.rmnet /config/usb_gadget/g1/configs/b.1/f3
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.${sys.usb.rmnet.inst.name} /config/usb_gadget/g1/configs/b.1/f3
     symlink /config/usb_gadget/g1/functions/ccid.ccid /config/usb_gadget/g1/configs/b.1/f4
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
@@ -748,7 +748,7 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,serial_cdev,rmne
     write /config/usb_gadget/g1/idProduct 0x90D3
     symlink /config/usb_gadget/g1/functions/diag.diag /config/usb_gadget/g1/configs/b.1/f1
     symlink /config/usb_gadget/g1/functions/cser.dun.0 /config/usb_gadget/g1/configs/b.1/f2
-    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.rmnet /config/usb_gadget/g1/configs/b.1/f3
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.${sys.usb.rmnet.inst.name} /config/usb_gadget/g1/configs/b.1/f3
     symlink /config/usb_gadget/g1/functions/ccid.ccid /config/usb_gadget/g1/configs/b.1/f4
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f5
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
@@ -772,7 +772,7 @@ on property:sys.usb.config=diag,diag_mdm,qdss,qdss_mdm,serial_cdev,serial_cdev_m
     symlink /config/usb_gadget/g1/functions/qdss.qdss_mdm /config/usb_gadget/g1/configs/b.1/f4
     symlink /config/usb_gadget/g1/functions/cser.dun.0 /config/usb_gadget/g1/configs/b.1/f5
     symlink /config/usb_gadget/g1/functions/cser.dun.2 /config/usb_gadget/g1/configs/b.1/f6
-    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.rmnet /config/usb_gadget/g1/configs/b.1/f7
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.${sys.usb.rmnet.inst.name} /config/usb_gadget/g1/configs/b.1/f7
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}
 
@@ -797,7 +797,7 @@ on property:sys.usb.ffs.ready=1 && property:sys.usb.config=diag,diag_mdm,qdss,qd
     symlink /config/usb_gadget/g1/functions/qdss.qdss_mdm /config/usb_gadget/g1/configs/b.1/f4
     symlink /config/usb_gadget/g1/functions/cser.dun.0 /config/usb_gadget/g1/configs/b.1/f5
     symlink /config/usb_gadget/g1/functions/cser.dun.2 /config/usb_gadget/g1/configs/b.1/f6
-    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.rmnet /config/usb_gadget/g1/configs/b.1/f7
+    symlink /config/usb_gadget/g1/functions/${sys.usb.rmnet.func.name}.${sys.usb.rmnet.inst.name} /config/usb_gadget/g1/configs/b.1/f7
     symlink /config/usb_gadget/g1/functions/ffs.adb /config/usb_gadget/g1/configs/b.1/f8
     write /config/usb_gadget/g1/UDC ${sys.usb.controller}
     setprop sys.usb.state ${sys.usb.config}

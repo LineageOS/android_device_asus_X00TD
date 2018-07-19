@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2013-2017, The Linux Foundation. All rights reserved.
+Copyright (c) 2013-2018, The Linux Foundation. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are
@@ -270,7 +270,7 @@ void IPACM_Lan::event_callback(ipa_cm_event_id event, void *param)
 			if (rx_prop != NULL || tx_prop != NULL)
 			{
 				IPACMDBG_H(" Has rx/tx properties registered for iface %s, add for NATTING \n", dev_name);
-				IPACM_Iface::ipacmcfg->AddNatIfaces(dev_name);
+				IPACM_Iface::ipacmcfg->AddNatIfaces(dev_name, IPA_IP_MAX);
 			}
 		}
 		break;
@@ -447,6 +447,18 @@ void IPACM_Lan::event_callback(ipa_cm_event_id event, void *param)
 						} else {
 							IPACMDBG_H("Wan_V6 haven't up yet\n");
 						}
+#else
+						/* check if Upstream was set before */
+						if (IPACM_Wan::isWanUP(ipa_if_num))
+						{
+							IPACMDBG_H("Upstream was set previously for ipv4, change is_upstream_set flag\n");
+							is_upstream_set[IPA_IP_v4] = true;
+						}
+						if (IPACM_Wan::isWanUP_V6(ipa_if_num))
+						{
+							IPACMDBG_H("Upstream was set previously for ipv6, change is_upstream_set flag\n");
+							is_upstream_set[IPA_IP_v6] = true;
+						}
 #endif
 						/* Post event to NAT */
 						if (data->iptype == IPA_IP_v4)
@@ -563,7 +575,8 @@ void IPACM_Lan::event_callback(ipa_cm_event_id event, void *param)
 					if (data_wan_tether->is_sta == false)
 					{
 							ext_prop = IPACM_Iface::ipacmcfg->GetExtProp(IPA_IP_v4);
-							handle_wan_up_ex(ext_prop, IPA_IP_v4, 0);
+							handle_wan_up_ex(ext_prop, IPA_IP_v4,
+								IPACM_Wan::getXlat_Mux_Id());
 					} else {
 							handle_wan_up(IPA_IP_v4);
 					}
@@ -721,7 +734,7 @@ void IPACM_Lan::event_callback(ipa_cm_event_id event, void *param)
 		if (ipa_interface_index == ipa_if_num)
 		{
 			IPACMDBG_H("Received IPA_DOWNSTREAM_ADD event.\n");
-			if (is_downstream_set[data->prefix.iptype] == false)
+			if (data->prefix.iptype < IPA_IP_MAX && is_downstream_set[data->prefix.iptype] == false)
 			{
 				IPACMDBG_H("Add downstream for IP iptype %d\n", data->prefix.iptype);
 				is_downstream_set[data->prefix.iptype] = true;
@@ -745,7 +758,14 @@ void IPACM_Lan::event_callback(ipa_cm_event_id event, void *param)
 						if (IPACM_Wan::backhaul_is_sta_mode == false) /* LTE */
 						{
 							ext_prop = IPACM_Iface::ipacmcfg->GetExtProp(data->prefix.iptype);
-							handle_wan_up_ex(ext_prop, data->prefix.iptype, 0);
+							if (data->prefix.iptype == IPA_IP_v4)
+							{
+								handle_wan_up_ex(ext_prop, data->prefix.iptype,
+									IPACM_Wan::getXlat_Mux_Id());
+							}
+							else {
+								handle_wan_up_ex(ext_prop, data->prefix.iptype, 0);
+							}
 						} else {
 							handle_wan_up(data->prefix.iptype); /* STA */
 						}
@@ -2857,8 +2877,10 @@ int IPACM_Lan::handle_down_evt()
 		IPACMDBG_H("LAN IF goes down, backhaul type %d\n", IPACM_Wan::backhaul_is_sta_mode);
 		handle_wan_down(IPACM_Wan::backhaul_is_sta_mode);
 #ifdef FEATURE_IPA_ANDROID
+#ifndef FEATURE_IPACM_HAL
 		/* Clean-up tethered-iface list */
 		IPACM_Wan::delete_tether_iface(IPA_IP_v4, ipa_if_num);
+#endif
 #endif
 	}
 
@@ -3250,46 +3272,46 @@ int IPACM_Lan::handle_uplink_filter_rule(ipacm_ext_prop *prop, ipa_ip_type iptyp
 
 #ifdef FEATURE_IPACM_HAL
 		/* add prefix equation in modem UL rules */
-		if(iptype == IPA_IP_v4)
+		if(iptype == IPA_IP_v4 && (flt_rule_entry.rule.eq_attrib.num_offset_meq_32 >= 0)
+			&& (flt_rule_entry.rule.eq_attrib.num_offset_meq_32 < IPA_IPFLTR_NUM_MEQ_32_EQNS))
 		{
 			flt_rule_entry.rule.eq_attrib.num_offset_meq_32++;
-			if(flt_rule_entry.rule.eq_attrib.num_offset_meq_32 <= IPA_IPFLTR_NUM_MEQ_32_EQNS)
-			{
-				eq_index = flt_rule_entry.rule.eq_attrib.num_offset_meq_32 - 1;
+			eq_index = flt_rule_entry.rule.eq_attrib.num_offset_meq_32 - 1;
 #ifdef FEATURE_IPA_V3
-				if(eq_index == 0)
-				{
-					flt_rule_entry.rule.eq_attrib.rule_eq_bitmap |= (1<<5);
-				}
-				else
-				{
-					flt_rule_entry.rule.eq_attrib.rule_eq_bitmap |= (1<<6);
-				}
-#else
-				if(eq_index == 0)
-				{
-					flt_rule_entry.rule.eq_attrib.rule_eq_bitmap |= (1<<2);
-				}
-				else
-				{
-					flt_rule_entry.rule.eq_attrib.rule_eq_bitmap |= (1<<3);
-				}
-#endif
-				flt_rule_entry.rule.eq_attrib.offset_meq_32[eq_index].offset = 12;
-				flt_rule_entry.rule.eq_attrib.offset_meq_32[eq_index].mask = prefix[IPA_IP_v4].v4Mask;
-				flt_rule_entry.rule.eq_attrib.offset_meq_32[eq_index].value = prefix[IPA_IP_v4].v4Addr;
+			if(eq_index == 0)
+			{
+				flt_rule_entry.rule.eq_attrib.rule_eq_bitmap |= (1<<5);
 			}
 			else
 			{
-				IPACMERR("Run out of MEQ32 equation.\n");
-				flt_rule_entry.rule.eq_attrib.num_offset_meq_32--;
+				flt_rule_entry.rule.eq_attrib.rule_eq_bitmap |= (1<<6);
 			}
+#else
+			if(eq_index == 0)
+			{
+				flt_rule_entry.rule.eq_attrib.rule_eq_bitmap |= (1<<2);
+			}
+			else
+			{
+				flt_rule_entry.rule.eq_attrib.rule_eq_bitmap |= (1<<3);
+			}
+#endif
+			flt_rule_entry.rule.eq_attrib.offset_meq_32[eq_index].offset = 12;
+			flt_rule_entry.rule.eq_attrib.offset_meq_32[eq_index].mask = prefix[IPA_IP_v4].v4Mask;
+			flt_rule_entry.rule.eq_attrib.offset_meq_32[eq_index].value = prefix[IPA_IP_v4].v4Addr;
+		}
+		else if (flt_rule_entry.rule.eq_attrib.num_offset_meq_32 > IPA_IPFLTR_NUM_MEQ_32_EQNS)
+		{
+			IPACMERR("Run out of MEQ32 equation.\n");
+			flt_rule_entry.rule.eq_attrib.num_offset_meq_32--;
 		}
 		else
 		{
-			flt_rule_entry.rule.eq_attrib.num_offset_meq_128++;
-			if(flt_rule_entry.rule.eq_attrib.num_offset_meq_128 <= IPA_IPFLTR_NUM_MEQ_128_EQNS)
+			if ((flt_rule_entry.rule.eq_attrib.num_offset_meq_128 >= 0) &&
+				(flt_rule_entry.rule.eq_attrib.num_offset_meq_128 
+					< IPA_IPFLTR_NUM_MEQ_128_EQNS))
 			{
+				flt_rule_entry.rule.eq_attrib.num_offset_meq_128++;
 				eq_index = flt_rule_entry.rule.eq_attrib.num_offset_meq_128 - 1;
 #ifdef FEATURE_IPA_V3
 				if(eq_index == 0)
@@ -3301,21 +3323,21 @@ int IPACM_Lan::handle_uplink_filter_rule(ipacm_ext_prop *prop, ipa_ip_type iptyp
 					flt_rule_entry.rule.eq_attrib.rule_eq_bitmap |= (1<<4);
 				}
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].mask + 0)
-					= prefix[IPA_IP_v6].v6Mask[3];
+						= prefix[IPA_IP_v6].v6Mask[3];
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].mask + 4)
-					= prefix[IPA_IP_v6].v6Mask[2];
+						= prefix[IPA_IP_v6].v6Mask[2];
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].mask + 8)
-					= prefix[IPA_IP_v6].v6Mask[1];
+						= prefix[IPA_IP_v6].v6Mask[1];
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].mask + 12)
-					= prefix[IPA_IP_v6].v6Mask[0];
+						= prefix[IPA_IP_v6].v6Mask[0];
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].value + 0)
-					= prefix[IPA_IP_v6].v6Addr[3];
+						= prefix[IPA_IP_v6].v6Addr[3];
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].value + 4)
-					= prefix[IPA_IP_v6].v6Addr[2];
+						= prefix[IPA_IP_v6].v6Addr[2];
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].value + 8)
-					= prefix[IPA_IP_v6].v6Addr[1];
+						= prefix[IPA_IP_v6].v6Addr[1];
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].value + 12)
-					= prefix[IPA_IP_v6].v6Addr[0];
+						= prefix[IPA_IP_v6].v6Addr[0];
 #else
 				if(eq_index == 0)
 				{
@@ -3326,24 +3348,24 @@ int IPACM_Lan::handle_uplink_filter_rule(ipacm_ext_prop *prop, ipa_ip_type iptyp
 					flt_rule_entry.rule.eq_attrib.rule_eq_bitmap |= (1<<10);
 				}
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].mask + 0)
-					= prefix[IPA_IP_v6].v6Mask[0];
+						= prefix[IPA_IP_v6].v6Mask[0];
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].mask + 4)
-					= prefix[IPA_IP_v6].v6Mask[1];
+						= prefix[IPA_IP_v6].v6Mask[1];
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].mask + 8)
-					= prefix[IPA_IP_v6].v6Mask[2];
+						= prefix[IPA_IP_v6].v6Mask[2];
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].mask + 12)
-					= prefix[IPA_IP_v6].v6Mask[3];
+						= prefix[IPA_IP_v6].v6Mask[3];
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].value + 0)
-					= prefix[IPA_IP_v6].v6Addr[0];
+						= prefix[IPA_IP_v6].v6Addr[0];
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].value + 4)
-					= prefix[IPA_IP_v6].v6Addr[1];
+						= prefix[IPA_IP_v6].v6Addr[1];
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].value + 8)
-					= prefix[IPA_IP_v6].v6Addr[2];
+						= prefix[IPA_IP_v6].v6Addr[2];
 				*(uint32_t *)(flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].value + 12)
-					= prefix[IPA_IP_v6].v6Addr[3];
+						= prefix[IPA_IP_v6].v6Addr[3];
 #endif
 				flt_rule_entry.rule.eq_attrib.offset_meq_128[eq_index].offset = 8;
-		}
+			}
 			else
 			{
 				IPACMERR("Run out of MEQ128 equation.\n");
