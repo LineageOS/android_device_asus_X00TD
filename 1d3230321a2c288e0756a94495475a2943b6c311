@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "65f4a564_ffd65896",
+        "filename": "sepolicy/hostapd.te",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-20T16:34:24Z",
+      "side": 1,
+      "message": "rw_file_perms;",
+      "range": {
+        "startLine": 1,
+        "startChar": 35,
+        "endLine": 1,
+        "endChar": 53
+      },
+      "revId": "1d3230321a2c288e0756a94495475a2943b6c311",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
