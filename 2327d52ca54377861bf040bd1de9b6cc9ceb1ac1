@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "38a673e4_72fdb933",
+        "filename": "sepolicy/nxpnfc_hal_svc.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-20T14:55:33Z",
+      "side": 1,
+      "message": "remove \u0027;\u0027",
+      "range": {
+        "startLine": 4,
+        "startChar": 34,
+        "endLine": 4,
+        "endChar": 35
+      },
+      "revId": "2327d52ca54377861bf040bd1de9b6cc9ceb1ac1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "749c0518_121b4a1e",
+        "filename": "sepolicy/nxpnfc_hal_svc.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-20T14:55:33Z",
+      "side": 1,
+      "message": "remove \u0027;\u0027",
+      "range": {
+        "startLine": 5,
+        "startChar": 47,
+        "endLine": 5,
+        "endChar": 48
+      },
+      "revId": "2327d52ca54377861bf040bd1de9b6cc9ceb1ac1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c48ae3a0_c3a78ae9",
+        "filename": "sepolicy/nxpnfc_hal_svc.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-20T14:55:33Z",
+      "side": 1,
+      "message": "remove \u0027;\u0027",
+      "range": {
+        "startLine": 6,
+        "startChar": 45,
+        "endLine": 6,
+        "endChar": 46
+      },
+      "revId": "2327d52ca54377861bf040bd1de9b6cc9ceb1ac1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
