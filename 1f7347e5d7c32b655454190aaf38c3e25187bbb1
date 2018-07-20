@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "59ea6988_6cd4fac1",
+        "filename": "sepolicy/hal_power_default.te",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 10067
+      },
+      "writtenOn": "2018-07-20T16:35:27Z",
+      "side": 1,
+      "message": "r_file_perms;",
+      "range": {
+        "startLine": 1,
+        "startChar": 49,
+        "endLine": 1,
+        "endChar": 66
+      },
+      "revId": "1f7347e5d7c32b655454190aaf38c3e25187bbb1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
