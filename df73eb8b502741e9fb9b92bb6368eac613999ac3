@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e99527e_707a2e26",
+        "filename": "sepolicy/hal_fingerprint_default.te",
+        "patchSetId": 6
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 523
+      },
+      "writtenOn": "2018-07-25T15:18:28Z",
+      "side": 1,
+      "message": "remove ;",
+      "range": {
+        "startLine": 10,
+        "startChar": 47,
+        "endLine": 10,
+        "endChar": 49
+      },
+      "revId": "df73eb8b502741e9fb9b92bb6368eac613999ac3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0a35f88a_9f7743eb",
+        "filename": "sepolicy/hal_fingerprint_default.te",
+        "patchSetId": 6
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 523
+      },
+      "writtenOn": "2018-07-25T15:18:28Z",
+      "side": 1,
+      "message": "remove ;",
+      "range": {
+        "startLine": 11,
+        "startChar": 45,
+        "endLine": 11,
+        "endChar": 47
+      },
+      "revId": "df73eb8b502741e9fb9b92bb6368eac613999ac3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9d009242_dc33eac3",
+        "filename": "sepolicy/property_contexts",
+        "patchSetId": 6
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 523
+      },
+      "writtenOn": "2018-07-25T15:18:28Z",
+      "side": 1,
+      "message": "cdfinger_prop ?",
+      "range": {
+        "startLine": 3,
+        "startChar": 46,
+        "endLine": 3,
+        "endChar": 57
+      },
+      "revId": "df73eb8b502741e9fb9b92bb6368eac613999ac3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
