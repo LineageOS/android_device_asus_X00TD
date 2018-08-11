@@ -140,7 +140,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.nfc.port=I2C \
-	ro.hardware.nfc_nci=nqx.default \
 	persist.nfc.smartcard.config=SIM1
 
 # NTP Server
