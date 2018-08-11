@@ -350,11 +350,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
-# Properties
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.am.reschedule_service=true \
-    ro.sys.fw.use_trim_settings=true
-
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
@@ -484,6 +479,9 @@ PRODUCT_PACKAGES += \
 # Vendor security patch level
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.lineage.build.vendor_security_patch=2018-08-01
+
+# Vendor properties
+-include $(LOCAL_PATH)/vendor_prop.mk
 
 # Vibrator
 PRODUCT_PACKAGES += \
