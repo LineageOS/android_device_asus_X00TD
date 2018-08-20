@@ -27,6 +27,7 @@
         <boolean name="carrier_rtt_supported_on_vtcalls" value="false" />
         <boolean name="carrier_rtt_upgrade_supported" value="false" />
         <boolean name="carrier_rtt_downgrade_supported" value="false" />
+        <string name="config_ims_package_override_string">com.google.android.ims</string>
     </carrier_config>
     <carrier_config mcc="204" mnc="04">
         <boolean name="carrier_volte_available_bool" value="false" />
@@ -704,24 +705,24 @@
         <boolean name="config_carrier_cs_retry_available" value="true" />
     </carrier_config>
     <carrier_config mcc="454" mnc="00">
-        <boolean name="carrier_volte_available_bool" value="false" />
+        <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
     <carrier_config mcc="454" mnc="03">
-        <boolean name="carrier_volte_available_bool" value="false" />
+        <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
         <boolean name="check_mobile_data_for_cf" value="true" />
     </carrier_config>
     <carrier_config mcc="454" mnc="04">
-        <boolean name="carrier_volte_available_bool" value="false" />
+        <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
         <boolean name="check_mobile_data_for_cf" value="true" />
     </carrier_config>
     <carrier_config mcc="454" mnc="31">
-        <boolean name="carrier_volte_available_bool" value="false" />
+        <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
@@ -1278,13 +1279,47 @@
         <boolean name="editable_wfc_roaming_mode_bool" value="true" />
         <boolean name="carrier_volte_available_bool" value="false" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="config_hide_vt_callforward_option" value="true" />
+    </carrier_config>
+    <carrier_config mcc="525" mnc="05" gid1="0a">
+        <int name="carrier_default_wfc_ims_mode_int" value="2" />
+        <int name="carrier_default_wfc_ims_roaming_mode_int" value="2" />
+        <boolean name="editable_wfc_roaming_mode_bool" value="true" />
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <boolean name="config_hide_vt_callforward_option" value="true" />
+    </carrier_config>
+    <carrier_config mcc="525" mnc="05" gid1="0affffffffffffff">
+        <int name="carrier_default_wfc_ims_mode_int" value="2" />
+        <int name="carrier_default_wfc_ims_roaming_mode_int" value="2" />
+        <boolean name="editable_wfc_roaming_mode_bool" value="true" />
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <boolean name="config_hide_vt_callforward_option" value="true" />
+    </carrier_config>
+    <carrier_config imsi="525053095[0-9]{6}">
+        <int name="carrier_default_wfc_ims_mode_int" value="2" />
+        <int name="carrier_default_wfc_ims_roaming_mode_int" value="2" />
+        <boolean name="editable_wfc_roaming_mode_bool" value="true" />
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <boolean name="config_hide_vt_callforward_option" value="true" />
+    </carrier_config>
+    <carrier_config imsi="525053096[0-9]{6}">
+        <int name="carrier_default_wfc_ims_mode_int" value="2" />
+        <int name="carrier_default_wfc_ims_roaming_mode_int" value="2" />
+        <boolean name="editable_wfc_roaming_mode_bool" value="true" />
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <boolean name="config_hide_vt_callforward_option" value="true" />
     </carrier_config>
     <carrier_config mcc="466" mnc="05">
         <int name="carrier_default_wfc_ims_mode_int" value="2" />
         <int name="carrier_default_wfc_ims_roaming_mode_int" value="2" />
         <boolean name="editable_wfc_roaming_mode_bool" value="true" />
-        <boolean name="carrier_volte_available_bool" value="false" />
-        <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
+        <boolean name="config_hide_vt_callforward_option" value="true" />
     </carrier_config>
     <carrier_config mcc="466" mnc="92">
         <boolean name="carrier_volte_available_bool" value="false" />
@@ -1292,12 +1327,16 @@
         <int name="carrier_default_wfc_ims_mode_int" value="1" />
         <int name="carrier_default_wfc_ims_roaming_mode_int" value="2" />
         <boolean name="carrier_default_wfc_ims_enabled_bool" value="false" />
+        <boolean name="config_hide_vt_callforward_option" value="true" />
+        <boolean name="editable_wfc_roaming_mode_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="466" mnc="97">
         <boolean name="carrier_volte_available_bool" value="false" />
+        <boolean name="config_hide_vt_callforward_option" value="true" />
     </carrier_config>
     <carrier_config mcc="466" mnc="89">
         <boolean name="carrier_volte_available_bool" value="false" />
+        <boolean name="config_hide_vt_callforward_option" value="true" />
     </carrier_config>
     <carrier_config mcc="724" mnc="02">
         <boolean name="carrier_volte_available_bool" value="false" />
@@ -1324,11 +1363,19 @@
         <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config mcc="454" mnc="19">
-        <boolean name="carrier_volte_available_bool" value="false" />
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_vt_available_bool" value="false" />
+    </carrier_config>
+    <carrier_config mcc="454" mnc="12">
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_vt_available_bool" value="false" />
+    </carrier_config>
+    <carrier_config mcc="454" mnc="13">
+        <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config mcc="454" mnc="06">
-        <boolean name="carrier_volte_available_bool" value="false" />
+        <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config mcc="440" mnc="20">
