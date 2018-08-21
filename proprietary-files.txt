@@ -2589,7 +2589,7 @@ vendor/lib64/vendor.qti.hardware.vpp@1.1_vendor.so
 
 # NFC
 -vendor/app/SmartcardService/SmartcardService.apk
-vendor/firmware/libpn553_fw.so
+vendor/firmware/libpn553_fw.so:vendor/lib/libpn553_fw.so
 
 # Open mobile API
 etc/permissions/org.simalliance.openmobileapi.xml

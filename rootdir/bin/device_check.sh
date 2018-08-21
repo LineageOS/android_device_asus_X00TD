@@ -30,7 +30,7 @@ if ! grep "nfc" /persist/manifest.xml
     rm -rf /vendor/etc/*nfc*
     rm -rf /vendor/etc/init/*nfc*
     rm -rf /vendor/etc/permissions/*nfc*
-    rm -rf /vendor/firmware/libpn553_fw.so
+    rm -rf /vendor/lib/libpn553_fw.so
     rm -rf /vendor/lib/*nfc*
     rm -rf /vendor/lib/hw/*nfc*
     rm -rf /vendor/lib64/*nfc*
