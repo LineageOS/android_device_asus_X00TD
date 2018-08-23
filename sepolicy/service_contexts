@@ -1,1 +1,2 @@
-cdfinger.fingerprint        u:object_r:cdfinger_service:s0
+cdfinger.fingerprint          u:object_r:cdfinger_service:s0
+com.goodix.FingerprintService u:object_r:goodix_fingerprint_service:s0
