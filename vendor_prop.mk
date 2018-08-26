@@ -224,10 +224,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.usb.firstboot.config=diag,serial_cdev,rmnet,adb
 
-# Vendor security patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lineage.build.vendor_security_patch=2018-08-01
-
 # WFD display
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.debug.wfd.enable=1 \
