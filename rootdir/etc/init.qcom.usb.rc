@@ -47,6 +47,7 @@ on charger
     enable qcom-usb-sh
     start qcom-usb-sh
     setprop sys.usb.config mass_storage
+    setprop sys.usb.ffs.aio_compat 1
 
 on boot
     write /sys/class/android_usb/android0/iSerial ${ro.serialno}
@@ -90,6 +91,7 @@ on boot
     mount functionfs adb /dev/usb-ffs/adb uid=2000,gid=2000
     write /sys/class/android_usb/android0/f_ffs/aliases adb
     enable qcom-usb-sh
+    setprop sys.usb.ffs.aio_compat 1
 
 service qcom-usb-sh /vendor/bin/init.qcom.usb.sh
     class core
@@ -1757,4 +1759,3 @@ on property:sys.usb.config=diag,adb,uac2,video && property:sys.usb.configfs=0
     write /sys/class/android_usb/android0/enable 1
     start adbd
     setprop sys.usb.state ${sys.usb.config}
-
