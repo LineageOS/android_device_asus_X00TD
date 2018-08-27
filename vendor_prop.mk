@@ -40,7 +40,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.bt.hfp.playbackforvr=false \
 	persist.bt.hfp.playbackforvoip=false \
 	persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac \
-	qcom.bluetooth.soc=cherokee \
+	vendor.qcom.bluetooth.soc=cherokee \
 	ro.bluetooth.emb_wp_mode=true \
 	ro.bluetooth.wipower=true
 
