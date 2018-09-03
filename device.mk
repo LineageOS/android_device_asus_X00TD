@@ -273,7 +273,6 @@ PRODUCT_COPY_FILES += \
 
 # Manifest replacement for non NFC variant
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest_no_nfc.xml:$(TARGET_COPY_OUT_VENDOR)/manifest_no_nfc.xml \
     $(LOCAL_PATH)/rootdir/bin/device_check.sh:install/bin/device_check.sh
 
 # Media
