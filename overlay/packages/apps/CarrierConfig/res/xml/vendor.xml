@@ -1335,7 +1335,7 @@
         <boolean name="config_hide_vt_callforward_option" value="true" />
     </carrier_config>
     <carrier_config mcc="466" mnc="89">
-        <boolean name="carrier_volte_available_bool" value="false" />
+        <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="config_hide_vt_callforward_option" value="true" />
     </carrier_config>
     <carrier_config mcc="724" mnc="02">
