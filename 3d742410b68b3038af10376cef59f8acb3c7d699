@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f37a6311_bdc8a987",
+        "filename": "vendor_prop.mk",
+        "patchSetId": 2
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 16051
+      },
+      "writtenOn": "2018-09-11T09:25:37Z",
+      "side": 1,
+      "message": "\\",
+      "range": {
+        "startLine": 85,
+        "startChar": 19,
+        "endLine": 85,
+        "endChar": 22
+      },
+      "revId": "3d742410b68b3038af10376cef59f8acb3c7d699",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
