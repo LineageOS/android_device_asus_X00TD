@@ -16,6 +16,24 @@
       "revId": "13f6bf72fd60a13f5519194a2d1fd11c8f31ae24",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "572df826_340eaae8",
+        "filename": "vendor_prop.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 18751
+      },
+      "writtenOn": "2018-09-11T18:01:36Z",
+      "side": 1,
+      "message": "I wasn\u0027t needed in oreo\nPush patch if you want cleanup",
+      "parentUuid": "626e7620_b938d64d",
+      "revId": "13f6bf72fd60a13f5519194a2d1fd11c8f31ae24",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
