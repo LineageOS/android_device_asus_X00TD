@@ -113,11 +113,11 @@ void vendor_check_variant()
     if (sys.totalram > 4096ull * 1024 * 1024) {
         // 6 GB variant
         property_override_dual("ro.product.device", "ro.vendor.product.device", "ASUS_X00T_3");
-        property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", "asus/WW_X00TD/ASUS_X00T_3:8.1.0/OPM1/15.2016.1808.327-20180911:user/release-keys");
+        property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", "asus/WW_X00TD/ASUS_X00T_3:8.1.0/OPM1/15.2016.1805.318-20180712:user/release-keys");
     } else {
         // 3/4 GB variant
         property_override_dual("ro.product.device", "ro.vendor.product.device", "ASUS_X00T_2");
-        property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", "asus/WW_X00TD/ASUS_X00T_2:8.1.0/OPM1/15.2016.1808.327-20180911:user/release-keys");
+        property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", "asus/WW_X00TD/ASUS_X00T_2:8.1.0/OPM1/15.2016.1805.318-20180712:user/release-keys");
     }
 }
 
