@@ -1,6 +1,7 @@
 /*
    Copyright (c) 2015, The Linux Foundation. All rights reserved.
    Copyright (C) 2016 The CyanogenMod Project.
+   Copyright (C) 2018 The LineageOS Project
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -34,6 +35,7 @@
 #include <android-base/properties.h>
 #include <android-base/strings.h>
 
+#include <sys/sysinfo.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
@@ -102,7 +104,35 @@ static void init_alarm_boot_properties()
     }
 }
 
+void vendor_check_variant()
+{
+    struct sysinfo sys;
+
+    sysinfo(&sys);
+
+    if (sys.totalram > 4096ull * 1024 * 1024) {
+        // 6 GB variant
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "ASUS_X00T_3");
+        property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", "asus/WW_X00TD/ASUS_X00T_3:8.1.0/OPM1/15.2016.1808.327-20180911:user/release-keys");
+    } else {
+        // 3/4 GB variant
+        property_override_dual("ro.product.device", "ro.vendor.product.device", "ASUS_X00T_2");
+        property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", "asus/WW_X00TD/ASUS_X00T_2:8.1.0/OPM1/15.2016.1808.327-20180911:user/release-keys");
+    }
+}
+
+void vendor_load_region_properties()
+{
+    char const *region_file = "/persist/flag/countrycode.txt";
+    std::string region;
+
+    if (ReadFileToString(region_file, &region))
+        property_set("ro.config.versatility", Trim(region));
+}
+
 void vendor_load_properties()
 {
     init_alarm_boot_properties();
+    vendor_check_variant();
+    vendor_load_region_properties();
 }
