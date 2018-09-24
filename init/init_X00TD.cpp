@@ -62,6 +62,13 @@ void property_override_dual(char const system_prop[], char const vendor_prop[], 
     property_override(vendor_prop, value);
 }
 
+void property_override_triple(char const system_prop[], char const vendor_prop[], char const bootimg_prop[], char const value[])
+{
+    property_override(system_prop, value);
+    property_override(vendor_prop, value);
+    property_override(bootimg_prop, value);
+}
+
 static void init_alarm_boot_properties()
 {
     char const *boot_reason_file = "/proc/sys/kernel/boot_reason";
