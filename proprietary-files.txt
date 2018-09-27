@@ -117,7 +117,6 @@ vendor/etc/acdbdata/adsp_avs_config.acdb
 vendor/bin/btnvtool
 vendor/bin/hci_qcomm_init
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
-vendor/bin/wcnss_filter
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
 vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0_vendor.so
 vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
