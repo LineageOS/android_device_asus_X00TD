@@ -107,32 +107,51 @@ static void init_alarm_boot_properties()
 void vendor_check_variant()
 {
     struct sysinfo sys;
-
-    sysinfo(&sys);
-
-    if (sys.totalram > 4096ull * 1024 * 1024) {
-        // 6 GB variant
-        property_override_dual("ro.product.device", "ro.vendor.product.device", "ASUS_X00T_3");
-        property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", "asus/WW_X00TD/ASUS_X00T_3:8.1.0/OPM1/15.2016.1805.318-20180712:user/release-keys");
-    } else {
-        // 3/4 GB variant
-        property_override_dual("ro.product.device", "ro.vendor.product.device", "ASUS_X00T_2");
-        property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", "asus/WW_X00TD/ASUS_X00T_2:8.1.0/OPM1/15.2016.1805.318-20180712:user/release-keys");
-    }
-}
-
-void vendor_load_region_properties()
-{
     char const *region_file = "/persist/flag/countrycode.txt";
     std::string region;
 
+    sysinfo(&sys);
+
+    // Set country code via ro.config.versatility prop
     if (ReadFileToString(region_file, &region))
         property_set("ro.config.versatility", Trim(region));
+
+    // Russian model
+    if (Trim(region) == "RU") {
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "ASUS_X00TDB");
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "RU_X00TD");
+
+        if (sys.totalram > 4096ull * 1024 * 1024) {
+            // 6 GB variant
+            property_override_dual("ro.product.device", "ro.vendor.product.device", "ASUS_X00T_9");
+            property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", "asus/RU_X00TD/ASUS_X00T_9:8.1.0/OPM1/15.2016.1805.318-20180712:user/release-keys");
+        } else {
+            // 3/4 GB variant
+            property_override_dual("ro.product.device", "ro.vendor.product.device", "ASUS_X00T_6");
+            property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", "asus/RU_X00TD/ASUS_X00T_6:8.1.0/OPM1/15.2016.1805.318-20180712:user/release-keys");
+        }
+    // Global model
+    } else {
+        // Taiwanese model; let this be here, still need to gather more info
+        if (Trim(region) == "TW")
+            property_override_dual("ro.product.model", "ro.vendor.product.model", "ASUS_X00TDB");
+
+        property_override_dual("ro.product.name", "ro.vendor.product.name", "WW_X00TD");
+
+        if (sys.totalram > 4096ull * 1024 * 1024) {
+            // 6 GB variant
+            property_override_dual("ro.product.device", "ro.vendor.product.device", "ASUS_X00T_3");
+            property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", "asus/WW_X00TD/ASUS_X00T_3:8.1.0/OPM1/15.2016.1805.318-20180712:user/release-keys");
+        } else {
+            // 3/4 GB variant
+            property_override_dual("ro.product.device", "ro.vendor.product.device", "ASUS_X00T_2");
+            property_override_triple("ro.build.fingerprint", "ro.vendor.build.fingerprint", "ro.bootimage.build.fingerprint", "asus/WW_X00TD/ASUS_X00T_2:8.1.0/OPM1/15.2016.1805.318-20180712:user/release-keys");
+        }
+    }
 }
 
 void vendor_load_properties()
 {
     init_alarm_boot_properties();
     vendor_check_variant();
-    vendor_load_region_properties();
 }

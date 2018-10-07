@@ -37,7 +37,6 @@ TARGET_VENDOR := asus
 TARGET_VENDOR_PRODUCT_NAME := X00TD
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME="WW_X00TD" \
     PRIVATE_BUILD_DESC="sdm660_64-user 8.1.0 OPM1 1309 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
