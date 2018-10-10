@@ -37,6 +37,7 @@ else
     rm -rf /vendor/lib/hw/*nfc*
     rm -rf /vendor/lib64/*nfc*
     rm -rf /vendor/lib64/hw/*nfc*
+    rm -rf /vendor/bin/hw/android.hardware.nfc@1.1-service
 fi
 
 # Delete Goodix FP data on clean flash
