@@ -175,6 +175,9 @@ on boot
     # Set the console loglevel to < KERN_INFO
     # Set the default message loglevel to KERN_INFO
     write /proc/sys/kernel/printk "6 6 1 7"
+    #[1226433] add by fangzheng for TCP start
+    write /proc/sys/net/ipv4/tcp_mtu_probing 1
+    #[1226433] add by fangzheng for TCP end
 
     # Allow access for CCID command/response timeout configuration
     chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout

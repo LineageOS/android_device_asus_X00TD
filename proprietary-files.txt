@@ -168,6 +168,7 @@ lib/libtruescanner.so
 lib/libts_detected_face_jni.so
 lib/libts_face_beautify_hal.so
 lib/libts_face_beautify_jni.so
+lib64/libarcsoft_beautyshot.so
 lib64/libchromaflash.so
 lib64/libdualcameraddm.so
 lib64/libjni_blurbuster.so
@@ -176,6 +177,7 @@ lib64/libjni_clearsight.so
 lib64/libjni_dualcamera.so
 lib64/libjni_filtergenerator.so
 lib64/libjni_hazebuster.so
+lib64/libjni_hq_beautyshot.so
 lib64/libjni_imageutil.so
 lib64/libjni_makeupV2.so
 lib64/libjni_optizoom.so
@@ -213,6 +215,7 @@ lib64/libubifocus.so
 vendor/lib/hw/camera.sdm660.so
 vendor/lib/libarcsoft_arc3dnr_intf.so
 vendor/lib/libarcsoft_arcshdr_intf.so
+vendor/lib/libarcsoft_beautyshot.so
 vendor/lib/libarcsoft_dualcam_refocus.so
 vendor/lib/libarcsoft_hdr.so
 vendor/lib/libarcsoft_night_shot.so
@@ -423,6 +426,7 @@ vendor/lib/libmmjpeg_interface.so
 vendor/lib/libmmlib2d_interface.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmmqjpegdma.so
+vendor/lib/libmorpho_video_refiner.so
 vendor/lib/libmpbase.so
 vendor/lib/liboptizoom.so
 vendor/lib/libqomx_core.so
@@ -1777,6 +1781,7 @@ vendor/lib/libchromatix_ov16880_qtech_front_cpp_video_full.so
 vendor/lib/libchromatix_ov16880_qtech_front_default_preview_bu64297.so
 vendor/lib/libchromatix_ov16880_qtech_front_default_video.so
 vendor/lib/libchromatix_ov16880_qtech_front_default_video_bu64297.so
+vendor/lib/libchromatix_ov16880_qtech_front_eis_video_bu64297.so
 vendor/lib/libchromatix_ov16880_qtech_front_hfr_60.so
 vendor/lib/libchromatix_ov16880_qtech_front_hfr_60_bu64297.so
 vendor/lib/libchromatix_ov16880_qtech_front_hfr_90.so
@@ -1803,6 +1808,7 @@ vendor/lib/libchromatix_ov16885_holitech_16m_cpp_video_full.so
 vendor/lib/libchromatix_ov16885_holitech_16m_default_preview_bu64297.so
 vendor/lib/libchromatix_ov16885_holitech_16m_default_video.so
 vendor/lib/libchromatix_ov16885_holitech_16m_default_video_bu64297.so
+vendor/lib/libchromatix_ov16885_holitech_16m_eis_video_bu64297.so
 vendor/lib/libchromatix_ov16885_holitech_16m_hfr_60.so
 vendor/lib/libchromatix_ov16885_holitech_16m_hfr_60_bu64297.so
 vendor/lib/libchromatix_ov16885_holitech_16m_hfr_90.so
@@ -1829,6 +1835,7 @@ vendor/lib/libchromatix_ov16885_ofilm_16m_cpp_video_full.so
 vendor/lib/libchromatix_ov16885_ofilm_16m_default_preview_bu64297.so
 vendor/lib/libchromatix_ov16885_ofilm_16m_default_video.so
 vendor/lib/libchromatix_ov16885_ofilm_16m_default_video_bu64297.so
+vendor/lib/libchromatix_ov16885_ofilm_16m_eis_video_bu64297.so
 vendor/lib/libchromatix_ov16885_ofilm_16m_hfr_60.so
 vendor/lib/libchromatix_ov16885_ofilm_16m_hfr_60_bu64297.so
 vendor/lib/libchromatix_ov16885_ofilm_16m_hfr_90.so
