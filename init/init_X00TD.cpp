@@ -71,39 +71,6 @@ void property_override_triple(char const system_prop[], char const vendor_prop[]
     property_override(bootimg_prop, value);
 }
 
-static void init_alarm_boot_properties()
-{
-    char const *boot_reason_file = "/proc/sys/kernel/boot_reason";
-    char const *power_off_alarm_file = "/persist/alarm/powerOffAlarmSet";
-    std::string boot_reason;
-    std::string power_off_alarm;
-    std::string reboot_reason = GetProperty("ro.boot.alarmboot", "");
-
-    if (ReadFileToString(boot_reason_file, &boot_reason)
-            && ReadFileToString(power_off_alarm_file, &power_off_alarm)) {
-        /*
-         * Setup ro.alarm_boot value to true when it is RTC triggered boot up
-         * For existing PMIC chips, the following mapping applies
-         * for the value of boot_reason:
-         *
-         * 0 -> unknown
-         * 1 -> hard reset
-         * 2 -> sudden momentary power loss (SMPL)
-         * 3 -> real time clock (RTC)
-         * 4 -> DC charger inserted
-         * 5 -> USB charger inserted
-         * 6 -> PON1 pin toggled (for secondary PMICs)
-         * 7 -> CBLPWR_N pin toggled (for external power supply)
-         * 8 -> KPDPWR_N pin toggled (power key pressed)
-         */
-        if ((Trim(boot_reason) == "3" || reboot_reason == "true")
-                && Trim(power_off_alarm) == "1")
-            property_set("ro.alarm_boot", "true");
-        else
-            property_set("ro.alarm_boot", "false");
-    }
-}
-
 void vendor_check_variant()
 {
     struct sysinfo sys;
@@ -169,6 +136,5 @@ void vendor_check_variant()
 
 void vendor_load_properties()
 {
-    init_alarm_boot_properties();
     vendor_check_variant();
 }
