@@ -1693,20 +1693,22 @@ lib/liblistenjni.so
 lib/liblistensoundmodel2.so
 lib64/liblistenjni.so
 lib64/liblistensoundmodel2.so
-vendor/lib/hw/sound_trigger.primary.sdm660.so
-vendor/lib/libadpcmdec.so
-vendor/lib/libsmwrapper.so
 vendor/lib/libgcs-calwrapper.so
 vendor/lib/libgcs-ipc.so
 vendor/lib/libgcs-osal.so
 vendor/lib/libgcs.so
 vendor/lib/vendor.qti.voiceprint@1.0.so
-vendor/lib64/hw/sound_trigger.primary.sdm660.so
 vendor/lib64/libgcs-calwrapper.so
 vendor/lib64/libgcs-ipc.so
 vendor/lib64/libgcs-osal.so
 vendor/lib64/libgcs.so
 vendor/lib64/vendor.qti.voiceprint@1.0.so
+
+# Listen (sound trigger) - from LA.UM.7.2.r1-04000-sdm660.0 - B2N_sprout:9/PPR1.180610.011/00WW_3_22C
+vendor/lib/hw/sound_trigger.primary.sdm660.so|af935e760c7e11c5e0673e188a91a28c0cd41514
+vendor/lib/libadpcmdec.so|7c12a153200fd2e9f1f6139fcf40beee1a96f48d
+vendor/lib/libsmwrapper.so|45be75b414f7a8bc3f4807dfab37a9ef9ce91426
+vendor/lib64/hw/sound_trigger.primary.sdm660.so|eccf860f30cf7e06e0eb39231765055a21451c42
 
 # Media - from Nokia N7+
 lib/libmmosal.so|54fb60b71faa40519bd5ce581f8d04c286654851
