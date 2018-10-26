@@ -135,12 +135,6 @@ PRODUCT_PACKAGES += \
     cneapiclient \
     com.quicinc.cne
 
-# Configs
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/appboosts.xml:$(TARGET_COPY_OUT_VENDOR)/etc/appboosts.xml \
-    $(LOCAL_PATH)/configs/gamedwhitelist.xml:$(TARGET_COPY_OUT_VENDOR)/etc/gamedwhitelist.xml \
-    $(LOCAL_PATH)/configs/whitelistedapps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/whitelistedapps.xml
-
 # Configstore
 PRODUCT_PACKAGES += \
     android.hardware.configstore@1.0-service
