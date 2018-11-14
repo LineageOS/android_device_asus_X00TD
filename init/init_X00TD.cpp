@@ -151,7 +151,8 @@ void vendor_check_variant()
     }
 
     // Product model override for B version available on selected regions
-    if (region == "RU" || region == "TW")
+    if (region == "RU" || region == "TW" ||
+        (region == "PH" && sys.totalram > 3072ull * 1024 * 1024))
         property_override_dual("ro.product.model", "ro.vendor.product.model", "ASUS_X00TDB");
 
     // Override props based on values set
