@@ -731,6 +731,7 @@ vendor/lib/libchromatix_hi846_tsp_front_cpp_snapshot.so
 vendor/lib/libchromatix_hi846_tsp_front_cpp_us_chromatix.so
 vendor/lib/libchromatix_hi846_tsp_front_cpp_video.so
 vendor/lib/libchromatix_hi846_tsp_front_default_video.so
+vendor/lib/libchromatix_hi846_tsp_front_eis_video.so
 vendor/lib/libchromatix_hi846_tsp_front_hfr_60.so
 vendor/lib/libchromatix_hi846_tsp_front_hfr_90.so
 vendor/lib/libchromatix_hi846_tsp_front_hfr_120.so
@@ -754,6 +755,7 @@ vendor/lib/libchromatix_hi1333_ofilm_13m_cpp_video_full.so
 vendor/lib/libchromatix_hi1333_ofilm_13m_default_preview_bu64297.so
 vendor/lib/libchromatix_hi1333_ofilm_13m_default_video.so
 vendor/lib/libchromatix_hi1333_ofilm_13m_default_video_bu64297.so
+vendor/lib/libchromatix_hi1333_ofilm_13m_eis_video_bu64297.so
 vendor/lib/libchromatix_hi1333_ofilm_13m_hfr_60.so
 vendor/lib/libchromatix_hi1333_ofilm_13m_hfr_60_bu64297.so
 vendor/lib/libchromatix_hi1333_ofilm_13m_hfr_90.so
@@ -1500,6 +1502,7 @@ vendor/lib/libchromatix_ov8856_chicony_front_cpp_snapshot.so
 vendor/lib/libchromatix_ov8856_chicony_front_cpp_us_chromatix.so
 vendor/lib/libchromatix_ov8856_chicony_front_cpp_video.so
 vendor/lib/libchromatix_ov8856_chicony_front_default_video.so
+vendor/lib/libchromatix_ov8856_chicony_front_eis_video.so
 vendor/lib/libchromatix_ov8856_chicony_front_hfr_60.so
 vendor/lib/libchromatix_ov8856_chicony_front_hfr_90.so
 vendor/lib/libchromatix_ov8856_chicony_front_hfr_120.so
@@ -1719,6 +1722,7 @@ vendor/lib/libchromatix_ov13855_holitech_13m_cpp_video_full.so
 vendor/lib/libchromatix_ov13855_holitech_13m_default_preview_bu64297.so
 vendor/lib/libchromatix_ov13855_holitech_13m_default_video.so
 vendor/lib/libchromatix_ov13855_holitech_13m_default_video_bu64297.so
+vendor/lib/libchromatix_ov13855_holitech_13m_eis_video_bu64297.so
 vendor/lib/libchromatix_ov13855_holitech_13m_hfr_60.so
 vendor/lib/libchromatix_ov13855_holitech_13m_hfr_60_bu64297.so
 vendor/lib/libchromatix_ov13855_holitech_13m_hfr_90.so

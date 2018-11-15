@@ -2481,6 +2481,18 @@
     </path>
     <!-- Huaqin add for TT bug id 1165336 by xudayi at 2018/03/15 end -->
 
+    <!-- Huaqin add for TT bug id 1235288 by zhaojunhai1 at 2018/09/29 start -->
+    <path name="low-latency-playback speaker-and-bt-sco">
+        <path name="low-latency-playback bt-sco" />
+        <path name="low-latency-playback speaker" />
+    </path>
+
+    <path name="low-latency-playback speaker-and-bt-sco-wb">
+        <path name="low-latency-playback bt-sco-wb" />
+        <path name="low-latency-playback speaker" />
+    </path>
+    <!-- Huaqin add for TT bug id 1235288 by zhaojunhai1 at 2018/09/29 end -->
+
     <path name="mmap-playback">
         <ctl name="SLIMBUS_0_RX Audio Mixer MultiMedia16" value="1" />
     </path>

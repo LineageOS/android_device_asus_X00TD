@@ -685,7 +685,7 @@
         <boolean name="config_carrier_ims_call_deflect" value="true" />
     </carrier_config>
     <carrier_config mcc="440" mnc="51">
-        <boolean name="carrier_volte_available_bool" value="false" />
+        <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="hide_enhanced_4g_lte_bool" value="true" />
         <boolean name="carrier_vt_available_bool" value="false" />
         <boolean name="config_carrier_ims_call_deflect" value="true" />
@@ -1379,11 +1379,11 @@
         <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config mcc="440" mnc="20">
-        <boolean name="carrier_volte_available_bool" value="false" />
+        <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_vt_available_bool" value="false" />
     </carrier_config>
     <carrier_config mcc="440" mnc="10">
-        <boolean name="carrier_volte_available_bool" value="false" />
+        <boolean name="carrier_volte_available_bool" value="true" />
         <boolean name="carrier_wfc_ims_available_bool" value="false" />
     </carrier_config>
     <carrier_config mcc="520" mnc="05">
