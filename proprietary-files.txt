@@ -1826,7 +1826,6 @@ vendor/lib/libmmi_jni.so
 vendor/lib64/libmmi_jni.so
 
 # Unclassified
-vendor/firmware/aw87339_kspk.bin
 vendor/firmware/mono.cnt
 vendor/firmware/startup_fw_update.img
 vendor/lib/libstreamparser.so
