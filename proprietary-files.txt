@@ -33,6 +33,9 @@ vendor/lib/rfsa/adsp/libscveFaceLandmark_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 
+# Amplifier calibration - from X00Q - 15.0619.1810.73
+vendor/bin/SpeakerCalibrationTest|db92fe9a33f3924883b0aea42967fad714d8115f
+
 # ANT+
 lib/com.qualcomm.qti.ant@1.0.so
 -lib/libantradio.so
