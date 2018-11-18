@@ -302,13 +302,10 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.nfc@1.1-service \
-    android.hardware.nfc@1.1-impl \
     com.android.nfc_extras \
     NfcNci \
     SecureElement \
     Tag \
-    vendor.nxp.hardware.nfc@1.0-impl \
-    vendor.nxp.hardware.nfc@1.0-service
 
 # OMX
 PRODUCT_PACKAGES += \
