@@ -958,19 +958,23 @@ vendor/lib64/vendor.qti.hardware.data.latency@1.0_vendor.so
 # Content Adaptive Backlight Settings
 -vendor/app/CABLService/CABLService.apk
 
-# Display - from Nokia N7+
-etc/permissions/com.qti.snapdragon.sdk.display.xml|0bff16d681e75f203c1e11ff33afba82490e49b3
--framework/com.qti.snapdragon.sdk.display.jar|49349a394e14918e98d6e3760dbdeb846582b97d
-lib/libsdm-disp-apis.so|78e6bf4201c18cae2fb7631de73d24a802ae115f
-lib/vendor.display.color@1.0.so|cfc859081df595408d8379b512106ca8b1a0b6e6
-lib/vendor.display.postproc@1.0.so|14260d08fc25826d57d8c70f37f6b3d4a616532a
-lib/vendor.qti.hardware.qdutils_disp@1.0.so|fb003a2c9e4d7093f18e699fbbf16724f27526dc
-lib64/libsdm-disp-apis.so|348d104f6e8fa365f610582da8d939bf3b83fad8
-lib64/vendor.display.color@1.0.so|b9e233918753704222976104a4228bb4dc46e50d
-lib64/vendor.display.postproc@1.0.so|ec73a9cd69f19e2fab84df98c3159fe682e6932e
-lib64/vendor.qti.hardware.qdutils_disp@1.0.so|6b3195c93fcda9a694e66702b0dee08c5d3fe91e
-vendor/bin/hw/vendor.display.color@1.0-service|d6b21059ebd11db4c5a0b8983d3c2e9451bd9444
-vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti|bf787d3c3877cb3fba27daf6abddb48634dbfd3d
+# Display - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+etc/permissions/com.qti.snapdragon.sdk.display.xml|79a36c560f8cdbfeca03911fefc282bda25b2322
+-framework/com.qti.snapdragon.sdk.display.jar|5af50f654d6174a726c0a57b5f32254e1a9d3016
+lib/libsdm-disp-apis.so|5c7e946cfa654f533d481970da9b3d2e0c181161
+lib/vendor.display.color@1.0.so|68f3b191767e32ebe6d1e77725d22bfd1152ce14
+lib/vendor.display.color@1.1.so|9fc879923cdf549709fe09913393f4a01af052cb
+lib/vendor.display.color@1.2.so|88782c36567cf84014710e94630c94217f030fd6
+lib/vendor.display.postproc@1.0.so|fe3bfd38306d1c5e2c1ba900c18ccc09b9152b61
+lib/vendor.qti.hardware.qdutils_disp@1.0.so|09fb9cae13bf5edb70aa7568c7bf457db7415dc8
+lib64/libsdm-disp-apis.so|c6681b458123832bb6f4015fd3e24032d5b2eff8
+lib64/vendor.display.color@1.0.so|ec75654927c63b74c7f8d0760fa463f0e8287f25
+lib64/vendor.display.color@1.1.so|28dd1ef69ea74f5623746bbac5c483a3f3b46990
+lib64/vendor.display.color@1.2.so|2c61fe34f1b7548b258812c85920aa82f6b3a8db
+lib64/vendor.display.postproc@1.0.so|b95e9f990a207d5c62db4d66f5aaf088adc02ba8
+lib64/vendor.qti.hardware.qdutils_disp@1.0.so|de6aade2863c03d5b3e234bf87bd398b8f23b13d
+vendor/bin/hw/vendor.display.color@1.0-service|4186fc9f9c69897fe4d79bbf58025144df9c6387
+vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti|d37b70fa2aa2da25d829a4616bcc04cde9453ad8
 vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
 vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc|69d9cbc54f8ac0a0fb010f92bfa7de5981d643cf
 
@@ -1242,65 +1246,65 @@ vendor/firmware/a512_zap.mdt
 vendor/firmware/a530_pfp.fw
 vendor/firmware/a530_pm4.fw
 
-# Graphics - from Nokia N7+
-vendor/lib/egl/eglSubDriverAndroid.so|cddc48f49083f6367ba1fa711b4ac6a1030c729e
-vendor/lib/egl/libEGL_adreno.so|409aa59b5500d0bee8fbbc5a66e220ac93b4c263
-vendor/lib/egl/libGLESv1_CM_adreno.so|c0c8454539c1adfef604c29bbd1dcf1b04b49a28
-vendor/lib/egl/libGLESv2_adreno.so|b1a9d7d0be96a9f1975e73648c7307b0b6765e70
-vendor/lib/egl/libQTapGLES.so|cf018b3e02cd267d9b46d373be8415da1307928e
+# Graphics - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+vendor/lib/egl/eglSubDriverAndroid.so|c8ffb5031734026961217586a5caf5becfa99a6d
+vendor/lib/egl/libEGL_adreno.so|bb2db6766b393777b8d37d81c2614e1166dd39af
+vendor/lib/egl/libGLESv1_CM_adreno.so|0930a64d8889c184de31a085539e1b8b28520a31
+vendor/lib/egl/libGLESv2_adreno.so|005ca25494f36aa4e8298f8a8ff9b8c4ae6bd1e4
+vendor/lib/egl/libQTapGLES.so|7641cd4f894d86f53394bcdc421ecae254afaf30
 vendor/lib/egl/libq3dtools_adreno.so|a2506b94eb0fe3c2bccc7c8e6d8b8d21bd314ae8
-vendor/lib/egl/libq3dtools_esx.so|03b380d327b2ea8f34a8555adc6762dd5cc5cded
-vendor/lib/libC2D2.so|c4bd8db1bc07726fbe914e912c56e6bce928f0f9
-vendor/lib/libCB.so|d2aee9916b580f6270ec0b6a92298fc12f96121f
+vendor/lib/egl/libq3dtools_esx.so|9116ff1328163d82ca624ea02f09d80ec0f055dc
+vendor/lib/libC2D2.so|a110bf0568eef9e49b251b7750cf6e51c3c85969
+vendor/lib/libCB.so|ec481cf472b0cfc568b909be92b7da5a68405f70
 vendor/lib/libOpenCL.so|fbf2d8e82973ea44583f1ca6a624163759167a73
-vendor/lib/libRSDriver_adreno.so|310095594b5b2fb950cb73b87f2b3a3e7d0871d4
-vendor/lib/libadreno_utils.so|05c19ceaae4af7ebf8da950c939984fa0ee4cf90
-vendor/lib/libbccQTI.so|0e430f227ec7be30e4033a2e5f72d76abfd1405f
-vendor/lib/libgsl.so|63955ba7aae72f871e927d58f6b294b7e67ddf7a
-vendor/lib/libllvm-glnext.so|10b647d2f7f1a0f4110573ba19d0e58f9449541b
-vendor/lib/libllvm-qcom.so|3e4f01b23a52cddd3cbfd7db1163af7339ad5e7a
-vendor/lib/libpvr.so|26c775840794337a975c2549f65c2279fa8c21dd
-vendor/lib/librs_adreno_sha1.so|803da83ea238a1e9be75d7bc74cbc2fad0c7b70e
-vendor/lib/librs_adreno.so|31ec54b970722ad8cf3845a1f363e7f94c016391
-vendor/lib64/egl/eglSubDriverAndroid.so|2cfc8728051d467c97919c342fc586223a5ec089
-vendor/lib64/egl/libEGL_adreno.so|06c1c2ebe3ac1b0397ebca970381a054c3cbaeb3
-vendor/lib64/egl/libGLESv1_CM_adreno.so|c024aa202544631c26f6f5f5406c92d9b0fb9351
-vendor/lib64/egl/libGLESv2_adreno.so|3d1d1ce06ae20a838f4d098965c84338350a2c99
-vendor/lib64/egl/libQTapGLES.so|adff3012de0822d7bf95b2597c34d3e999f6242a
+vendor/lib/libRSDriver_adreno.so|7e6b61cb975de2029ea6debe4fe442852da06e00
+vendor/lib/libadreno_utils.so|34023494194932a62c70d82c60d4f6cf2e64b58f
+vendor/lib/libbccQTI.so|aa1220cad9df3c39c0c14c4a36546342cc518ad1
+vendor/lib/libc2d30_bltlib.so|e9767a3e4e674d42f23f5482471d38973e038d45
+vendor/lib/libgsl.so|2849df0ee52249c7d6e5ed869df064eff910c12c
+vendor/lib/libllvm-glnext.so|aaf39c5b6fd424edc773c64ad06de2e1dfbd9600
+vendor/lib/libllvm-qcom.so|ba0f181d031bcdd479bc007e33c5490cf5a34723
+vendor/lib/libpvr.so|4538ce6f1db3ff0c55772f0a916996f14199980c
+vendor/lib/librs_adreno_sha1.so|3eab25ba145381aa9ac3dd4d913152fb181a74d3
+vendor/lib/librs_adreno.so|41b2a1b35a8a9966728cea607bf5b7a8f568680d
+vendor/lib64/egl/eglSubDriverAndroid.so|baa2b8d500d0645642f40358be6c5e10fbabd193
+vendor/lib64/egl/libEGL_adreno.so|8c7de13558f96022520834663021f8e68b430aac
+vendor/lib64/egl/libGLESv1_CM_adreno.so|95497830d4e08c02a3b6d82bc7623f926d2ef9ed
+vendor/lib64/egl/libGLESv2_adreno.so|8027d82d27298e78a9fdb67fd2232a0091623d1f
+vendor/lib64/egl/libQTapGLES.so|dac820eea4d54f98f7e20a49b82404de6f09743b
 vendor/lib64/egl/libq3dtools_adreno.so|4bd18c19a4d8376311983303b0971a7aa1334897
-vendor/lib64/egl/libq3dtools_esx.so|e50298000fe072eaf5663d486856e36321efc15a
-vendor/lib64/libC2D2.so|2638a3a47da43bce76cbc674151cf4310fdc9e52
-vendor/lib64/libCB.so|520655ad8603e8a3e7e5e4abca3a6585a1d24468
+vendor/lib64/egl/libq3dtools_esx.so|19d96756fda3f1ba0251c041120d1d4f3a5a8d03
+vendor/lib64/libC2D2.so|724684ac0e167bc729cbdea1ee9e21da248cfd58
+vendor/lib64/libCB.so|7f9ee00ababa07845d200a991d9ec839d364e8f9
 vendor/lib64/libOpenCL.so|1e78c9b98378803703835a3e1cbfabf43318f341
-vendor/lib64/libRSDriver_adreno.so|07b01d848260f02ea060453b5a9dc56cc3c048b8
-vendor/lib64/libadreno_utils.so|f99569e267425cc6773d463c0f8715ff298e6872
-vendor/lib64/libbccQTI.so|d9cd63dc315738e8ba5c0871a25c7d9d02301fe9
-vendor/lib64/libc2d30_bltlib.so|701b25c5616284aa0b753f5419b89d3a33edf2b0
-vendor/lib64/libgsl.so|48463a4cba0acc5891b2ac04e6638a5d57cd54cb
-vendor/lib64/libllvm-glnext.so|b0360977c98b8ce0688b3697aaffeeb6901c0644
-vendor/lib64/libllvm-qcom.so|8ba5b8e20a110b9f70959c804624f207e6997c55
-vendor/lib64/libpvr.so|fe1e3ad506bcc07aa4863d8d31b536b93ad14264
-vendor/lib64/librs_adreno_sha1.so|f3079343770b7def7834cb1f3975d53a03bfeb94
-vendor/lib64/librs_adreno.so|4b8f5f5f73dde6325b48d2d4a7e1c486485dc672
-vendor/lib64/libscalar.so|b7dd9afe0770e045a837c3af67d70193c5a1e081
+vendor/lib64/libRSDriver_adreno.so|3d77fb21a40b98e908840aa89d044aea4f695694
+vendor/lib64/libadreno_utils.so|4b9072beb7ce486163966d6a12d8edd7e92830b5
+vendor/lib64/libbccQTI.so|be1ae3a075c42dcb19bc6e1ecd7374f9aeae083c
+vendor/lib64/libc2d30_bltlib.so|e950f918802d3d3e656ab4f0fe731bb60e1b357e
+vendor/lib64/libgsl.so|39bbfb10ef6c20feab0162ca2078d6bdab64ba6f
+vendor/lib64/libllvm-glnext.so|6bad98f9d784d7c50a3d47fe61dbabd6164cc0bc
+vendor/lib64/libllvm-qcom.so|4e9dc8128379692407bf730f1b1ebdd3307bd5c0
+vendor/lib64/libpvr.so|a766fdd5757fc0b7df96f7b37a7949881ab75a72
+vendor/lib64/librs_adreno_sha1.so|1eb6385f291f6a611ec7096b3b7cfaeb9a08c9f3
+vendor/lib64/librs_adreno.so|b6bc2274fc4079818f3124a694348a890c5d7b07
 
-# Graphics (SDM) - from Nokia N7+
-vendor/lib/libqseed3.so|e29a10228dfd0cceee2e0ac59c27535d8e87db92
-vendor/lib/libsdm-color.so|d391f304027feaae6df5cfe8a377be1c17dbbb50
-vendor/lib/libsdm-diag.so|e62985d3514636333b889235647bfd65dc38c2b1
--vendor/lib/libsdm-disp-vndapis.so|8db9815165439774b5fba9d83f048c19b71f3495
-vendor/lib/libsdmextension.so|5a113315fd1c55b3d4db06e00f8185d532f16625
-vendor/lib/libtinyxml2_1.so|6a85a3ebc064319fba7b69c400d7d13f55a5b959
-vendor/lib64/libqseed3.so|d23c424bf8e5530049562c7e1d5d3cbda20ca79e
-vendor/lib64/libsdm-color.so|52f7ac30a7d1b9b53e3350d3ede1b198bd5a45c7
-vendor/lib64/libsdm-diag.so|05555ff56e2fd4f0db0f9b3a803927c90a3ae430
--vendor/lib64/libsdm-disp-vndapis.so|76e10024f48b66c5da1e354aee8e431ce1fe2f96
-vendor/lib64/libsdmextension.so|45d71be8c8480bf91cc0fbdf4c050c491427e72f
-vendor/lib64/libtinyxml2_1.so|eae7c0526a56300dad04bce1a4e154a5869b3542
+# Graphics (SDM) - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+vendor/lib/libqseed3.so|c60e08f5efa1e9aea339a7a5a6dccdc2d107f530
+vendor/lib/libsdm-color.so|418a070bc1e845f0268ffb2f627af8fcddc437f2
+vendor/lib/libsdm-diag.so|e0455e9dd0e2378a3f770eb914aa11e612d594eb
+-vendor/lib/libsdm-disp-vndapis.so|31b8df32d8091ef0390352b118e59bbde3d4acc1
+vendor/lib/libsdmextension.so|50be67d8b328d54c7ef86b0de8aff6efcad0cd85
+vendor/lib/libtinyxml2_1.so|20fea724b7a9f94530833cfdc841049104a0ffa3
+vendor/lib64/libqseed3.so|f95dd7b55de9401ce2f568e3ec18493daa5a6bfe
+vendor/lib64/libsdm-color.so|5c8cda1e79cd46cd29e45d689017e24a440800b7
+vendor/lib64/libsdm-diag.so|25bab19a8c4453b3d20e3e1a71a0e8d3675b17b4
+-vendor/lib64/libsdm-disp-vndapis.so|6b0ee25367d386ccc1b42ea941f1da439a48b3ec
+vendor/lib64/libsdmextension.so|db7d755121acd2eaff7134b7403d59202d3cf197
+vendor/lib64/libtinyxml2_1.so|9d5179eda8ce70b9a4014b144f9d23d33509fddc
 
-# Graphics (Vulkan) - from Nokia N7+
-vendor/lib/hw/vulkan.sdm660.so|3db8b9fd6dd25259eac9d8b4866ee33ce7e386a1
-vendor/lib64/hw/vulkan.sdm660.so|ca80111741eb03a5eb0c5e306f255c07277a3429
+# Graphics (Vulkan) - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+vendor/lib/hw/vulkan.sdm660.so|1426694ac179ddd26d0dadf9cc54305cad0386a4
+vendor/lib64/hw/vulkan.sdm660.so|82b72990a737799894c291f8a3515d7d668a5423
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
@@ -1460,16 +1464,20 @@ vendor/bin/pm-service|d9fefe2b7fec574ac4eb70a29303eeec819e449d
 vendor/lib/libperipheral_client.so|27b655cf18a1282594e5c91376b705fe31db6dab
 vendor/lib64/libperipheral_client.so|c4b0cb11e908b234a54a9f212c42ff4c37e37391
 
-# Postprocessing
-vendor/bin/mm-pp-dpps
-vendor/lib/libdisp-aba.so
-vendor/lib/vendor.display.color@1.0_vendor.so
-vendor/lib/vendor.display.postproc@1.0_vendor.so
-vendor/lib/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
-vendor/lib64/libdisp-aba.so
-vendor/lib64/vendor.display.color@1.0_vendor.so
-vendor/lib64/vendor.display.postproc@1.0_vendor.so
-vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0_vendor.so
+# Postprocessing - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+vendor/bin/mm-pp-dpps|74141c92e68a293b2f5fb0992cb58102ecd9718b
+vendor/lib/libdisp-aba.so|75008ca9696ded106b6bf47e2968d8a8a9dcc897
+vendor/lib/vendor.display.color@1.0.so|00c666b244d0dded349c57c009d492cc99659218
+vendor/lib/vendor.display.color@1.1.so|34f8aa9a3af53911c26fe0b87ef920af0bf43d5e
+vendor/lib/vendor.display.color@1.2.so|7b8654af0df0d1c1d3fa8c26158b577a1acf1df6
+vendor/lib/vendor.display.postproc@1.0.so|dfd11af2b40feedc49befa22e5948ea77af0b1e6
+vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|4df22feae4105d098205e374f9d09813d58189a6
+vendor/lib64/libdisp-aba.so|09a8d5f64b3a6f6f57971ad6fab62cfde4e98547
+vendor/lib64/vendor.display.color@1.0.so|4a77650c5d42169073a13f5150da619bf806e7d7
+vendor/lib64/vendor.display.color@1.1.so|a8bfe228ed1235f1ceb8ab794100c7edab38d0a7
+vendor/lib64/vendor.display.color@1.2.so|6a9474efc2736d68bab877dfdbdca5296c8b4e5d
+vendor/lib64/vendor.display.postproc@1.0.so|014e060db0ddb6b1f9af705fb11a775d00ee2d14
+vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|49137c36991e59404ed9394e8b1c415b8338002d
 
 # QMI
 etc/permissions/qti_libpermissions.xml
