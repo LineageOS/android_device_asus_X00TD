@@ -1457,12 +1457,12 @@ vendor/lib64/vendor.qti.hardware.limits@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.wipower@1.0_vendor.so
 
-# Peripheral manager
-vendor/bin/hal_proxy_daemon
-vendor/bin/pm-proxy
-vendor/bin/pm-service
-vendor/lib/libperipheral_client.so
-vendor/lib64/libperipheral_client.so
+# Peripheral manager - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+vendor/bin/hal_proxy_daemon|c933dbd6872cb551c1a88060dc75f5a6fac01de5
+vendor/bin/pm-proxy|e5f8c69e8d231dd2665dc411b4e9d9e696c90187
+vendor/bin/pm-service|d9fefe2b7fec574ac4eb70a29303eeec819e449d
+vendor/lib/libperipheral_client.so|27b655cf18a1282594e5c91376b705fe31db6dab
+vendor/lib64/libperipheral_client.so|c4b0cb11e908b234a54a9f212c42ff4c37e37391
 
 # Postprocessing
 vendor/bin/mm-pp-dpps
