@@ -1318,27 +1318,23 @@ vendor/lib64/libkeymasterutils.so
 vendor/lib/hw/keystore.sdm660.so
 vendor/lib64/hw/keystore.sdm660.so
 
-# Listen
-lib/liblistenjni.so
-lib/liblistensoundmodel2.so
-lib64/liblistenjni.so
-lib64/liblistensoundmodel2.so
-vendor/lib/libgcs-calwrapper.so
-vendor/lib/libgcs-ipc.so
-vendor/lib/libgcs-osal.so
-vendor/lib/libgcs.so
-vendor/lib/vendor.qti.voiceprint@1.0.so
-vendor/lib64/libgcs-calwrapper.so
-vendor/lib64/libgcs-ipc.so
-vendor/lib64/libgcs-osal.so
-vendor/lib64/libgcs.so
-vendor/lib64/vendor.qti.voiceprint@1.0.so
-
-# Listen (sound trigger) - from LA.UM.7.2.r1-04000-sdm660.0 - B2N_sprout:9/PPR1.180610.011/00WW_3_22C
-vendor/lib/hw/sound_trigger.primary.sdm660.so|af935e760c7e11c5e0673e188a91a28c0cd41514
+# Listen - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+lib/liblistenjni.so|d914ac961799957732ac03e7b34cf5eb8a7d7331
+lib/liblistensoundmodel2.so|d1792ba8d2678cd05963aca6e89f4d156870eb0b
+lib64/liblistenjni.so|b10419d835e4270458c75e0f75414ce84e7824fc
+lib64/liblistensoundmodel2.so|7ca63c2c1e8ead10a00c21f417458ca6cd0ad2ca
+vendor/lib/hw/sound_trigger.primary.sdm660.so|22b58f782f34308c42bdacde2ee1aad3e740301e
 vendor/lib/libadpcmdec.so|7c12a153200fd2e9f1f6139fcf40beee1a96f48d
-vendor/lib/libsmwrapper.so|45be75b414f7a8bc3f4807dfab37a9ef9ce91426
-vendor/lib64/hw/sound_trigger.primary.sdm660.so|eccf860f30cf7e06e0eb39231765055a21451c42
+vendor/lib/libgcs-calwrapper.so|0c4a0700db711c3fffbfdac74cef6b54f278ae11
+vendor/lib/libgcs-ipc.so|32ce32080f5deff1bbd07fb563fdaeb852e3e146
+vendor/lib/libgcs-osal.so|eeda0f28a7be1a5463cb0da0bf4c7534b23d72e4
+vendor/lib/libgcs.so|4e02c27555e40d418181406cdc4a1a094d1ab11e
+vendor/lib/libsmwrapper.so|5406c4930fc71f16d315723d38cc3f316887c6ef
+vendor/lib64/hw/sound_trigger.primary.sdm660.so|77f393d110d9e917d9791c1bc1653b880fd55567
+vendor/lib64/libgcs-calwrapper.so|52682134cdb34a6a85518ea13722fc3b428158e2
+vendor/lib64/libgcs-ipc.so|f2f7e54bf351e009c09c25fcbb216f54af38695e
+vendor/lib64/libgcs-osal.so|0394ae7df035ae7b371969a38aa2b443b26341a0
+vendor/lib64/libgcs.so|152af5321ebe26fe06513c71b63d02f89bd4e01d
 
 # Media - from Nokia N7+
 lib/libmmosal.so|54fb60b71faa40519bd5ce581f8d04c286654851
