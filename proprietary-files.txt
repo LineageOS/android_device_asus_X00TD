@@ -1123,17 +1123,17 @@ vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so
 vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so
 vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 
-# FM
-lib/fm_helium.so
-lib/libfm-hci.so
--lib/vendor.qti.hardware.fm@1.0.so
-lib64/fm_helium.so
-lib64/libfm-hci.so
--lib64/vendor.qti.hardware.fm@1.0.so
-vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
-vendor/lib/vendor.qti.hardware.fm@1.0_vendor.so
-vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.fm@1.0_vendor.so
+# FM - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+lib/fm_helium.so|fb2a591a61122bbdf818ba9e6c931aa7c3d8a953
+lib/libfm-hci.so|b066567e07279bf59e78f7d318302dd706bb80fe
+-lib/vendor.qti.hardware.fm@1.0.so|3c725ea0f85bf709bcf77761d707abf7660b1c4d
+lib64/fm_helium.so|e41e3a18f5a0dc666adad471e7332c707b4d2044
+lib64/libfm-hci.so|24cd3321d251409aec7d5b6fe160c9fd37a12af5
+-lib64/vendor.qti.hardware.fm@1.0.so|dc576dfcb0bf390a106b5ed8861e7f547110cbf1
+vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so|e02c756e500badb69bc96bcc665a5943bbfaaec0
+vendor/lib/vendor.qti.hardware.fm@1.0.so|62f2ff5491b5013d9ddf91ced3fde01fd5311199
+vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|2469d0cb6b1c01bcee8f280a113569bd5682bf89
+vendor/lib64/vendor.qti.hardware.fm@1.0.so|061ebea5b94f63fdc25ce67869dde08dbd969cca
 
 # Gatekeeper
 lib/libgatekeeper.so:vendor/lib/libgatekeeper.so
