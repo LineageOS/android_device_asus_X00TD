@@ -1729,10 +1729,10 @@ vendor/etc/thermal-engine.conf
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 
-# Time services
--vendor/app/TimeService/TimeService.apk
-vendor/bin/time_daemon
--vendor/lib64/libtime_genoff.so
+# Time services - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+-vendor/app/TimeService/TimeService.apk|78109530538aa8fb533ad288c9d356c57481a10e
+vendor/bin/time_daemon|c55499f7cc2ce5f3c12645e2395bf079f0a5b2fd
+-vendor/lib64/libtime_genoff.so|e341ec29dbfb6d1fae84915a6151fd56d25f4ddc
 
 # TUI
 lib/vendor.qti.hardware.tui_comm@1.0.so
