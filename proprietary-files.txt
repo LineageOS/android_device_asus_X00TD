@@ -1779,11 +1779,11 @@ vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libwvhidl.so
 
-# WiFi
-vendor/bin/cnss_diag
-vendor/bin/cnss-daemon
-vendor/bin/fstman
-vendor/lib64/vendor.qti.hardware.wifi.supplicant@1.0_vendor.so
+# WiFi - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+vendor/bin/cnss_diag|27c1bf202f481e6d74e9c6f0eb7e25ee052cea4d
+vendor/bin/cnss-daemon|01ce2fa8f4852305bea2af33f59e41e7f05f44ad
+vendor/bin/fstman|b17e70c447a0b85631f6062a149b91df5e28a1f9
+vendor/lib64/vendor.qti.hardware.wifi.supplicant@2.0.so|aa29c08f806afc66adcec01cbbc01b021f83171e
 
 # Wi-Fi Display - from Nokia N7+
 bin/wfdservice|2b7fdb1ac2bc1001e5f51bdbbf043d1fce3532e8
