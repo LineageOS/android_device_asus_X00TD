@@ -33,6 +33,16 @@ vendor/lib/rfsa/adsp/libscveFaceLandmark_skel.so
 vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 
+# Alarm - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+framework/vendor.qti.hardware.alarm-V1.0-java.jar|7d8b2303fd4fe74b21c458f13d52a38587e4eb50
+vendor/bin/power_off_alarm|f973dabbdba85ece5115d4beb457cb37887e4358
+vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|1300f2aacbcd159a2587abc1f38031d9c1f1beed
+vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
+vendor/lib/hw/vendor.qti.hardware.alarm@1.0-impl.so|0b6cfa8af4a0a056f9f4d57b53df07d0cdf0c982
+vendor/lib/vendor.qti.hardware.alarm@1.0.so|08a4c042506ca9f0eda1d2fec18a025950a03399
+vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|7d163c35a9deee2801070ed50c6625709c3e0b65
+vendor/lib64/vendor.qti.hardware.alarm@1.0.so|1594b679eb1c791e0f4e0dbb9115b599a8553401
+
 # Amplifier calibration - from X00Q - 15.0619.1810.73
 vendor/bin/SpeakerCalibrationTest|db92fe9a33f3924883b0aea42967fad714d8115f
 
@@ -47,16 +57,6 @@ vendor/lib/com.qualcomm.qti.ant@1.0_vendor.so
 vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so
 vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
-
-# Alarm
-vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service
-vendor/bin/power_off_alarm
-vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
--vendor/framework/vendor.qti.hardware.alarm-V1.0-java.jar
-vendor/lib/hw/vendor.qti.hardware.alarm@1.0-impl.so
-vendor/lib/vendor.qti.hardware.alarm@1.0.so
-vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.alarm@1.0.so
 
 # aptX - from Nokia N7+
 vendor/lib64/libaptX_encoder.so|22f5749edb5099526788c22708099a7791dd837f
