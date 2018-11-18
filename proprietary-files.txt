@@ -1085,15 +1085,15 @@ vendor/etc/scve/facereco/gModel.dat
 vendor/lib/libsdsprpc.so
 vendor/lib64/libsdsprpc.so
 
-# ESE-Powermanager
-lib/vendor.qti.esepowermanager@1.0.so
-lib64/vendor.qti.esepowermanager@1.0.so
-vendor/bin/hw/vendor.qti.esepowermanager@1.0-service
-vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc
-vendor/lib/vendor.qti.esepowermanager@1.0_vendor.so
-vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so
-vendor/lib64/vendor.qti.esepowermanager@1.0_vendor.so
-vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so
+# ESE-Powermanager - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+lib/vendor.qti.esepowermanager@1.0.so|e65ad704bb73308ddc7eabeeaf46b8d8a3f57f4c
+lib64/vendor.qti.esepowermanager@1.0.so|1662a45073eb48f9682975289ba87e314e6edec8
+vendor/bin/hw/vendor.qti.esepowermanager@1.0-service|d5ade73df5b0948fc0f6c29281e3ca3af2b2536a
+vendor/etc/init/vendor.qti.esepowermanager@1.0-service.rc|58a3866ad5a7613d9392c9adb671eaa7825578a2
+vendor/lib/hw/vendor.qti.esepowermanager@1.0-impl.so|a56027dc75c8c71e5c2163e674d5b14a732482f1
+vendor/lib/vendor.qti.esepowermanager@1.0.so|9791cc63728cf84431be61da597f0c7bf1994a00
+vendor/lib64/hw/vendor.qti.esepowermanager@1.0-impl.so|6b4a3df201146ce2510f38addd27e5a12fa7d107
+vendor/lib64/vendor.qti.esepowermanager@1.0.so|2dbf8f5fbe73a87da5a6a48f0d78236116c5071d
 
 # Factory
 lib/vendor.qti.hardware.factory@1.0.so
