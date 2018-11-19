@@ -1700,14 +1700,6 @@ vendor/lib64/sensors.native.so
 vendor/lib64/sensors.ssc.so
 vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
 
-# Sensors HIDL
-lib/android.hardware.sensors@1.0.so
-lib64/android.hardware.sensors@1.0.so
-vendor/bin/hw/android.hardware.sensors@1.0-service
-vendor/etc/init/android.hardware.sensors@1.0-service.rc
-vendor/lib/hw/android.hardware.sensors@1.0-impl.so
-vendor/lib64/hw/android.hardware.sensors@1.0-impl.so
-
 # Sensors calibration
 vendor/etc/calmodule.cfg
 vendor/lib/libcalmodule_common.so
