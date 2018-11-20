@@ -1757,7 +1757,9 @@ vendor/etc/qvop/cmudict.bin
 vendor/etc/qvop/noisesample.bin
 vendor/etc/qvop/poc_64_hmm.gmm
 vendor/lib/libqvop-service.so
+vendor/lib/vendor.qti.voiceprint@1.0.so
 vendor/lib64/libqvop-service.so
+vendor/lib64/vendor.qti.voiceprint@1.0.so
 
 # VR
 lib/libvr_amb_engine.so
