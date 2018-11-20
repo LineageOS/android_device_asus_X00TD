@@ -1405,7 +1405,7 @@ vendor/lib64/libvpptestutils.so|b6b417fc29f48e55d2c39f7487b51ceafff79ea9
 
 # NFC
 -vendor/app/SmartcardService/SmartcardService.apk
-vendor/firmware/libpn553_fw.so
+vendor/firmware/libpn553_fw.so:vendor/lib/libpn553_fw.so
 
 # Open mobile API
 etc/permissions/org.simalliance.openmobileapi.xml
