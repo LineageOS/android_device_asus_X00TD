@@ -1,0 +1,2 @@
+typeattribute time_daemon data_between_core_and_vendor_violators;
+allow time_daemon time_data_file:file { open read write };

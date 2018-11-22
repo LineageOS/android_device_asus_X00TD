@@ -8,6 +8,8 @@ allow hal_fingerprint_default cdfinger_device:chr_file rw_file_perms;
 allow hal_fingerprint_default tee_device:chr_file rw_file_perms;
 allow hal_fingerprint_default fingerprintd_device:chr_file rw_file_perms;
 
+typeattribute hal_fingerprint_default data_between_core_and_vendor_violators;
+
 get_prop(hal_fingerprint_default, cdfinger_prop)
 set_prop(hal_fingerprint_default, cdfinger_prop)
 
@@ -28,3 +30,6 @@ allow hal_fingerprint_default fingerprintd_data_file:file create_file_perms;
 allow hal_fingerprint_default fingerprintd_data_file:dir rw_dir_perms;
 
 allow hal_fingerprint_default self:netlink_socket create_socket_perms_no_ioctl;
+
+allow hal_fingerprint_default sysfs_usb_supply:dir search;
+allow hal_fingerprint_default sysfs_usb_supply:file { open read };

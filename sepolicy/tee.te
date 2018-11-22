@@ -1,7 +1,8 @@
 # TODO(b/36644492): Remove data_between_core_and_vendor_violators once
 # tee no longer directly accesses /data owned by the frameworks.
-typeattribute tee data_between_core_and_vendor_violators;
 type_transition tee system_data_file:{ dir file } cdfinger_data_file;
+typeattribute tee data_between_core_and_vendor_violators;
+allow tee system_prop:property_service set;
 allow tee system_data_file:dir create_dir_perms;
 allow tee cdfinger_data_file:dir create_dir_perms;
 allow tee cdfinger_data_file:file create_file_perms;
