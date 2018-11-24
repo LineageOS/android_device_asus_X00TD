@@ -154,7 +154,7 @@ void vendor_check_variant()
     if (region == "RU" || region == "TW" ||
         (region == "PH" && sys.totalram > 3072ull * 1024 * 1024))
         product_model = "ASUS_X00TDB";
-    else
+    else if (sys.totalram < 3072ull * 1024 * 1024)
         product_model = "ASUS_X00TDA";
 
     // Override props based on values set
