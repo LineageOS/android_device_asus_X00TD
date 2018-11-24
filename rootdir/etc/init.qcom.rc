@@ -232,9 +232,6 @@ on boot
     # Create hvdcp_opti directory
     mkdir /persist/hvdcp_opti 0770 root system
 
-    # Amplifier Calibration
-    start spk_amp_cal
-
 # msm specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
@@ -744,13 +741,6 @@ on property:ro.data.large_tcp_window_size=true
 
 on property:sys.sysctl.tcp_adv_win_scale=*
     write /proc/sys/net/ipv4/tcp_adv_win_scale ${sys.sysctl.tcp_adv_win_scale}
-
-service spk_amp_cal /vendor/bin/SpeakerCalibrationTest 1
-    class late_start
-    user root
-    group root
-    disabled
-    oneshot
 
 service amp_init /vendor/bin/amploader -i
     class late_start

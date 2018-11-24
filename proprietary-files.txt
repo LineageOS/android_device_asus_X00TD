@@ -43,9 +43,6 @@ vendor/lib/vendor.qti.hardware.alarm@1.0.so|08a4c042506ca9f0eda1d2fec18a025950a0
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|7d163c35a9deee2801070ed50c6625709c3e0b65
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so|1594b679eb1c791e0f4e0dbb9115b599a8553401
 
-# Amplifier calibration - from X00Q - 15.0619.1810.73
-vendor/bin/SpeakerCalibrationTest|db92fe9a33f3924883b0aea42967fad714d8115f
-
 # ANT+ (system) - from enchilada - PKQ1.180716.001
 lib/com.qualcomm.qti.ant@1.0.so|fcd6a7130c480bfe4e4d9cc00702ed8444cddc82
 -lib/libantradio.so|7506f2577f2f1068688b623ca85e432be9c3dac9
