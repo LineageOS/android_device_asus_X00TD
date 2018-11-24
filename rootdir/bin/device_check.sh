@@ -14,17 +14,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
-ui_print() {
-    until [ ! "$1" ]; do
-      echo -e "ui_print $1\nui_print" > $OUTFD;
-      shift;
-    done;
-}
-
 # Check if device supports NFC
-if ! grep -q NFC /dev/block/platform/soc/c0c4000.sdhci/by-name/version; then
-    ui_print "Device doesn't support NFC, removing..."
+if grep -q NFC /dev/block/platform/soc/c0c4000.sdhci/by-name/version; then
+    echo "Device supports NFC"
+else
+    echo "Device doesn't support NFC , removing ..."
     # Remove NFC
     rm -rf /system/app/*Nfc*
     rm -rf /system/etc/permissions/*nfc*
