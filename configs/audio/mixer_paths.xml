@@ -1840,8 +1840,8 @@
     </path>
 
     <path name="speaker">
+        <ctl name="TERT_MI2S_RX Channels" value="One" />
 	<!-- Huaqin add for config new audioboard xml by xudayi at 2018/03/05 start -->
-        <!-- ctl name="INT0_MI2S_RX Channels" value="One" /-->
         <!-- ctl name="RX2 MIX1 INP1" value="RX2" /-->
         <!-- ctl name="RDAC2 MUX" value="RX2" /-->
         <!-- ctl name="RX HPH Mode" value="HD2" /-->
