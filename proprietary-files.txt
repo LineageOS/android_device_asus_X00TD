@@ -35,6 +35,7 @@ vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 
 # Alarm - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
 framework/vendor.qti.hardware.alarm-V1.0-java.jar|7d8b2303fd4fe74b21c458f13d52a38587e4eb50
+-vendor/app/PowerOffAlarm/PowerOffAlarm.apk|c6ac3bd60b196cbc69fd51a532fcbcf2f4521a67
 vendor/bin/power_off_alarm|f973dabbdba85ece5115d4beb457cb37887e4358
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|1300f2aacbcd159a2587abc1f38031d9c1f1beed
 vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
