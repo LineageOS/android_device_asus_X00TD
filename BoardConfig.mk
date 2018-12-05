@@ -167,9 +167,6 @@ ifeq ($(HOST_OS),linux)
   endif
 endif
 
-# Extended Filesystem Support
-TARGET_EXFAT_DRIVER := sdfat
-
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
