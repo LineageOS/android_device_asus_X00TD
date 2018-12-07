@@ -1312,6 +1312,9 @@ vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.soter@1.0.so
 
+# Telephony - from jasmine-user-9-PKQ1.180904.001-V10.0.1.0.PDIMIFJ-release-keys
+framework/qti-telephony-common.jar|2ff99f59424637220556eb036c04896f82ddc3b5
+
 # Thermal
 vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
