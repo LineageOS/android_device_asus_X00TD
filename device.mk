@@ -458,6 +458,9 @@ PRODUCT_PACKAGES += \
     vndk-sp
 
 # WFD
+PRODUCT_PACKAGES += \
+    libnl
+
 PRODUCT_BOOT_JARS += \
     WfdCommon
 
