@@ -63,9 +63,6 @@ on post-fs
     start qseecomd
     exec - system system -- /vendor/bin/init.qti.qseecomd.sh
     write /dev/ipa 1
-#Huaqin add for ZQL1650-43 by lanshiming at 2018/1/18 start
-    start emmc_prop_init
-#Huaqin add for ZQL1650-43 by lanshiming at 2018/1/18 end
 
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
@@ -511,14 +508,6 @@ service smcinvoked /system/bin/smcinvoked
    class main
    user system
    group system
-
-#Huaqin add for ZQL1650-43 by lanshiming at 2018/1/18 start
-service emmc_prop_init /vendor/bin/sh /vendor/bin/emmc_prop_init.sh
-    class core
-    user root
-    oneshot
-    disabled
-#Huaqin add for ZQL1650-43 by lanshiming at 2018/1/18 end
 
 #Huaqin modify for disable sar in Indonesia by chenyijun5 at 2018/03/20 start
 on property:ro.config.versatility=ID

@@ -341,7 +341,6 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    emmc_prop_init.sh \
     init.class_main.sh \
     init.crda.sh \
     init.mdm.sh \
