@@ -1015,50 +1015,49 @@ vendor/lib/libdpmqmihal.so
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0_vendor.so
 vendor/lib64/libdpmqmihal.so
 
-# DRM
-vendor/bin/qseecomd
-vendor/lib/libGPreqcancel.so
-vendor/lib/libGPreqcancel_svc.so
-vendor/lib/libQSEEComAPI.so
-vendor/lib/libSecureUILib.so
-vendor/lib/libStDrvInt.so
-vendor/lib/libbase64.so
-vendor/lib/libcppf.so
-vendor/lib/libdrmfs.so
-vendor/lib/libdrmtime.so
-vendor/lib/libmm-hdcpmgr.so
-vendor/lib/libqisl.so
-vendor/lib/librmp.so
-vendor/lib/librpmb.so
-vendor/lib/libsdedrm.so
-vendor/lib/libsecureui.so
-vendor/lib/libsecureui_svcsock.so
-vendor/lib/libsi.so
-vendor/lib/libssd.so
-vendor/lib/libtzdrmgenprov.so
-vendor/lib/qcdrm/playready/lib/drm/libdrmprplugin_customer.so
-vendor/lib/qcdrm/playready/lib/libprdrmdecrypt_customer.so
-vendor/lib/qcdrm/playready/lib/libtzplayready_customer.so
-vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmdecrypt_customer.so
-vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmplugin_customer.so
-vendor/lib64/libGPreqcancel.so
-vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libQSEEComAPI.so
-vendor/lib64/libSecureUILib.so
-vendor/lib64/libStDrvInt.so
-vendor/lib64/libbase64.so
-vendor/lib64/libdrmfs.so
-vendor/lib64/libdrmtime.so
-vendor/lib64/libmm-hdcpmgr.so
-vendor/lib64/libqisl.so
-vendor/lib64/librmp.so
-vendor/lib64/librpmb.so
-vendor/lib64/libsdedrm.so
-vendor/lib64/libsecureui.so
-vendor/lib64/libsecureui_svcsock.so
-vendor/lib64/libsi.so
-vendor/lib64/libssd.so
-vendor/lib64/libtzdrmgenprov.so
+# DRM - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+vendor/bin/qseecomd|cf78dd27e93f4cfd59d95909651d7f719d079181
+vendor/lib/libGPreqcancel.so|6aa135d11f95c183ade364bcd6589b79bb8542de
+vendor/lib/libGPreqcancel_svc.so|81d1a722b68535f5994cc16ecc9c9296a75c5268
+vendor/lib/libQSEEComAPI.so|8ffb4568c78e36639687583c5b8ea5e49a1eb388
+vendor/lib/libSecureUILib.so|1d7630188968fc4082cc2ce7883450b6af5d2961
+vendor/lib/libStDrvInt.so|f03bee73c21cb9f481db3b0728628ff80a202559
+vendor/lib/libbase64.so|b37fc41343b9636460c362f1b05b0e91086f217d
+vendor/lib/libcppf.so|7dfe5e7757808f2b5fd3a230c9546b0a49ffc2e4
+vendor/lib/libdrmfs.so|26520d661e2acb66d25827a07896b9b0a0646a6e
+vendor/lib/libdrmtime.so|fad8f37aaef7d1f89451163ade7e447cec182a5b
+vendor/lib/libmm-hdcpmgr.so|1ece57120c97c2f1168950ca7469460caaa4e954
+vendor/lib/libqisl.so|95eae0c6f27ebf57bffb5470d723d91da9a3d0e6
+vendor/lib/librmp.so|a8333cbe39ffab8b244c58ee512ea189a49e8de1
+vendor/lib/librpmb.so|cbf26dcfceb34a2674a818921f0aeaecbfb0a58d
+vendor/lib/libsdedrm.so|8cb2d9afec44f74c9c8c5feb8e7f7152f17c5059
+vendor/lib/libsecureui.so|3570eaeb47a221e7da111f3c8047df2ecab2b9b2
+vendor/lib/libsecureui_svcsock.so|8fab727ac0ca1bf89486fe349ee112499ae9e883
+vendor/lib/libsi.so|71bb9366e3ab951946dec6febee51c5ccdc082fe
+vendor/lib/libssd.so|1562f16aa832c23bc6e416a5bcaa91bccb948dfd
+vendor/lib/libtzdrmgenprov.so|98c17754db3494562a9edfacc0c374a45382fb44
+vendor/lib/qcdrm/playready/lib/libprdrmdecrypt_customer.so|7084184b1242c44ec7489338327e651e4cf4c60f
+vendor/lib/qcdrm/playready/lib/libtzplayready_customer.so|ff42a2853c385289dae54173e2778e88b05bd86e
+vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmdecrypt_customer.so|08a86c8182428cba87e1f196f07e60f01ffbcc90
+vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmplugin_customer.so|ff03339a289a3ca76f13e0331eccad912a2c96ef
+vendor/lib64/libGPreqcancel.so|19679b918e5dcce54f853b8019806cdb6d2da165
+vendor/lib64/libGPreqcancel_svc.so|a75a32d4cff28841783c0db222c08c618e52625b
+vendor/lib64/libQSEEComAPI.so|6ec762ad6105ca6b8a22f2878a6c8bb6d1bff0b9
+vendor/lib64/libSecureUILib.so|8b77215ac12265599bf50bbcbc0ef0f3e623cfff
+vendor/lib64/libStDrvInt.so|ff4ef2707ca8d219fd52b2ff629ffc62a43e2480
+vendor/lib64/libbase64.so|a52b6bea9a638391a171252dc1d853b53ef88de7
+vendor/lib64/libdrmfs.so|190f2ce59725f045c76ed14886fba8bc6a3a74ab
+vendor/lib64/libdrmtime.so|609c2964cd9d0f17c873ba7ce242752994ba2344
+vendor/lib64/libmm-hdcpmgr.so|f42daaad4741e87db5f4e11633a0b7a8f8eba687
+vendor/lib64/libqisl.so|18c594b80a3eb7e1435985411457ef9fdeae862b
+vendor/lib64/librmp.so|559feca9dda8792b00058cfb91cd59f46c9386b4
+vendor/lib64/librpmb.so|15b5052a97a4952246a9f9d7fce98e1be50f86cc
+vendor/lib64/libsdedrm.so|973dde7d654c4f1ef46844011e6a2de3e6f7ee8c
+vendor/lib64/libsecureui.so|6f8ae781f925b6852ad2d350fc2d362ce80e277b
+vendor/lib64/libsecureui_svcsock.so|faad5dad9fb6a33f1e2a404514c12f86b56cfdf6
+vendor/lib64/libsi.so|81ddaff9e14bec82f959d1534cdd286bad94c4c8
+vendor/lib64/libssd.so|e8a688dac8c3f5d74e18cf81b646de7469201055
+vendor/lib64/libtzdrmgenprov.so|3dc9eb29ca0ec753a6e8b62560d3f46abd75edf2
 
 # DRM (Widevine)
 vendor/bin/hw/android.hardware.drm@1.0-service.widevine
@@ -1126,16 +1125,13 @@ vendor/lib/vendor.qti.hardware.fm@1.0.so|62f2ff5491b5013d9ddf91ced3fde01fd531119
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|2469d0cb6b1c01bcee8f280a113569bd5682bf89
 vendor/lib64/vendor.qti.hardware.fm@1.0.so|061ebea5b94f63fdc25ce67869dde08dbd969cca
 
-# Gatekeeper
-lib/libgatekeeper.so:vendor/lib/libgatekeeper.so
-lib64/android.hardware.gatekeeper@1.0.so:vendor/lib64/android.hardware.gatekeeper@1.0.so
-lib64/libgatekeeper.so:vendor/lib64/libgatekeeper.so
-vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti
+# Gatekeeper - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti|119385ebd0a25b9bf20ce70375a62d806f11d2f1
 vendor/etc/init/android.hardware.gatekeeper@1.0-service-qti.rc
-vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so
-vendor/lib/hw/gatekeeper.sdm660.so
-vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so
-vendor/lib64/hw/gatekeeper.sdm660.so
+vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so|0f3b3809977a7048873b8b47f7533aa0e81491ea
+vendor/lib/hw/gatekeeper.sdm660.so|bb56ae8a8fcc13148d1723044b8c617e6cf0b7ae
+vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|b9afb923665e7714309c2b912e0663cdd781f818
+vendor/lib64/hw/gatekeeper.sdm660.so|e8f32651e4bfff88fcc02c34eca6cd5f04a444aa
 
 # GPS - from nitrogen - PKQ1.181007.001 8.12.6
 etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
@@ -1297,21 +1293,21 @@ vendor/lib64/libtinyxml2_1.so|9d5179eda8ce70b9a4014b144f9d23d33509fddc
 vendor/lib/hw/vulkan.sdm660.so|1426694ac179ddd26d0dadf9cc54305cad0386a4
 vendor/lib64/hw/vulkan.sdm660.so|82b72990a737799894c291f8a3515d7d668a5423
 
-# Keymaster
-vendor/bin/hw/android.hardware.keymaster@3.0-service-qti
+# Keymaster - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+vendor/bin/hw/android.hardware.keymaster@3.0-service-qti|85f2221137d88d2aeefa67d5d92c24defe0ff18d
 vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc
-vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so
-vendor/lib/libkeymasterdeviceutils.so
-vendor/lib/libkeymasterprovision.so
-vendor/lib/libkeymasterutils.so
-vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so
-vendor/lib64/libkeymasterdeviceutils.so
-vendor/lib64/libkeymasterprovision.so
-vendor/lib64/libkeymasterutils.so
+vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so|6ca9ff030680738d0259b5b4f82fe57608d0d515
+vendor/lib/libkeymasterdeviceutils.so|0765fc204e741b0ee6d863e5512b2615f9a43d1c
+vendor/lib/libkeymasterprovision.so|9e18873343a8f9961723921bad1bd94094f63e5f
+vendor/lib/libkeymasterutils.so|d83fbb2aed8f1eb8faefe5f99c71f0f4dd262aa6
+vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so|c894b0847289c15ec2d201c69a66987fab1f8453
+vendor/lib64/libkeymasterdeviceutils.so|ffbf8d30cc4d41b24c2646529992da81cd794b7e
+vendor/lib64/libkeymasterprovision.so|01c113e2ddc4e2e5a2f62544d3f393bc31f15c8e
+vendor/lib64/libkeymasterutils.so|81e2d0e422bc5d6f0dd3f9d4f86ef086f9460205
 
-# Keystore
-vendor/lib/hw/keystore.sdm660.so
-vendor/lib64/hw/keystore.sdm660.so
+# Keystore - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
+vendor/lib/hw/keystore.sdm660.so|990bc5ca05914f3df85320a31b26fae325e174e3
+vendor/lib64/hw/keystore.sdm660.so|ffd01591bd8a864cb2dbc6fd2c01fbd36ae54051
 
 # Listen - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
 lib/liblistenjni.so|d914ac961799957732ac03e7b34cf5eb8a7d7331
