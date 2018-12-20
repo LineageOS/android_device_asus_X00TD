@@ -1322,8 +1322,8 @@
         <boolean name="config_hide_vt_callforward_option" value="true" />
     </carrier_config>
     <carrier_config mcc="466" mnc="92">
-        <boolean name="carrier_volte_available_bool" value="false" />
-        <boolean name="carrier_wfc_ims_available_bool" value="false" />
+        <boolean name="carrier_volte_available_bool" value="true" />
+        <boolean name="carrier_wfc_ims_available_bool" value="true" />
         <int name="carrier_default_wfc_ims_mode_int" value="1" />
         <int name="carrier_default_wfc_ims_roaming_mode_int" value="2" />
         <boolean name="carrier_default_wfc_ims_enabled_bool" value="false" />
