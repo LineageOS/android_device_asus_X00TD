@@ -2,6 +2,7 @@
    Copyright (c) 2015, The Linux Foundation. All rights reserved.
    Copyright (C) 2016 The CyanogenMod Project.
    Copyright (C) 2018 The LineageOS Project
+   Copyright (C) 2018 KudProject Development
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -123,6 +124,8 @@ void vendor_check_variant()
         product_model = "ASUS_X00TDB";
     else if (sys.totalram < 3072ull * 1024 * 1024)
         product_model = "ASUS_X00TDA";
+    else
+        product_model = "ASUS_X00TD";
 
     // Override props based on values set
     property_override_dual("ro.product.device", "ro.vendor.product.device", product_device);
