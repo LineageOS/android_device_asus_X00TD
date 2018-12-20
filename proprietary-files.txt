@@ -1133,10 +1133,10 @@ vendor/lib/hw/gatekeeper.sdm660.so|bb56ae8a8fcc13148d1723044b8c617e6cf0b7ae
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so|b9afb923665e7714309c2b912e0663cdd781f818
 vendor/lib64/hw/gatekeeper.sdm660.so|e8f32651e4bfff88fcc02c34eca6cd5f04a444aa
 
-# GPS - from nitrogen - PKQ1.181007.001 8.12.6
+# GPS - from nitrogen - PKQ1.181007.001 8.12.13
 etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
 etc/permissions/izat.xt.srv.xml|a0f460056f27b5495a4d6e959eecf0e429c42a57
-framework/com.qti.location.sdk.jar|5af50f654d6174a726c0a57b5f32254e1a9d3016
+framework/com.qti.location.sdk.jar|8c4afe6a7c1f44ceb2262e08c60cef343cbbe06b
 framework/izat.xt.srv.jar|b6418394481311aac9e1282ff77d6845c45f99da
 lib/libxt_native.so|4eddcf02573675507c56226527b9c68f89fc0e2f
 lib/vendor.qti.gnss@1.0.so|eddf81581610bdad45674d31e9b88eb8a9d08784
