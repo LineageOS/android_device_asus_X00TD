@@ -34,7 +34,7 @@ vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 
 # Alarm - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
-framework/vendor.qti.hardware.alarm-V1.0-java.jar|7d8b2303fd4fe74b21c458f13d52a38587e4eb50
+framework/vendor.qti.hardware.alarm-V1.0-java.jar|6e85126f9b33915de562e0d7cf8ba32293780319
 -vendor/app/PowerOffAlarm/PowerOffAlarm.apk|c6ac3bd60b196cbc69fd51a532fcbcf2f4521a67
 vendor/bin/hw/vendor.qti.hardware.alarm@1.0-service|1300f2aacbcd159a2587abc1f38031d9c1f1beed
 vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
@@ -957,7 +957,7 @@ vendor/lib64/vendor.qti.hardware.data.latency@1.0_vendor.so
 
 # Display - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
 etc/permissions/com.qti.snapdragon.sdk.display.xml|79a36c560f8cdbfeca03911fefc282bda25b2322
--framework/com.qti.snapdragon.sdk.display.jar|5af50f654d6174a726c0a57b5f32254e1a9d3016
+-framework/com.qti.snapdragon.sdk.display.jar|9cdc5914d59301e6a004d9bc134beb86d85df8c7
 lib/libsdm-disp-apis.so|5c7e946cfa654f533d481970da9b3d2e0c181161
 lib/vendor.display.color@1.0.so|68f3b191767e32ebe6d1e77725d22bfd1152ce14
 lib/vendor.display.color@1.1.so|9fc879923cdf549709fe09913393f4a01af052cb
