@@ -125,6 +125,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	vidc.enc.dcvs.extra-buff-count=2 \
 	vidc.enc.target_support_bframe=1
 
+# Memory optimizations
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.vendor.qti.sys.fw.bservice_enable=true
+
 # Misc
 PRODUCT_PROPERTY_OVERRIDES += \
 	keyguard.no_require_sim=true \
