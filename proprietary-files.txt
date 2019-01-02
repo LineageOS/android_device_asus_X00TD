@@ -59,9 +59,6 @@ vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
 vendor/lib64/libaptX_encoder.so|22f5749edb5099526788c22708099a7791dd837f
 vendor/lib64/libaptXHD_encoder.so|c4ad4d6d7615f7df3ea1a4be5c6dae8a8c8ee8b1
 
-# aptX (UI)
--vendor/app/aptxui/aptxui.apk
-
 # Audio
 vendor/bin/audioflacapp
 vendor/etc/drc/drc_cfg_5.1.txt
@@ -980,9 +977,12 @@ vendor/etc/qdcm_calib_data_nt36672_1080p_video_mode_dsi_panel.xml
 vendor/etc/qdcm_calib_data_nt36672_1080p_video_mode_dsi_txd_panel.xml
 vendor/etc/qdcm_calib_data_td4310_1080p_video_mode_dsi_txd_panel.xml
 
-# Display firmware NVT
+# Display firmware (Novatek)
 vendor/firmware/novatek_ts_fw_dj.bin
 vendor/firmware/novatek_ts_fw_txd.bin
+
+# Display firmware (Synaptics)
+vendor/firmware/startup_fw_update.img
 
 # DPM
 bin/dpmd
@@ -1743,6 +1743,12 @@ vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
 vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so
 
+# Universal Bandwidth Compression (UBWC)
+vendor/lib/libstreamparser.so
+vendor/lib/libUBWC.so
+vendor/lib64/libstreamparser.so
+vendor/lib64/libUBWC.so
+
 # VR
 lib/libvr_amb_engine.so
 lib/libvraudio.so
@@ -1806,24 +1812,3 @@ vendor/lib64/libhdcp1prov.so|25aa30d053c9d520526e15434ce80a2635a8a40c
 vendor/lib64/libhdcp2p2prov.so|de8347cbb242a1e069b42577ce810edad04d2afe
 vendor/lib64/libmmosal_proprietary.so|3e61257e525983a11a6198fac1fdf17afec4823e
 vendor/lib64/libwfdhdcpcp.so|cd7c9b49b094918d202edc50746b266a6761c585
-
-# mmi
-lib/libmmi.so
-lib64/libmmi.so
--vendor/app/Qmmi/Qmmi.apk
--vendor/app/SecProtect/SecProtect.apk
-vendor/bin/mmid
-vendor/bin/nvram_btwifi
-vendor/bin/nvram_country
-vendor/etc/ftm_test_config
-vendor/lib/libmmi_jni.so
-vendor/lib64/libmmi_jni.so
-
-# Unclassified
-vendor/bin/e_loop
-vendor/firmware/mono.cnt
-vendor/firmware/startup_fw_update.img
-vendor/lib/libstreamparser.so
-vendor/lib/libUBWC.so
-vendor/lib64/libstreamparser.so
-vendor/lib64/libUBWC.so
