@@ -1216,17 +1216,17 @@ vendor/lib64/librs_adreno.so|b6bc2274fc4079818f3124a694348a890c5d7b07
 vendor/lib/libqseed3.so|c60e08f5efa1e9aea339a7a5a6dccdc2d107f530
 vendor/lib64/libqseed3.so|f95dd7b55de9401ce2f568e3ec18493daa5a6bfe
 
-# Graphics (SDM) - from D1C - PKQ1.181105.001 00CN_6_120
-vendor/lib/libsdm-color.so|78745aee29ebaf1b29e51a7e4de4a8f6559e155f
-vendor/lib/libsdm-diag.so|e2e3a0fba39190c58bafa0568e8cd51b391b71b6
-vendor/lib/libsdm-disp-vndapis.so|6c4233ea3676643bc9658c25cfad7edd45c49362
-vendor/lib/libsdmextension.so|b7dc9bf5af1f0e528653db6ff055a0050b9ff556
-vendor/lib/libtinyxml2_1.so|3882fddae942997be6ad6af789cf209fa45e61b3
-vendor/lib64/libsdm-color.so|a1af37dd56eea852759efe3aa213df3bd3c00daf
-vendor/lib64/libsdm-diag.so|87a4f764e894f16246c9a0d6e3f5885df76b750b
-vendor/lib64/libsdm-disp-vndapis.so|3ceb59b68f3057f2297af9f4badac07ef1da1008
-vendor/lib64/libsdmextension.so|fd0c55fb27df93a36affccba87843fe50a246719
-vendor/lib64/libtinyxml2_1.so|b225b16e689e7e4c26fc6144637f6b0c416063f8
+# Graphics (SDM) - from LA.UM.7.4.r1-04100-8x98.0
+vendor/lib/libsdm-color.so|8e083bb2a20ecf76bf96e303134cbaa9ce46be81
+vendor/lib/libsdm-diag.so|e0455e9dd0e2378a3f770eb914aa11e612d594eb
+vendor/lib/libsdm-disp-vndapis.so|f81628ddf7fff00f5e316956ed3b50941932c7de
+vendor/lib/libsdmextension.so|3104df6a013e53b972227ed132aa683ec7303746
+vendor/lib/libtinyxml2_1.so|20fea724b7a9f94530833cfdc841049104a0ffa3
+vendor/lib64/libsdm-color.so|1a9b68e5f2f09d37c2fa83907a6a70c7adb081f5
+vendor/lib64/libsdm-diag.so|25bab19a8c4453b3d20e3e1a71a0e8d3675b17b4
+vendor/lib64/libsdm-disp-vndapis.so|8ac59a32a2601a8a4b0d3b097ed02f1279f3c6b7
+vendor/lib64/libsdmextension.so|c4a416cb8c0f5dc87bee8494d70247cf049224b9
+vendor/lib64/libtinyxml2_1.so|9d5179eda8ce70b9a4014b144f9d23d33509fddc
 
 # Graphics (Vulkan) - from nitrogen - PKQ1.181007.001 8.12.13
 vendor/lib/hw/vulkan.sdm660.so|b50effe52bc030cdf5b337d18c4d9a07daf94a45
