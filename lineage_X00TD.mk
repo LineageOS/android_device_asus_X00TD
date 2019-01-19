@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2018 The LineageOS Project
+# Copyright (C) 2018-2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -29,7 +29,6 @@ PRODUCT_BRAND := asus
 PRODUCT_DEVICE := X00TD
 PRODUCT_MANUFACTURER := asus
 PRODUCT_NAME := lineage_X00TD
-PRODUCT_MODEL := Zenfone Max Pro M1
 
 PRODUCT_GMS_CLIENTID_BASE := android-asus
 
@@ -41,3 +40,14 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
 BUILD_FINGERPRINT := Android/sdm660_64/sdm660_64:8.1.0/OPM1/15.2016.1805.318-20180712:user/release-keys
+
+# The following system and vendor props will be set by vendor init
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST := \
+    ro.product.device \
+    ro.product.model \
+    ro.product.name
+
+PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
+    ro.vendor.product.device \
+    ro.vendor.product.model \
+    ro.vendor.product.name
