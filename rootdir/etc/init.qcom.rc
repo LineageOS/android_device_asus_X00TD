@@ -28,8 +28,6 @@
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.msm.usb.configfs.rc
 import /vendor/etc/init/hw/init.target.rc
-import /vendor/etc/init/hw/init.qcom.factory.rc
-import /vendor/etc/init/hw/init.qcom.test.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -453,46 +451,6 @@ on post-fs-data
 
     # Create vpp directory
     mkdir /data/vendor/vpp 0770 media media
-
-    #Create FTM_AP dir for factory test
-    mkdir /data/FTM_AP 0775 system system
-
-    # Huaqin add for ZQL1650-126 CountryCode by yangzhiyuan at 2018/01/23 start
-    #Note: In the post-fs-data phase,init.rc mkdir data/data
-    #      So this must place after that.
-    chmod 0777 /system/bin/PhoneInfoTest
-    symlink /system/bin/PhoneInfoTest /data/data/PhoneInfoTest
-
-    setprop persist.sys.nvinit Ready
-    # Huaqin add for ZQL1650-126 CountryCode by yangzhiyuan at 2018/01/23 end
-
-# Huaqin add for ZQL1650-126 CountryCode by yangzhiyuan at 2018/01/24 start
-# Huaqin add for bt/wifi prop by zhouyingchen at 2018/03/23 start
-# Huaqin add for change class core  by xudayi at 2018/05/28 start
-service nvram_country /vendor/bin/nvram_country
-    class core
-    user root
-    group system
-    chmod 0644 /vendor/bin/nvram_country
-    oneshot
-# Huaqin add for change class core  by xudayi at 2018/05/28 end
-
-service nvram_btwifi /vendor/bin/nvram_btwifi
-    user root
-    group system
-    chmod 0644 /vendor/bin/nvram_btwifi
-    oneshot
-    disabled
-
-on property:sys.boot_completed=1
-start nvram_btwifi
-
-on property:sys.nvram.btmac=*
-    setprop ro.btmac ${sys.nvram.btmac}
-on property:sys.nvram.wifimac=*
-    setprop ro.wifimac ${sys.nvram.wifimac}
-# Huaqin add for bt/wifi prop by zhouyingchen at 2018/03/23 end
-# Huaqin add for ZQL1650-126 CountryCode by yangzhiyuan at 2018/01/24 end
 
 service nqnfcinfo /vendor/bin/nqnfcinfo
     class late_start
@@ -978,12 +936,6 @@ service vendor.wigig_hostapd /vendor/bin/hostapd -dd /data/vendor/wifi/wigig_hos
     group wifi inet keystore net_admin net_raw
     oneshot
     disabled
-
-#Huaqin modify for ZQL1650-6 by chengming at 2018/01/30 start
-#ASUS_BSP++ Write IMEI to device ID
-on property:persist.radio.device.imei=*
-    setprop ro.deviceid ${persist.radio.device.imei}
-#Huaqin modify for ZQL1650-6 by chengming at 2018/01/30 end
 
 service ims_regmanager /vendor/bin/exe-ims-regmanagerprocessnative
     class late_start

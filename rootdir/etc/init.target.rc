@@ -43,10 +43,6 @@ on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     mount_all /vendor/etc/fstab.qcom
-    swapon_all /vendor/etc/fstab.qcom
-#Huaqin modify for ZQL1650-96 by lanshiming at 2018/1/29 start
-    setprop persist.alreadly_boot_resize true
-#Huaqin modify for ZQL1650-96 by lanshiming at 2018/1/29 end
 
     # Keeping following partitions outside fstab file. As user may not have
     # these partition flashed on the device. Failure to mount any partition in fstab file
