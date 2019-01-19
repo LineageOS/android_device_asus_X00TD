@@ -1234,7 +1234,7 @@ vendor/lib64/hw/vulkan.sdm660.so|213678394fd6a3ab464841b54064372d3606df8c
 
 # Keymaster - from nitrogen - PKQ1.181007.001 8.12.13
 vendor/bin/hw/android.hardware.keymaster@3.0-service-qti|85f2221137d88d2aeefa67d5d92c24defe0ff18d
-vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc|573b7392c8997008204081165cfe81a11080745d
+vendor/etc/init/android.hardware.keymaster@3.0-service-qti.rc
 vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so|53b75b28e8417659222ab2227bb5179cbfb013cd
 vendor/lib64/libkeymasterdeviceutils.so|3dfb011da80143a7fd319e375bd17eedf31adee9
 vendor/lib64/libkeymasterprovision.so|fd006b24828bbb914b949a568d36cb0203a165ff
@@ -1693,6 +1693,7 @@ lib/libwfduibcsrc.so|78bc3258deb8f818c3392d5accdf8e7aac729fdc
 lib/libwfduibcsrcinterface.so|3ce31a3bde36bd5c7dac31ccc1fda8043f482f86
 lib64/extractors/libmmparser.so|8b7d40a2b4eb2cfea804972305016bf45f8def44
 lib64/libFileMux.so|c528ef66ce38e8474690b75d6ee1c9380c424be1
+lib64/libmmosal.so|3d50c7ea56db9c3676be9d6e36e1030386ecdb02
 lib64/libmmparser_lite.so|ac1a200c73d45642dbd214c03994d744d1ac8793
 lib64/libwfdclient.so|c69712162493bdaa8833b5aae342ee4f9b0c2408
 lib64/libwfdnative.so|3e14251b63e285ef5106815564613497adb8aeb4
