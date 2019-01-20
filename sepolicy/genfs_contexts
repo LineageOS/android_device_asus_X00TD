@@ -1,1 +1,4 @@
 genfscon debugfs /wlan0/power_stats    u:object_r:debugfs_power_stats:s0
+
+# Touchpanel
+genfscon sysfs /kernel/touchpanel      u:object_r:sysfs_touchpanel:s0
