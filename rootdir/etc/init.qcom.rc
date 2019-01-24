@@ -46,6 +46,9 @@ on init
     chown root system /sys/fs/cgroup/memory/bg/tasks
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
+    # ZRAM setup
+    write /proc/sys/vm/page-cluster 0
+
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
 
