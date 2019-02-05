@@ -1,4 +1,6 @@
 # ADSP
+lib/libsdsprpc_system.so
+lib64/libsdsprpc_system.so
 vendor/bin/adsprpcd
 vendor/lib/libadsp_default_listener.so
 vendor/lib/libadsp_hvx_callback_skel.so
@@ -7,13 +9,16 @@ vendor/lib/libadsprpc.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libmdsprpc.so
+vendor/lib/libsdsprpc.so
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
 vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libfastcvopt.so
 vendor/lib64/libmdsprpc.so
+vendor/lib64/libsdsprpc.so
 
 # ADSP modules
+vendor/etc/scve/facereco/gModel.dat
 vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so
 vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so
 vendor/lib/rfsa/adsp/libFastRPC_AUE_Forward_skel.so
@@ -112,83 +117,13 @@ vendor/lib64/libbt-hidlclient.so|cd3513edb12f5e9ef1825c13a290d42e05b7a69b
 vendor/lib64/libbtnv.so|c0251f0064fc6fff2444760b0723755fc4a51957
 
 # Camera
-lib/libchromaflash.so
-lib/libdualcameraddm.so
-lib/libjni_blurbuster.so
-lib/libjni_chromaflash.so
-lib/libjni_dualcamera.so
-lib/libjni_filtergenerator.so
-lib/libjni_hazebuster.so
-lib/libjni_makeupV2.so
-lib/libjni_optizoom.so
-lib/libjni_panorama.so
-lib/libjni_seestraight.so
-lib/libjni_sharpshooter.so
-lib/libjni_stillmore.so
-lib/libjni_trackingfocus.so
-lib/libjni_trueportrait.so
-lib/libjni_truescanner_v2.so
-lib/libjni_ubifocus.so
-lib/libmmcamera_faceproc2.so
-lib/libmmcamera_faceproc.so
-lib/liboptizoom.so
-lib/libscveBlobDescriptor.so
-lib/libscveBlobDescriptor_stub.so
-lib/libscveCommon.so
-lib/libscveCommon_stub.so
-lib/libscveFaceLandmarks.so
-lib/libscveFaceLandmarks_stub.so
-lib/libscveFaceRecognition.so
-lib/libscveImageCorrection.so
-lib/libscveObjectSegmentation.so
-lib/libscveObjectTracker.so
-lib/libscveObjectTracker_stub.so
-lib/libscvePanorama.so
-lib/libscvePanorama_lite.so
-lib/libseemore.so
-lib/libtrueportrait.so
-lib/libtruescanner.so
-lib/libts_detected_face_jni.so
-lib/libts_face_beautify_hal.so
-lib/libts_face_beautify_jni.so
-lib64/libarcsoft_beautyshot.so
-lib64/libchromaflash.so
-lib64/libdualcameraddm.so
-lib64/libjni_blurbuster.so
-lib64/libjni_chromaflash.so
-lib64/libjni_clearsight.so
-lib64/libjni_dualcamera.so
-lib64/libjni_filtergenerator.so
-lib64/libjni_hazebuster.so
-lib64/libjni_hq_beautyshot.so
-lib64/libjni_imageutil.so
 lib64/libjni_makeupV2.so
 lib64/libjni_optizoom.so
-lib64/libjni_panorama.so
-lib64/libjni_seestraight.so
-lib64/libjni_sharpshooter.so
 lib64/libjni_stillmore.so
-lib64/libjni_trackingfocus.so
 lib64/libjni_trueportrait.so
 lib64/libjni_truescanner_v2.so
 lib64/libjni_ubifocus.so
-lib64/libmmcamera_faceproc2.so
-lib64/libmmcamera_faceproc.so
 lib64/liboptizoom.so
-lib64/libscveBlobDescriptor.so
-lib64/libscveBlobDescriptor_stub.so
-lib64/libscveCommon.so
-lib64/libscveCommon_stub.so
-lib64/libscveFaceLandmarks.so
-lib64/libscveFaceLandmarks_stub.so
-lib64/libscveFaceRecognition.so
-lib64/libscveImageCorrection.so
-lib64/libscveObjectSegmentation.so
-lib64/libscveObjectTracker.so
-lib64/libscveObjectTracker_stub.so
-lib64/libscvePanorama.so
-lib64/libscvePanorama_lite.so
-lib64/libseemore.so
 lib64/libtrueportrait.so
 lib64/libtruescanner.so
 lib64/libts_detected_face_jni.so
@@ -200,8 +135,6 @@ vendor/lib/libarcsoft_arc3dnr_intf.so
 vendor/lib/libarcsoft_arcshdr_intf.so
 vendor/lib/libarcsoft_beautyshot.so
 vendor/lib/libarcsoft_dualcam_refocus.so
-vendor/lib/libarcsoft_hdr.so
-vendor/lib/libarcsoft_night_shot.so
 vendor/lib/libarcsoft_picselfie_algorithm.so
 vendor/lib/libcdsprpc.so
 vendor/lib/libchromaflash.so
@@ -209,7 +142,6 @@ vendor/lib/libdepthmapwrapper.so
 vendor/lib/libdualcameraddm.so
 vendor/lib/libflash_pmic.so
 vendor/lib/libhal_dbg.so
-vendor/lib/libhdr_tm.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
@@ -234,11 +166,9 @@ vendor/lib/libmmcamera_arcsoftbokeh_lib.so
 vendor/lib/libmmcamera_atmel_at24c32e_eeprom.so
 vendor/lib/libmmcamera_bokeh.so
 vendor/lib/libmmcamera_chromaflash_lib.so
-vendor/lib/libmmcamera_csidtg.so
 vendor/lib/libmmcamera_dbg.so
 vendor/lib/libmmcamera_depth_map.so
 vendor/lib/libmmcamera_dummyalgo.so
-vendor/lib/libmmcamera_dw9761b_2d_eeprom.so
 vendor/lib/libmmcamera_eebinparse.so
 vendor/lib/libmmcamera_eeprom_util.so
 vendor/lib/libmmcamera_eztune_module.so
@@ -360,70 +290,18 @@ vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmmqjpegdma.so
 vendor/lib/libmorpho_video_refiner.so
 vendor/lib/libmpbase.so
-vendor/lib/liboptizoom.so
 vendor/lib/libqomx_core.so
 vendor/lib/libqomx_jpegdec.so
 vendor/lib/libqomx_jpegenc.so
 vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libremosaic_daemon.so
-vendor/lib/libscveBlobDescriptor.so
-vendor/lib/libscveBlobDescriptor_stub.so
-vendor/lib/libscveCommon.so
-vendor/lib/libscveCommon_stub.so
-vendor/lib/libscveFaceLandmarks.so
-vendor/lib/libscveFaceLandmarks_stub.so
-vendor/lib/libscveFaceRecognition.so
-vendor/lib/libscveImageCorrection.so
-vendor/lib/libscveObjectSegmentation.so
-vendor/lib/libscveObjectTracker.so
-vendor/lib/libscveObjectTracker_stub.so
-vendor/lib/libscvePanorama.so
-vendor/lib/libscvePanorama_lite.so
-vendor/lib/libseemore.so
 vendor/lib/libts_detected_face_hal.so
 vendor/lib/libts_face_beautify_hal.so
-vendor/lib/libubifocus.so
 vendor/lib/libvideobokeh.so
 vendor/lib/libvideoutils.so
-vendor/lib64/libcdsprpc.so
-vendor/lib64/libchromaflash.so
-vendor/lib64/libdualcameraddm.so
-vendor/lib64/libhdr_tm.so
-vendor/lib64/libmmcamera2_frame_algorithm.so
-vendor/lib64/libmmcamera2_is.so
-vendor/lib64/libmmcamera2_q3a_core.so
-vendor/lib64/libmmcamera2_stats_algorithm.so
-vendor/lib64/libmmcamera2_stats_lib.so
-vendor/lib64/libmmcamera_dbg.so
-vendor/lib64/libmmcamera_faceproc2.so
-vendor/lib64/libmmcamera_faceproc.so
-vendor/lib64/libmmcamera_tintless_algo.so
-vendor/lib64/libmmcamera_tintless_bg_pca_algo.so
-vendor/lib64/liboptizoom.so
-vendor/lib64/libscveBlobDescriptor.so
-vendor/lib64/libscveBlobDescriptor_stub.so
-vendor/lib64/libscveCommon.so
-vendor/lib64/libscveCommon_stub.so
-vendor/lib64/libscveFaceLandmarks.so
-vendor/lib64/libscveFaceLandmarks_stub.so
-vendor/lib64/libscveFaceRecognition.so
-vendor/lib64/libscveImageCorrection.so
-vendor/lib64/libscveObjectSegmentation.so
-vendor/lib64/libscveObjectTracker.so
-vendor/lib64/libscveObjectTracker_stub.so
-vendor/lib64/libscvePanorama.so
-vendor/lib64/libscvePanorama_lite.so
-vendor/lib64/libseemore.so
-vendor/lib64/libts_detected_face_hal.so
-vendor/lib64/libts_face_beautify_hal.so
-vendor/lib64/libubifocus.so
-vendor/lib64/libvideobokeh.so
-vendor/lib64/libvideoutils.so
 
 # Camera configs
 vendor/etc/camera/camera_config.xml
-vendor/etc/camera/csidtg_camera.xml
-vendor/etc/camera/csidtg_chromatix.xml
 vendor/etc/camera/gc5025_ofilm_13m_chromatix.xml
 vendor/etc/camera/gc5025_ofilm_16m_chromatix.xml
 vendor/etc/camera/hi1333_ofilm_13m_chromatix.xml
@@ -444,37 +322,16 @@ vendor/etc/qvr/qvrservice_6dof_config_stereo.xml
 vendor/etc/qvr/qvrservice_config.txt
 
 # Camera actuators
-vendor/lib/libactuator_ad5816g.so
-vendor/lib/libactuator_ad5823.so
-vendor/lib/libactuator_ak7345.so
-vendor/lib/libactuator_ak7371.so
-vendor/lib/libactuator_bu64244gwz.so
 vendor/lib/libactuator_bu64297.so
 vendor/lib/libactuator_dw9714.so
-vendor/lib/libactuator_dw9716.so
-vendor/lib/libactuator_dw9761b.so
-vendor/lib/libactuator_dw9763.so
-vendor/lib/libactuator_dw9763b.so
-vendor/lib/libactuator_dw9790a.so
-vendor/lib/libactuator_dw9800.so
 vendor/lib/libactuator_hi1333_ofilm_dw9714v.so
-vendor/lib/libactuator_lc898212xd.so
-vendor/lib/libactuator_lc898212xd_qc2002.so
-vendor/lib/libactuator_lc898217xc.so
 vendor/lib/libactuator_ov13855_chicony_rear_s2034.so
 vendor/lib/libactuator_ov13855_holitech_fp5510a.so
 vendor/lib/libactuator_ov16880_qtech_rear_dw9714a.so
 vendor/lib/libactuator_ov16885_holitech_16m_fp5510a.so
 vendor/lib/libactuator_ov16885_ofilm_16m_dw9714v.so
-vendor/lib/libactuator_pseudo.so
-vendor/lib/libactuator_rohm_bu64243gwz.so
 
 # Camera chromatix
-vendor/lib/libchromatix_csidtg_common.so
-vendor/lib/libchromatix_csidtg_cpp_preview.so
-vendor/lib/libchromatix_csidtg_postproc.so
-vendor/lib/libchromatix_csidtg_preview.so
-vendor/lib/libchromatix_csidtg_zsl_preview.so
 vendor/lib/libchromatix_gc5025_ofilm_13m_common.so
 vendor/lib/libchromatix_gc5025_ofilm_13m_cpp_ds_chromatix.so
 vendor/lib/libchromatix_gc5025_ofilm_13m_cpp_hfr_60.so
@@ -951,11 +808,6 @@ vendor/bin/hw/vendor.display.color@1.0-service|e6dbb06d0d82ffe3328e7ddd259db02f8
 vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti|cdcfb511a73d3c175c9641a4004bbbbb6bee02f0
 vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
 vendor/etc/init/vendor.qti.hardware.qdutils_disp@1.0-service-qti.rc|69d9cbc54f8ac0a0fb010f92bfa7de5981d643cf
-vendor/lib/vendor.display.color@1.0.so|68f3b191767e32ebe6d1e77725d22bfd1152ce14
-vendor/lib/vendor.display.color@1.1.so|9fc879923cdf549709fe09913393f4a01af052cb
-vendor/lib/vendor.display.color@1.2.so|88782c36567cf84014710e94630c94217f030fd6
-vendor/lib/vendor.display.postproc@1.0.so|fe3bfd38306d1c5e2c1ba900c18ccc09b9152b61
-vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|09fb9cae13bf5edb70aa7568c7bf457db7415dc8
 vendor/lib64/vendor.display.color@1.0.so|ec75654927c63b74c7f8d0760fa463f0e8287f25
 vendor/lib64/vendor.display.color@1.1.so|28dd1ef69ea74f5623746bbac5c483a3f3b46990
 vendor/lib64/vendor.display.color@1.2.so|2c61fe34f1b7548b258812c85920aa82f6b3a8db
@@ -1010,8 +862,6 @@ vendor/bin/qseecomd|cf78dd27e93f4cfd59d95909651d7f719d079181
 vendor/lib/libGPreqcancel.so|6aa135d11f95c183ade364bcd6589b79bb8542de
 vendor/lib/libGPreqcancel_svc.so|81d1a722b68535f5994cc16ecc9c9296a75c5268
 vendor/lib/libQSEEComAPI.so|8ffb4568c78e36639687583c5b8ea5e49a1eb388
-vendor/lib/libSecureUILib.so|1d7630188968fc4082cc2ce7883450b6af5d2961
-vendor/lib/libStDrvInt.so|f03bee73c21cb9f481db3b0728628ff80a202559
 vendor/lib/libbase64.so|b37fc41343b9636460c362f1b05b0e91086f217d
 vendor/lib/libcppf.so|7dfe5e7757808f2b5fd3a230c9546b0a49ffc2e4
 vendor/lib/libdrmfs.so|26520d661e2acb66d25827a07896b9b0a0646a6e
@@ -1021,11 +871,8 @@ vendor/lib/libqisl.so|95eae0c6f27ebf57bffb5470d723d91da9a3d0e6
 vendor/lib/librmp.so|a8333cbe39ffab8b244c58ee512ea189a49e8de1
 vendor/lib/librpmb.so|cbf26dcfceb34a2674a818921f0aeaecbfb0a58d
 vendor/lib/libsdedrm.so|8cb2d9afec44f74c9c8c5feb8e7f7152f17c5059
-vendor/lib/libsecureui.so|3570eaeb47a221e7da111f3c8047df2ecab2b9b2
-vendor/lib/libsecureui_svcsock.so|8fab727ac0ca1bf89486fe349ee112499ae9e883
 vendor/lib/libsi.so|71bb9366e3ab951946dec6febee51c5ccdc082fe
 vendor/lib/libssd.so|1562f16aa832c23bc6e416a5bcaa91bccb948dfd
-vendor/lib/libtzdrmgenprov.so|98c17754db3494562a9edfacc0c374a45382fb44
 vendor/lib/qcdrm/playready/lib/libprdrmdecrypt_customer.so|7084184b1242c44ec7489338327e651e4cf4c60f
 vendor/lib/qcdrm/playready/lib/libtzplayready_customer.so|ff42a2853c385289dae54173e2778e88b05bd86e
 vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmdecrypt_customer.so|08a86c8182428cba87e1f196f07e60f01ffbcc90
@@ -1033,8 +880,6 @@ vendor/lib/qcdrm/playready/lib/mediadrm/libprmediadrmplugin_customer.so|ff03339a
 vendor/lib64/libGPreqcancel.so|19679b918e5dcce54f853b8019806cdb6d2da165
 vendor/lib64/libGPreqcancel_svc.so|a75a32d4cff28841783c0db222c08c618e52625b
 vendor/lib64/libQSEEComAPI.so|6ec762ad6105ca6b8a22f2878a6c8bb6d1bff0b9
-vendor/lib64/libSecureUILib.so|8b77215ac12265599bf50bbcbc0ef0f3e623cfff
-vendor/lib64/libStDrvInt.so|ff4ef2707ca8d219fd52b2ff629ffc62a43e2480
 vendor/lib64/libbase64.so|a52b6bea9a638391a171252dc1d853b53ef88de7
 vendor/lib64/libdrmfs.so|190f2ce59725f045c76ed14886fba8bc6a3a74ab
 vendor/lib64/libdrmtime.so|609c2964cd9d0f17c873ba7ce242752994ba2344
@@ -1043,11 +888,8 @@ vendor/lib64/libqisl.so|18c594b80a3eb7e1435985411457ef9fdeae862b
 vendor/lib64/librmp.so|559feca9dda8792b00058cfb91cd59f46c9386b4
 vendor/lib64/librpmb.so|15b5052a97a4952246a9f9d7fce98e1be50f86cc
 vendor/lib64/libsdedrm.so|973dde7d654c4f1ef46844011e6a2de3e6f7ee8c
-vendor/lib64/libsecureui.so|6f8ae781f925b6852ad2d350fc2d362ce80e277b
-vendor/lib64/libsecureui_svcsock.so|faad5dad9fb6a33f1e2a404514c12f86b56cfdf6
 vendor/lib64/libsi.so|81ddaff9e14bec82f959d1534cdd286bad94c4c8
 vendor/lib64/libssd.so|e8a688dac8c3f5d74e18cf81b646de7469201055
-vendor/lib64/libtzdrmgenprov.so|3dc9eb29ca0ec753a6e8b62560d3f46abd75edf2
 
 # DRM (Widevine)
 vendor/bin/hw/android.hardware.drm@1.0-service.widevine
@@ -1057,13 +899,6 @@ vendor/lib/libwvhidl.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/mediadrm/libwvdrmengine.so
 vendor/lib64/libwvhidl.so
-
-# DSP
-lib/libsdsprpc_system.so
-lib64/libsdsprpc_system.so
-vendor/etc/scve/facereco/gModel.dat
-vendor/lib/libsdsprpc.so
-vendor/lib64/libsdsprpc.so
 
 # ESE-Powermanager - from nitrogen - PKQ1.181007.001 8.12.13
 lib64/vendor.qti.esepowermanager@1.0.so|1662a45073eb48f9682975289ba87e314e6edec8
@@ -1211,6 +1046,10 @@ vendor/lib64/libllvm-qcom.so|4e9dc8128379692407bf730f1b1ebdd3307bd5c0
 vendor/lib64/libpvr.so|a766fdd5757fc0b7df96f7b37a7949881ab75a72
 vendor/lib64/librs_adreno_sha1.so|e746c872c123948f91ea8fe93e39bda5a67cc7a2
 vendor/lib64/librs_adreno.so|b6bc2274fc4079818f3124a694348a890c5d7b07
+
+# Graphics (HDR)
+vendor/lib/libhdr_tm.so
+vendor/lib64/libhdr_tm.so
 
 # Graphics (QSEED3) - from jasmine - PKQ1.180904.001 V10.0.1.0.PDIMIFJ
 vendor/lib/libqseed3.so|c60e08f5efa1e9aea339a7a5a6dccdc2d107f530
@@ -1604,10 +1443,6 @@ vendor/firmware/cppf.b06
 vendor/firmware/cppf.b07
 vendor/firmware/cppf.mdt
 
-# Subsystem restart
-vendor/bin/ssr_diag
-vendor/bin/ssr_setup
-
 # Thermal
 vendor/bin/thermal-engine
 vendor/etc/thermal-engine.conf
@@ -1619,14 +1454,6 @@ vendor/lib64/libthermalioctl.so
 -vendor/app/TimeService/TimeService.apk|78109530538aa8fb533ad288c9d356c57481a10e
 vendor/bin/time_daemon|9fd464e3f356fcd4f4db6a4c9a1383d8210cb67b
 vendor/lib64/libtime_genoff.so|8f4c1f9ace6af463b241b130d6872b5d39cc7b2a
-
-# TUI
-lib/vendor.qti.hardware.tui_comm@1.0.so
-lib64/vendor.qti.hardware.tui_comm@1.0.so
-vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti
-vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc
-vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so
-vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so
 
 # Universal Bandwidth Compression (UBWC)
 vendor/lib/libstreamparser.so
