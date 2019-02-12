@@ -338,20 +338,14 @@ PRODUCT_COPY_FILES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
     init.class_main.sh \
-    init.crda.sh \
-    init.mdm.sh \
-    init.qcom.coex.sh \
-    init.qcom.efs.sync.sh \
     init.qcom.post_boot.sh \
-    init.qcom.sdio.sh \
     init.qcom.sensors.sh \
     init.qcom.sh \
-    init.qcom.syspart_fixup.sh \
     init.qcom.usb.sh \
-    init.qcom.wifi.sh \
-    init.qti.fm.sh \
     init.qti.ims.sh \
     init.qti.qseecomd.sh \
+    move_time_data.sh \
+    move_wifi_data.sh \
     fstab.qcom \
     init.msm.usb.configfs.rc \
     init.qcom.rc \
