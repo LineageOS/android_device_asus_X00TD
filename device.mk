@@ -342,6 +342,7 @@ PRODUCT_COPY_FILES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
+    init.btmac.sh \
     init.class_main.sh \
     init.qcom.post_boot.sh \
     init.qcom.sensors.sh \

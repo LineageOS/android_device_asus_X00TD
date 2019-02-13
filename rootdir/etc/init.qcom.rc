@@ -477,9 +477,17 @@ on property:sys.boot_completed=1
 
 on property:sys.nvram.btmac=*
     setprop ro.btmac ${sys.nvram.btmac}
+    start vendor-btmac-sh
+
 on property:sys.nvram.wifimac=*
     setprop ro.wifimac ${sys.nvram.wifimac}
 # Huaqin add for bt/wifi prop by zhouyingchen at 2018/03/23 end
+
+service vendor-btmac-sh  /vendor/bin/init.btmac.sh
+    class core
+    user root
+    oneshot
+    disabled
 
 service nqnfcinfo /vendor/bin/nqnfcinfo
     class late_start
