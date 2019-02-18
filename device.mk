@@ -344,7 +344,6 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.usb.sh \
     init.qti.ims.sh \
-    init.qti.qseecomd.sh \
     move_time_data.sh \
     move_wifi_data.sh \
     fstab.qcom \
