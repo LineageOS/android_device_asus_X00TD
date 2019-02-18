@@ -299,18 +299,18 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
 
     # Huaqin add for ZQL1650-126 CountryCode by yangzhiyuan at 2018/01/23 start
-    mkdir /persist/flag 0771 system system
-    chown system system /persist/flag
+    mkdir /mnt/vendor/persist/flag 0771 system system
+    chown system system /mnt/vendor/persist/flag
 
-    chown system system /persist/flag/countrycode.txt
-    chmod 0644 /persist/flag/countrycode.txt
-    chown system system /persist/flag/cid.txt
-    chmod 0644 /persist/flag/cid.txt
-    chown system system /persist/flag/colorid.txt
-    chmod 0644 /persist/flag/colorid.txt
+    chown system system /mnt/vendor/persist/flag/countrycode.txt
+    chmod 0644 /mnt/vendor/persist/flag/countrycode.txt
+    chown system system /mnt/vendor/persist/flag/cid.txt
+    chmod 0644 /mnt/vendor/persist/flag/cid.txt
+    chown system system /mnt/vendor/persist/flag/colorid.txt
+    chmod 0644 /mnt/vendor/persist/flag/colorid.txt
     /* Huaqin add for MULTI SIM by jindaolun at 2018/3/1 start*/
-    chown system system /persist/flag/multisim.txt
-    chmod 0644 /persist/flag/multisim.txt
+    chown system system /mnt/vendor/persist/flag/multisim.txt
+    chmod 0644 /mnt/vendor/persist/flag/multisim.txt
     /* Huaqin add for MULTI SIM by jindaolun at 2018/3/1 end*/
 
     # Huaqin add for ZQL1650-126 CountryCode by yangzhiyuan at 2018/01/23 end

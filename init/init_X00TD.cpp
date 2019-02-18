@@ -1,8 +1,8 @@
 /*
    Copyright (c) 2015, The Linux Foundation. All rights reserved.
    Copyright (C) 2016 The CyanogenMod Project.
-   Copyright (C) 2018 The LineageOS Project
-   Copyright (C) 2018 KudProject Development
+   Copyright (C) 2018-2019 The LineageOS Project
+   Copyright (C) 2018-2019 KudProject Development
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -75,7 +75,7 @@ void property_override_triple(char const system_prop[], char const vendor_prop[]
 void vendor_check_variant()
 {
     struct sysinfo sys;
-    char const *region_file = "/persist/flag/countrycode.txt";
+    char const *region_file = "/mnt/vendor/persist/flag/countrycode.txt";
     char const *build_fingerprint, *product_device, *product_model, *product_name;
     std::string region;
 
