@@ -1,0 +1,6 @@
+type init_blutmac, domain;
+type init_blutmac_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(init_blutmac)
+
+set_prop(init_blutmac, vendor_bluetooth_prop)
+allow init_blutmac vendor_toolbox_exec:file execute_no_trans;

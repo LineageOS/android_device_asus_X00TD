@@ -1,0 +1,15 @@
+type nvram_btwifi, domain;
+type nvram_btwifi_exec, exec_type, vendor_file_type, file_type;
+type_transition nvram_btwifi tmpfs: file nvram_btwifi_tmpfs;
+
+allow nvram_btwifi block_device:dir search;
+allow nvram_btwifi diag_device:chr_file rw_file_perms;
+allow nvram_btwifi init:unix_stream_socket connectto;
+allow nvram_btwifi nvram_btwifi_exec:file entrypoint;
+allow nvram_btwifi nvram_btwifi_tmpfs:file rw_file_perms;
+allow nvram_btwifi persist_file:dir create_dir_perms;
+allow nvram_btwifi persist_file:file create_file_perms;
+allow nvram_btwifi property_socket:sock_file write;
+allow nvram_btwifi self:capability dac_override;
+allow nvram_btwifi system_prop:property_service set;
+allow nvram_btwifi vendor_toolbox_exec:file execute_no_trans;

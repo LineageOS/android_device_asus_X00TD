@@ -14,3 +14,7 @@
 # cdfinger Fingerprint
 /dev/fpsdev0                                                            u:object_r:cdfinger_device:s0
 /data/system/cdfinger(/.*)?                                             u:object_r:cdfinger_data_file:s0
+
+# blutmac script
+/(vendor|system/vendor)/bin/init\.btmac\.sh                             u:object_r:init_blutmac_exec:s0
+/(vendor|system/vendor)/bin/nvram_btwifi                                u:object_r:nvram_btwifi_exec:s0
