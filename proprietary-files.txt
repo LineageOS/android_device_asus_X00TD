@@ -1318,7 +1318,6 @@ vendor/firmware/cppf.mdt
 
 # Thermal
 vendor/bin/thermal-engine
-vendor/etc/thermal-engine.conf
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
