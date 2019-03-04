@@ -47,12 +47,8 @@ vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|df138b77fb116a1a786a70c9c76b69d61b5c04d2
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so|5761eae471e8dcd94ce139e831a1aa5b23f133c6
 
-# ANT+ - from lavender - PKQ1.180904.001 V10.2.3.0.PFGCNXM
--lib/libantradio.so|d1f41ee14d4cd7b3a306a628bca5cc9e19027201
-lib64/com.qualcomm.qti.ant@1.0.so|3a19c81d66ef1190d0b2f361420d5cbf707cc600
--lib64/libantradio.so|456b6b2fda1450c852ad0b766143b9cf3c61cde0
-vendor/lib64/com.qualcomm.qti.ant@1.0.so|44294189280e86d95538bc51bdccd87b3f010f27
-vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so|474187a8132aabd45089cacd2f8de9a6d9f449a3
+# ANT+ - from X01BD - PKQ1 16.2017.1901.046
+vendor/lib64/com.qualcomm.qti.ant@1.0.so|3a19c81d66ef1190d0b2f361420d5cbf707cc600
 
 # aptX - from crosshatch - PD1A.180720.030
 lib64/libaptX_encoder.so|0cebad28afcf29f931bdc2d24fce2730dc882ecf
@@ -108,14 +104,14 @@ vendor/etc/acdbdata/MTP/MTP_Speaker_cal.acdb
 vendor/etc/acdbdata/MTP/MTP_workspaceFile.qwsp
 vendor/etc/acdbdata/adsp_avs_config.acdb
 
-# Bluetooth - from lavender - PPR1.180904.001 V10.2.3.0.PFGCNXM
-vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|dff50e256246ab04e01ec5658f94073dddb9fb0c
+# Bluetooth - from X01BD - PKQ1 16.2017.1901.046
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|ddcced51721619952486cadc58c55bf5fc32edf6
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|a979981c55f3dcaf6cf2212e71b901ca4d58b959
-vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so|65044df90882e97700a7fbd3405a2c64423d7f01
-vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|e3aac2202a3242d3f29219df481a34aefd78adc7
-vendor/lib64/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so|eb68ea9f4021cc28d9267dd6c0e10ded248e4a89
-vendor/lib64/libbt-hidlclient.so|cd3513edb12f5e9ef1825c13a290d42e05b7a69b
-vendor/lib64/libbtnv.so|c0251f0064fc6fff2444760b0723755fc4a51957
+vendor/lib64/com.qualcomm.qti.bluetooth_audio@1.0.so|252eff7e0951182503219555301fec31e1f7c066
+vendor/lib64/hw/android.hardware.bluetooth@1.0-impl-qti.so|95abcca7c7a31d679ee8094b1a86cfc898715933
+vendor/lib64/hw/com.qualcomm.qti.bluetooth_audio@1.0-impl.so|303928607282987ba6885e13e0f16df6ab97f550
+vendor/lib64/libbt-hidlclient.so|0b0b69ef9787e3cd5409f0050cad03698dd6ce26
+vendor/lib64/libbtnv.so|6413acce4be4579b9231a51ceee31476ecc0de39
 
 # Camera
 lib64/libjni_makeupV2.so
