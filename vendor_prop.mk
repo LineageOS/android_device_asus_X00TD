@@ -11,10 +11,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.hifi.int_codec=true \
     persist.vendor.audio.ras.enabled=false \
     ro.af.client_heap_size_kbyte=7168 \
+    ro.config.media_vol_default=9 \
     ro.config.media_vol_steps=25 \
     ro.config.vc_call_vol_steps=7 \
     ro.vendor.audio.sdk.fluencetype=fluence  \
     ro.vendor.audio.sdk.ssr=false \
+    vendor.audio.adm.buffering.ms=3 \
     vendor.audio.dolby.ds2.enabled=false \
     vendor.audio.dolby.ds2.hardbypass=false \
     vendor.audio.flac.sw.decoder.24bit=true \
@@ -39,27 +41,35 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     bt.max.hfpclient.connections=1 \
     persist.bt.a2dp.aac_disable=true \
+    persist.bt.enable.multicast=0 \
     persist.bt.hfp.playbackforvr=false \
     persist.bt.hfp.playbackforvoip=false \
     persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac \
-    vendor.qcom.bluetooth.soc=cherokee \
+    persist.vendor.btstack.enable.splita2dp=true \
     ro.bluetooth.emb_wp_mode=true \
-    ro.bluetooth.wipower=true
+    ro.bluetooth.wipower=true \
+    vendor.qcom.bluetooth.soc=cherokee
 
     persist.camera.eis.enable=1 \
     persist.camera.expose.aux=1 \
     persist.camera.preview.ubwc=0 \
     persist.ts.rtmakeup=1 \
+    persist.vendor.camera.expose.aux=1 \
+    persist.vendor.camera.preview.ubwc=0 \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam
 
 # Camera HAL Setup
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.HAL3.enabled=1 \
+    persist.vendor.camera.HAL3.enabled=1 \
     vendor.camera.hal1.packagelist=com.whatsapp,com.facebook.katana,com.instagram.android,com.snapchat.android
 
 # Charging maximum voltage
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.chg.max_volt_mv=9000
+
+# CNE
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.cne.feature=true
 
 # Dalvik overrides
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -109,6 +119,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.asus.led.on=1
 
+# Location
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.location.osnlp.package=com.google.android.gms \
+    ro.location.osnlp.region.package=""
+
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
@@ -137,18 +152,22 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.qcomsysd.enabled=1 \
     ro.additionalbutton.operation=0 \
     ro.am.reschedule_service=true \
-    ro.control_privapp_permissions=log \
-    ro.opa.eligible_device=true \
-    ro.sys.fw.use_trim_settings=true
+    ro.sys.fw.use_trim_settings=true \
+    sys.autosuspend.timeout=500000
 
 # Netflix
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.netflix.bsp_rev=Q660-13149-1
 
+# Netmgr
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.use_data_netmgrd=true \
+    persist.vendor.data.mode=concurrent
+
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.nfc.port=I2C \
-    persist.nfc.smartcard.config=SIM1
+    ro.hardware.nfc_nci=pn8x \
+    ro.nfc.port=I2C
 
 # NTP Server
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -156,7 +175,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # QCOM cabl
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qualcomm.cabl=2
+    ro.vendor.display.cabl=2
 
 # QTI
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -170,12 +189,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     DEVICE_PROVISIONED=1 \
     persist.data.iwlan.enable=true \
-    persist.radio.atfwd.start=true \
     persist.radio.multisim.config=dsds \
-    persist.radio.schd.cache=3500 \
     persist.radio.VT_CAM_INTERFACE=1 \
     persist.radio.VT_CAM_INTERFACE=2 \
     persist.vendor.radio.apm_sim_not_pwdn=1 \
+    persist.vendor.radio.atfwd.start=true \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
@@ -185,19 +203,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.carrier=unknown \
     ro.com.android.dataroaming=false \
     ro.config.vc_call_vol_steps=11 \
+    ro.ril.ecclist=112,911 \
     ro.telephony.default_network=20,20 \
     telephony.lteOnCdmaDevice=1
 
+# Rescue Mode
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.enable_rescue=false \
+    persist.sys.disable_rescue=true
+
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.rmnet.data.enable=true\
-    persist.data.wda.enable=true \
-    persist.data.df.dl_mode=5 \
-    persist.data.df.ul_mode=5 \
-    persist.data.df.agg.dl_pkt=10 \
-    persist.data.df.agg.dl_size=4096 \
-    persist.data.df.mux_count=8 \
-    persist.data.df.iwlan_mux=9 \
     persist.data.df.dev_name=rmnet_usb0
     persist.vendor.radio.add_power_save=1
 
@@ -213,16 +229,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Skip Validate Disable
 PRODUCT_PROPERTY_OVERRIDES += \
+    sdm.debug.disable_skip_validate=1 \
     vendor.display.disable_skip_validate=1
 
 # Shutdown
 PRODUCT_PROPERTY_OVERRIDES += \
-    sys.vendor.shutdown.waittime=500 \
-    ro.build.shutdown_timeout=0 \
+    sys.vendor.shutdown.waittime=500
 
 # System prop for UBWC
 PRODUCT_PROPERTY_OVERRIDES += \
-    video.disable.ubwc=1
+    vendor.video.disable.ubwc=1
 
 # Tap to Wake
 PRODUCT_PROPERTY_OVERRIDES += \
