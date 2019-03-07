@@ -33,9 +33,9 @@ logi ()
 }
 
 unset BLUTMAC
-BLUTMAC=`getprop ro.btmac`
+BLUTMAC=`getprop sys.nvram.btmac`
 if [ -z "$BLUTMAC" ]; then
-      logi "ro.btmac empty"
+      logi "sys.nvram.btmac empty"
 else
       # convert to mac from nvram_btwifi to proper format
       final_blutmac=`echo $BLUTMAC | sed 's!^M$!!;s!\-!!g;s!\.!!g;s!\(..\)!\1:!g;s!:$!!'`
