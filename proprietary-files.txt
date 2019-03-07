@@ -1245,12 +1245,14 @@ framework/embmslibrary.jar|980832af89ed59120b7362ddb56d3120bb6b2239
 -framework/qcrilhook.jar|8d4bb52f92bbe963aefdf3b2b36a852f5d8f88ac
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|a65f8a8470f0114e7f0920b045b9c63f90a17113
 vendor/bin/ATFWD-daemon|17636bc52a2e79772d3aab4b4ffc0171796919f1
+vendor/bin/hw/qcrild
 vendor/bin/netmgrd|aaedfe9b9ad6ee9c66722dca7e1fe2d6d8a21748
 vendor/bin/qti|fd63a470a212695e75ba6b495c18127bda412107
 vendor/bin/rmt_storage|15368ff07a011b685c150bc2a7f8865ce33b8bc9
 vendor/bin/tftp_server|55034bc977f8803c5a50132be8e39c9e72548727
 vendor/etc/data/dsi_config.xml|f4861831fcb21d43e2a9ca12519155ebb8ac1407
 vendor/etc/data/netmgr_config.xml|f17d2ec5e1da2e3b0266004c9e22dbbad8294c9a
+vendor/etc/init/qcrild.rc
 vendor/lib/libmdmdetect.so|23b7494fe9bf09bb6a93908fbb46485f4a1a24c2
 vendor/lib64/libSubSystemShutdown.so|e09acae9acc05d11db34f479f7f4000275309007
 vendor/lib64/lib_remote_simlock.so|ca65b2ff9c8d02c8fdbc1ee8363fbc6eec677928
@@ -1273,6 +1275,7 @@ vendor/lib64/librilqmiservices.so|067d82b85689425bc6f0b7a2ccb949ca8ebf307e
 vendor/lib64/libsettings.so|58e95c8fd2cb1a51ecfa2ca6b4f0914cc1f21beb
 vendor/lib64/libsubsystem_control.so|92d56bfee542f5b574d5a9a977e453a822e4e33f
 vendor/lib64/libsystem_health_mon.so|fd597aeb064f42f212ecda0b2449c60682f1e826
+vendor/lib64/qcrild_librilutils.so
 vendor/lib64/vendor.qti.hardware.radio.am@1.0.so|ef6d56f7aa6ff13866ccb0c31c8ef96de503c17c
 vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so|8ad1c06563a4e5cd57eec16ade2509e9647fc8fb
 vendor/lib64/vendor.qti.hardware.radio.lpa@1.0.so|52abf00004868bb1c2f149a7ea2b7bbc8fc399d7
