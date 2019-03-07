@@ -2,6 +2,27 @@
  *  Copyright (C) 2016-2017, The Linux Foundation. All rights reserved.
  *
  *  Not a Contribution
+ *  Redistribution and use in source and binary forms, with or without
+ *  modification, are permitted (subject to the limitations in the
+ *  disclaimer below) provided that the following conditions are met:
+
+     * Redistributions of source code must retain the above copyright
+       notice, this list of conditions and the following disclaimer.
+
+     * Redistributions in binary form must reproduce the above
+       copyright notice, this list of conditions and the following
+       disclaimer in the documentation and/or other materials provided
+       with the distribution.
+
+     * Neither the name of The Linux Foundation nor the names of its
+       contributors may be used to endorse or promote products derived
+       from this software without specific prior written permission.
+
+ *  NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE
+ *  GRANTED BY THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT
+ *  HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+ *  WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+ *  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
  *****************************************************************************/
 /*****************************************************************************
  *  Copyright (C) 2009-2012 Broadcom Corporation
@@ -35,6 +56,8 @@
 ******************************************************************************/
 #define BT_AUDIO_HARDWARE_INTERFACE "libbthost"
 
+#define MAX_LEVELS 5
+
 typedef enum {
     A2DP_CTRL_CMD_NONE,
     A2DP_CTRL_CMD_CHECK_READY,
@@ -55,6 +78,7 @@ typedef enum {
     A2DP_CTRL_ACK_UNSUPPORTED,
     A2DP_CTRL_ACK_PENDING,
     A2DP_CTRL_ACK_DISCONNECT_IN_PROGRESS,
+    A2DP_CTRL_ACK_PREVIOUS_COMMAND_PENDING,
     A2DP_CTRL_SKT_DISCONNECTED,
     A2DP_CTRL_ACK_UNKNOWN,
 } tA2DP_CTRL_ACK;
@@ -75,7 +99,7 @@ typedef enum {
     A2DP_CTRL_GET_CONNECTION_STATUS,
 } tA2DP_CTRL_EXT_CMD;
 
-#define  MAX_CODEC_CFG_SIZE  30
+#define  MAX_CODEC_CFG_SIZE  34
 struct a2dp_config {
     uint32_t                rate;
     uint32_t                channel_flags;
@@ -98,8 +122,12 @@ struct a2dp_stream_common {
 /*
 codec specific definitions
 */
+#define AUDIO_CODEC_TYPE_CELT         603979776u // 0x24000000UL
+#define ENC_CODEC_TYPE_APTX_DUAL_MONO 570425344u // 0x22000000UL
+#define ENC_CODEC_TYPE_APTX_ADAPTIVE 620756992u // 0x25000000UL
 #define CODEC_TYPE_SBC 0x00
 #define CODEC_TYPE_AAC 0x02
+#define CODEC_TYPE_CELT 0xEF
 #define NON_A2DP_CODEC_TYPE 0xFF
 #define CODEC_OFFSET 3
 #define VENDOR_ID_OFFSET 4
@@ -112,6 +140,9 @@ codec specific definitions
 #ifndef VENDOR_APTX_HD
 #define VENDOR_APTX_HD 0xD7
 #endif
+#ifndef VENDOR_APTX_ADAPTIVE
+#define VENDOR_APTX_ADAPTIVE 0xD7
+#endif
 #ifndef VENDOR_APTX_LL
 #define VENDOR_APTX_LL 0x0A
 #endif
@@ -121,6 +152,21 @@ codec specific definitions
 #ifndef APTX_HD_CODEC_ID
 #define APTX_HD_CODEC_ID 0x24
 #endif
+#ifndef APTX_ADAPTIVE_CODEC_ID
+#define APTX_ADAPTIVE_CODEC_ID 0xAD
+#endif
+#ifndef APTX_TWS_CODEC_ID
+#define APTX_TWS_CODEC_ID 0x25
+#endif
+
+#ifndef VENDOR_LDAC
+#define VENDOR_LDAC 0x12D
+#endif
+#ifndef LDAC_CODEC_ID
+#define LDAC_CODEC_ID 0xAA
+#endif
+
+#define DEFAULT_MTU_SIZE 663
 
 #define A2D_SBC_FREQ_MASK 0xF0
 #define A2D_SBC_CHN_MASK  0x0F
@@ -151,6 +197,35 @@ codec specific definitions
 #define A2D_APTX_CHAN_MASK       0x0F
 #define A2D_APTX_CHAN_STEREO     0x02
 #define A2D_APTX_CHAN_MONO       0x01
+#define A2D_APTX_TWS_CHAN_MODE   0x08
+
+/* APTX Adaptive bitmask helper */
+#define A2D_APTX_ADAPTIVE_SAMP_FREQ_MASK           (0xF8)
+#define A2D_APTX_ADAPTIVE_CHAN_MASK                (0x1F)
+#define A2DP_APTX_ADAPTIVE_SAMPLERATE_44100        (0x08)
+#define A2DP_APTX_ADAPTIVE_SAMPLERATE_48000        (0x10)
+#define A2DP_APTX_ADAPTIVE_SAMPLERATE_88000        (0x20)
+#define A2DP_APTX_ADAPTIVE_SAMPLERATE_192000       (0x40)
+#define A2DP_APTX_ADAPTIVE_CHANNELS_MONO          (0x01)
+#define A2DP_APTX_ADAPTIVE_CHANNELS_STEREO        (0x02)
+#define A2DP_APTX_ADAPTIVE_CHANNELS_TWS_STEREO    (0x04)
+#define A2DP_APTX_ADAPTIVE_CHANNELS_JOINT_STEREO  (0x08)
+#define A2DP_APTX_ADAPTIVE_CHANNELS_TWS_MONO      (0x10)
+
+
+/* LDAC bitmask helper */
+#define A2D_LDAC_SAMP_FREQ_MASK  0x3F
+#define A2D_LDAC_SAMP_FREQ_44    0x20
+#define A2D_LDAC_SAMP_FREQ_48    0x10
+#define A2D_LDAC_SAMP_FREQ_88    0x08
+#define A2D_LDAC_SAMP_FREQ_96    0x04
+#define A2D_LDAC_SAMP_FREQ_176   0x02
+#define A2D_LDAC_SAMP_FREQ_192   0x01
+
+#define A2D_LDAC_CHAN_MASK       0x07
+#define A2D_LDAC_CHAN_STEREO     0x01
+#define A2D_LDAC_CHAN_MONO       0x04
+#define A2D_LDAC_CHAN_DUAL       0x02
 
 
 #define A2D_AAC_IE_OBJ_TYPE_MSK                0xF0    /* b7-b4 Object Type */
@@ -168,6 +243,32 @@ codec specific definitions
 
 #define A2DP_DEFAULT_SINK_LATENCY 0
 
+
+// CELT Codec config in order.
+// 7-4 bits of first byte of codec_info element
+#define A2D_CELT_SAMP_FREQ_MASK    0xF0
+#define A2D_CELT_SAMP_FREQ_48      0x10
+#define A2D_CELT_SAMP_FREQ_44      0x20
+#define A2D_CELT_SAMP_FREQ_32      0x40
+// 0-3 bits of first byte of codec_info element
+#define A2D_CELT_CHANNEL_MASK      0x0F
+#define A2D_CELT_CH_MONO           0x01
+#define A2D_CELT_CH_STEREO         0x02
+// 7-4 bits of second byte: frame size
+#define A2D_CELT_FRAME_SIZE_MASK   0xF0
+#define A2D_CELT_FRAME_SIZE_64     0x10
+#define A2D_CELT_FRAME_SIZE_128    0x20
+#define A2D_CELT_FRAME_SIZE_256    0x40
+#define A2D_CELT_FRAME_SIZE_512    0x80
+//0-3 bits of second byte: actual value of complexity
+#define A2D_CELT_COMPLEXITY_MASK   0x0F
+// 7-4 bits of third byte: prediction mode
+#define A2D_CELT_PREDICTION_MODE_MASK   0xF0
+// 0th bit of third byte: vbr flag
+#define A2D_CELT_VBR_MASK         0x01
+
+// next 2 bytes is actual frame size
+// next 1 bytes is actual complexity
 typedef struct {
     uint32_t subband;    /* 4, 8 */
     uint32_t blk_len;    /* 4, 8, 12, 16 */
@@ -177,6 +278,7 @@ typedef struct {
     uint8_t  min_bitpool;   /* 2 */
     uint8_t  max_bitpool;   /*53(44.1khz),51 (48khz) */
     uint32_t bitrate;      /* 320kbps to 512kbps */
+    uint32_t bits_per_sample;
 } audio_sbc_encoder_config_t;
 
 
@@ -188,8 +290,67 @@ typedef struct {
     uint16_t sampling_rate;
     uint8_t  channels;
     uint32_t bitrate;
+    uint32_t bits_per_sample;
 } audio_aptx_encoder_config_t;
 
+/* Information about BT APTX Adaptive encoder
+ * configuration. This data is used between audio HAL
+ * module and BT IPC library to configure DSP encoder
+ */
+
+typedef struct {
+    uint8_t sampling_rate;
+    uint8_t  channel_mode;
+    uint16_t mtu;
+    uint8_t min_sink_buffering_LL;
+    uint8_t max_sink_buffering_LL;
+    uint8_t min_sink_buffering_HQ;
+    uint8_t max_sink_buffering_HQ;
+    uint8_t min_sink_buffering_TWS;
+    uint8_t max_sink_buffering_TWS;
+    uint8_t TTP_LL_low;
+    uint8_t TTP_LL_high;
+    uint8_t TTP_HQ_low;
+    uint8_t TTP_HQ_high;
+    uint8_t TTP_TWS_low;
+    uint8_t TTP_TWS_high;
+    uint32_t bits_per_sample;
+    uint16_t aptx_mode;
+} audio_aptx_adaptive_encoder_config_t;
+
+struct bit_rate_level_map_t {
+    uint32_t link_quality_level;
+    uint32_t bitrate;
+};
+
+struct quality_level_to_bitrate_info {
+    uint32_t num_levels;
+    struct bit_rate_level_map_t bit_rate_level_map[MAX_LEVELS];
+};
+/* Information about BT APTX encoder configuration
+ * This data is used between audio HAL module and
+ * BT IPC library to configure DSP encoder
+ */
+typedef struct {
+    uint16_t sampling_rate;
+    uint8_t  channels;
+    uint32_t bitrate;
+    uint8_t sync_mode;
+} audio_aptx_tws_encoder_config_t;
+
+/* Information about BT LDAC encoder configuration
+ * This data is used between audio HAL module and
+ * BT IPC library to configure DSP encoder
+ */
+typedef struct {
+    uint32_t sampling_rate;
+    uint32_t bitrate;
+    uint16_t channel_mode;
+    uint16_t mtu;
+    bool is_abr_enabled;
+    struct quality_level_to_bitrate_info level_to_bitrate_map;
+    uint32_t bits_per_sample;
+} audio_ldac_encoder_config_t;
 
 /* Information about BT AAC encoder configuration
  * This data is used between audio HAL module and
@@ -201,7 +362,18 @@ typedef struct {
     uint16_t channels; /* 1-Mono, 2-Stereo */
     uint32_t sampling_rate;
     uint32_t bitrate;
+    uint32_t bits_per_sample;
 } audio_aac_encoder_config_t;
+
+typedef struct {
+    uint32_t sampling_rate; /* 32000 - 48000, 48000 */
+    uint16_t channels; /* 1-Mono, 2-Stereo, 2*/
+    uint16_t frame_size; /* 64-128-256-512, 512 */
+    uint16_t complexity; /* 0-10, 1 */
+    uint16_t prediction_mode; /* 0-1-2, 0 */
+    uint16_t vbr_flag; /* 0-1, 0*/
+    uint32_t bitrate; /*32000 - 1536000, 139500*/
+} audio_celt_encoder_config_t;
 
 //HIDL callbacks to invoke callback to BT stack
 typedef void (*bt_ipc_start_stream_req_cb)(void);
@@ -213,6 +385,7 @@ typedef void (*bt_ipc_get_multicast_status_cb)(void);
 typedef void (*bt_ipc_get_connected_devices_cb)(void);
 typedef void (*bt_ipc_get_connection_status_cb)(void);
 typedef void (*bt_ipc_get_sink_latency_cb)(void);
+
 typedef struct {
  bt_ipc_start_stream_req_cb start_req_cb;
  bt_ipc_suspend_stream_req_cb suspend_req_cb;
@@ -236,6 +409,7 @@ void bt_stack_on_get_num_connected_devices(uint8_t num);
 void bt_stack_on_get_connection_status(tA2DP_CTRL_ACK status);
 void bt_stack_on_check_a2dp_ready(tA2DP_CTRL_ACK status);
 void bt_stack_on_get_sink_latency(uint16_t latency);
+
 int audio_stream_open(void);
 int audio_stream_close(void);
 int audio_start_stream(void);
@@ -247,6 +421,7 @@ void clear_a2dpsuspend_flag(void);
 void* audio_get_next_codec_config(uint8_t idx, audio_format_t *codec_type);
 int audio_check_a2dp_ready(void);
 uint16_t audio_get_a2dp_sink_latency();
+bool audio_is_scrambling_enabled(void);
 int wait_for_stack_response(uint8_t duration);
 #endif
 
