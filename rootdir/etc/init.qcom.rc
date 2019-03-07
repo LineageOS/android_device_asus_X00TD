@@ -465,6 +465,22 @@ on post-fs-data
     #Start move time data to /data/vendor once post-fs-data done
     start vendor.move_time_data
 
+# Huaqin add for bt/wifi prop by zhouyingchen at 2018/03/23 start
+service nvram_btwifi /vendor/bin/nvram_btwifi
+    user root
+    group system
+    oneshot
+    disabled
+
+on property:sys.boot_completed=1
+    start nvram_btwifi
+
+on property:sys.nvram.btmac=*
+    setprop ro.btmac ${sys.nvram.btmac}
+on property:sys.nvram.wifimac=*
+    setprop ro.wifimac ${sys.nvram.wifimac}
+# Huaqin add for bt/wifi prop by zhouyingchen at 2018/03/23 end
+
 service nqnfcinfo /vendor/bin/nqnfcinfo
     class late_start
     group nfc

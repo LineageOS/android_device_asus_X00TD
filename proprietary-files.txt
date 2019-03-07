@@ -1056,6 +1056,10 @@ vendor/lib/libvqzip.so
 # NFC
 vendor/firmware/libpn553_fw.so:vendor/lib/libpn553_fw.so
 
+# NVRAM
+bin/nvram_btwifi:vendor/bin/nvram_btwifi
+lib64/libmmi.so:vendor/lib64/libmmi.so
+
 # Perf
 -app/Perfdump/Perfdump.apk
 lib/libqti-at.so
