@@ -34,29 +34,3 @@ key 766   CAMERA
 key 746   SAR_SENSOR_IN
 key 747   SAR_SENSOR_OUT
 # Huaqin add for ZQL1650 by fangxianpeng at 2018/03/08 end
-
-#Huaqin add for 1161528 by chenlingyu at 2017.3.1 start
-key 603   SYSTEM_NAVIGATION_UP
-key 602   SYSTEM_NAVIGATION_DOWN
-key 600   SYSTEM_NAVIGATION_LEFT
-key 601   SYSTEM_NAVIGATION_RIGHT
-#Huaqin add for ZQL1650-250 by chenlingyu at 2017.3.1 end
-
-# Huaqin add for ZQL1650 by fangxianpeng at 2018/03/08 start
-key 746   SAR_SENSOR_IN
-key 747   SAR_SENSOR_OUT
-# Huaqin add for ZQL1650 by fangxianpeng at 2018/03/08 end
-
-# Huaqin add for TT1176710 by liunianliang at 2018/03/30 start
-key 748   GESTURE_W
-key 749   GESTURE_E
-key 750   GESTURE_S
-key 751   GESTURE_Z
-key 752   GESTURE_C
-key 753   GESTURE_V
-# Huaqin add for TT1176710 by liunianliang at 2018/03/30 end
-
-# Huaqin modify for ZQL1650-420 by chengming at 2018/03/07 start
-key 758   GESTURE_SWIPE_UP
-key 759   GESTURE_DOUBLE_CLICK
-# Huaqin modify for ZQL1650-420 by chengming at 2018/03/07 end

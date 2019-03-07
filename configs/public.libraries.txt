@@ -2,6 +2,5 @@ libqti-perfd-client.so
 libadsprpc.so
 libcdsprpc.so
 libsdsprpc.so
-libqvrservice_client.so
-libvraudio_client.so
+libfastcvopt.so
 libOpenCL.so
