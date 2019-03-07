@@ -310,3 +310,12 @@ on boot
     chmod 0666 /dev/nq-nci
     chown system system /dev/nq-nci
 #Huaqin porting nfc for ZQL1650-1157 by daiweiwei at 2018/4/17 end
+
+# Huaqin add for ZQL1820-84 by liunianliang at 2018/07/16 start
+# for reduce power consumption.
+on property:sys.boot_completed=1
+    write /sys/class/gpio/export 12
+    write /sys/class/gpio/gpio12/direction out
+    write /sys/class/gpio/gpio12/value 0
+    write /sys/class/gpio/unexport 12
+# Huaqin add for ZQL1820-84 by liunianliang at 2018/07/16 end

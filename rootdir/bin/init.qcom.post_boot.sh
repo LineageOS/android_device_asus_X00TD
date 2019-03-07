@@ -372,6 +372,11 @@ else
 
             vmpres_file_min=$((minfree_5 + (minfree_5 - rem_minfree_4)))
             echo $vmpres_file_min > /sys/module/lowmemorykiller/parameters/vmpressure_file_min
+			if [ $MemTotal -gt 2097152 ]; then
+		    # Huaqin add for ZQL1820-699 by shengzhong at 2018/09/19 start
+		    echo "48432,63040,70648,95256,130296,145640" > /sys/module/lowmemorykiller/parameters/minfree
+		    # Huaqin add for ZQL1820-699 by shengzhong at 2018/09/19 end
+			fi
         else
             # Set LMK series, vmpressure_file_min for 32 bit non-go targets.
             # Disable Core Control, enable KLMK for non-go 8909.
@@ -2410,7 +2415,9 @@ case "$target" in
             echo 90 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load
             echo 20000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate
             echo 1401600 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq
-            echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
+            #huaqin add for improve random i/o by xudongfang at 2018/10/25 start
+            echo 1 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy
+            #huaqin add for improve random i/o by xudongfang at 2018/10/25 end
             echo "85 1747200:95" > /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads
             echo 39000 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time
             echo 0 > /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis
@@ -2427,7 +2434,9 @@ case "$target" in
             echo 90 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load
             echo 20000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate
             echo 1401600 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq
-            echo 0 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy
+            #huaqin add for improve random i/o by xudongfang at 2018/10/25 start
+            echo 1 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy
+            #huaqin add for improve random i/o by xudongfang at 2018/10/25 end
             echo "85 1401600:90 2150400:95" > /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads
             echo 39000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time
             echo 59000 > /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis

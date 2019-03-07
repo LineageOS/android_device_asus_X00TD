@@ -165,8 +165,11 @@ on boot
 
     setprop ro.telephony.call_ring.multiple false
 
-    #enable camera read sensors data
-    setprop persist.camera.gyro.disable 0
+    # Huaqin add for 1261108 by huqian at 2018/11/29 start
+    # Huaqin add for ZQL1820P1-27 by huqian at 2018/11/12 start
+    setprop persist.vendor.camera.gyro.disable 0
+    # Huaqin add for ZQL1820P1-27 by huqian at 2018/11/12 end
+    # Huaqin add for 1261108 by huqian at 2018/11/29 end
 
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
@@ -202,15 +205,16 @@ on boot
     # an ack packet comes out of order
     write /proc/sys/net/netfilter/nf_conntrack_tcp_be_liberal 1
 
-    #[ZQL1650-264] add by suochuanqi for ModemSlientReset start
-    write /sys/bus/msm_subsys/devices/subsys3/restart_level related
-    #[ZQL1650-264] add by suochuanqi for ModemSlientReset end
+    #Huaqin modify for TT1244863 by suochuanqi on 2018/10/09 start
+    write /sys/bus/msm_subsys/devices/subsys4/restart_level related
+    #Huaqin modify for TT1244863 by suochuanqi on 2018/10/09 end
     # Set the console loglevel to < KERN_INFO
     # Set the default message loglevel to KERN_INFO
     write /proc/sys/kernel/printk "6 6 1 7"
-    #[1226433] add by fangzheng for TCP start
-    write /proc/sys/net/ipv4/tcp_mtu_probing 1
-    #[1226433] add by fangzheng for TCP end
+
+    #Huaqin modify for 1650P 1285483 by guanyebin on 2019/2/25 start
+    write /proc/sys/net/ipv4/tcp_mtu_probing 2
+    #Huaqin modify for 1650P 1285483 by guanyebin on 2019/2/25 end
 
     # Allow access for CCID command/response timeout configuration
     chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
