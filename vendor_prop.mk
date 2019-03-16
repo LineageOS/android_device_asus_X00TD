@@ -207,11 +207,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.default_network=20,20 \
     telephony.lteOnCdmaDevice=1
 
-# Rescue Mode
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.enable_rescue=false \
-    persist.sys.disable_rescue=true
-
 # RmNet Data
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.dev_name=rmnet_usb0
