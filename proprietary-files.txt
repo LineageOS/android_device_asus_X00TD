@@ -945,67 +945,65 @@ vendor/firmware/a512_zap.mdt
 vendor/firmware/a530_pfp.fw
 vendor/firmware/a530_pm4.fw
 
-# Graphics (Adreno)
-vendor/lib/egl/eglSubDriverAndroid.so
-vendor/lib/egl/libEGL_adreno.so
+# Graphics (Adreno) - from chiron - PKQ1.190118.001 9.3.21
+vendor/lib/egl/eglSubDriverAndroid.so|2dc3ea90fd0e6c7ad1864a23cf736eedcfa4c985
+vendor/lib/egl/libEGL_adreno.so|adfa25a02996babb29fe6752ef01a25d9482f7d8
 vendor/lib/egl/libGLESv1_CM_adreno.so
-vendor/lib/egl/libGLESv2_adreno.so
+vendor/lib/egl/libGLESv2_adreno.so|5389e32a9ae4ba44a065f040918f0cd92d07d62a
 vendor/lib/egl/libQTapGLES.so
 vendor/lib/egl/libq3dtools_adreno.so
 vendor/lib/egl/libq3dtools_esx.so
 vendor/lib/libC2D2.so
-vendor/lib/libCB.so
+vendor/lib/libCB.so|322d998e2f84b50b0ee1c1d94b878dd5462844df
 vendor/lib/libOpenCL.so
-vendor/lib/libRSDriver_adreno.so
-vendor/lib/libadreno_utils.so
+vendor/lib/libRSDriver_adreno.so|fcffcda22b58c3d4386c8bd516058867b15106f1
+vendor/lib/libadreno_utils.so|9930d4a99e10bdc821e3609695100248d36b3913
 vendor/lib/libbccQTI.so
 vendor/lib/libc2d30_bltlib.so
 vendor/lib/libgsl.so
-vendor/lib/libllvm-glnext.so
-vendor/lib/libllvm-qcom.so
-vendor/lib/libpvr.so
-vendor/lib/librs_adreno_sha1.so
-vendor/lib/librs_adreno.so
-vendor/lib64/egl/eglSubDriverAndroid.so
-vendor/lib64/egl/libEGL_adreno.so
+vendor/lib/libllvm-glnext.so|e146ac9ad1704a1a8fca08691d07de0581d04c65
+vendor/lib/libllvm-qcom.so|155abdaf29390e44b5d363c74ab47f6fb8109d23
+vendor/lib/libpvr.so|d73e0721160cc6e97d4abe268f7e346bed038b16
+vendor/lib/librs_adreno_sha1.so|722fc73504df7cb5433075eb40ae3d96d2db2d2d
+vendor/lib/librs_adreno.so|a55840ae19e21c81948e2cba576bbd58a1ca836e
+vendor/lib64/egl/eglSubDriverAndroid.so|2f3edc8062166bc55cdfbc27fc2e5dc0dd3c5cbc
+vendor/lib64/egl/libEGL_adreno.so|62929bf23ecea823418910defed80bad5fc3416c
 vendor/lib64/egl/libGLESv1_CM_adreno.so
-vendor/lib64/egl/libGLESv2_adreno.so
+vendor/lib64/egl/libGLESv2_adreno.so|eac7d67b9b2c0155a2e9c0d36afc8cde1c496463
 vendor/lib64/egl/libQTapGLES.so
 vendor/lib64/egl/libq3dtools_adreno.so
 vendor/lib64/egl/libq3dtools_esx.so
 vendor/lib64/libC2D2.so
-vendor/lib64/libCB.so
+vendor/lib64/libCB.so|0ba6fafb7cc62c08b9a9dd86f74418590e358998
 vendor/lib64/libOpenCL.so
-vendor/lib64/libRSDriver_adreno.so
-vendor/lib64/libadreno_utils.so
+vendor/lib64/libRSDriver_adreno.so|38c235631783ad242bbfc791260b77fd363395dd
+vendor/lib64/libadreno_utils.so|c2a2afcee56cad745ad5444c3385fb74c0fb9ff2
 vendor/lib64/libbccQTI.so
 vendor/lib64/libc2d30_bltlib.so
 vendor/lib64/libgsl.so
-vendor/lib64/libllvm-glnext.so
-vendor/lib64/libllvm-qcom.so
-vendor/lib64/libpvr.so
-vendor/lib64/librs_adreno_sha1.so
-vendor/lib64/librs_adreno.so
+vendor/lib64/libllvm-glnext.so|72939cc5f8cf2840764f67bf5e40b820fbd212fc
+vendor/lib64/libllvm-qcom.so|0926cc1965f44273bf84d98a82bf8402e86750a7
+vendor/lib64/libpvr.so|e3b65544a96278e0f4374eab222429c8373d20da
+vendor/lib64/librs_adreno_sha1.so|37ce2f7dfdd316dce16279f1d303a6672a70afd5
+vendor/lib64/librs_adreno.so|58e697ffe5c4b76942118d4b3ca43464db7a4924
 
-# Graphics (HDR)
-vendor/lib/libhdr_tm.so
-vendor/lib64/libhdr_tm.so
+# Graphics (HDR) - from chiron - PKQ1.190118.001 9.3.21
+vendor/lib/libhdr_tm.so|17705b090e4e8b487a39071b2f46a45324d611a6
+vendor/lib64/libhdr_tm.so|a44d285a08aa30ef90e791c646b9c12a697a30b2
 
-# Graphics (QSEED3)
+# Graphics (SDM) - from chiron - PKQ1.190118.001 9.3.21
 vendor/lib/libqseed3.so
-vendor/lib64/libqseed3.so
-
-# Graphics (SDM) - from LA.UM.7.4.r1-04100-8x98.0
 vendor/lib/libsdm-color.so|8e083bb2a20ecf76bf96e303134cbaa9ce46be81
 vendor/lib/libsdm-diag.so|e0455e9dd0e2378a3f770eb914aa11e612d594eb
 vendor/lib/libsdm-disp-vndapis.so|f81628ddf7fff00f5e316956ed3b50941932c7de
-vendor/lib/libsdmextension.so|3104df6a013e53b972227ed132aa683ec7303746
-vendor/lib/libtinyxml2_1.so|20fea724b7a9f94530833cfdc841049104a0ffa3
+vendor/lib/libsdmextension.so|5eec37b5457ffb8ec5e82e6366cf7652eefc0a5e
+vendor/lib/libtinyxml2_1.so|0960b3c008d818be73774e345c2f0f1c1e5873cd
+vendor/lib64/libqseed3.so
 vendor/lib64/libsdm-color.so|1a9b68e5f2f09d37c2fa83907a6a70c7adb081f5
 vendor/lib64/libsdm-diag.so|25bab19a8c4453b3d20e3e1a71a0e8d3675b17b4
 vendor/lib64/libsdm-disp-vndapis.so|8ac59a32a2601a8a4b0d3b097ed02f1279f3c6b7
-vendor/lib64/libsdmextension.so|c4a416cb8c0f5dc87bee8494d70247cf049224b9
-vendor/lib64/libtinyxml2_1.so|9d5179eda8ce70b9a4014b144f9d23d33509fddc
+vendor/lib64/libsdmextension.so|5a33c4cd669d745e47110ec81a71fd9df7ca0608
+vendor/lib64/libtinyxml2_1.so|a2d9661cf2bb426e72ba15fd1a6a4eec940418a5
 
 # Graphics (Vulkan)
 vendor/lib/hw/vulkan.sdm660.so
