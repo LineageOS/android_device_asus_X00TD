@@ -50,9 +50,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.wipower=true \
     vendor.qcom.bluetooth.soc=cherokee
 
-    persist.camera.eis.enable=1 \
-    persist.camera.expose.aux=1 \
-    persist.camera.preview.ubwc=0 \
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.camera.eis.enable=1 \
+    persist.vendor.camera.ois.disable=1 \
+    persist.vendor.camera.is_type=5 \
     persist.ts.rtmakeup=1 \
     persist.vendor.camera.expose.aux=1 \
     persist.vendor.camera.preview.ubwc=0 \
