@@ -1,3 +1,5 @@
 type_transition init nvram_btwifi_exec:process nvram_btwifi;
 
 allow init nvram_btwifi:process { rlimitinh siginh transition };
+
+dontaudit init domain:process noatsecure;
