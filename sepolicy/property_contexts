@@ -1,4 +1,4 @@
 persist.cdfinger.ready             u:object_r:cdfinger_prop:s0
 property.cdfinger.enablesave       u:object_r:cdfinger_prop:s0
 persist.vendor.runin.fp            u:object_r:cdfinger_prop:s0
-persist.camera.                    u:object_r:camera_prop:s0
+persist.vendor.camera.             u:object_r:vendor_camera_prop:s0
