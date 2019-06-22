@@ -1,5 +1,5 @@
 set_prop(qti_init_shell, debug_prop);
 set_prop(qti_init_shell, radio_prop);
 set_prop(qti_init_shell, system_radio_prop);
+allow qti_init_shell vendor_radio_data_file:dir rw_dir_perms;;
 allow qti_init_shell vendor_radio_data_file:file create_file_perms;
-allow qti_init_shell vendor_radio_data_file:dir getattr;

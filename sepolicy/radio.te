@@ -1,0 +1,2 @@
+typeattribute radio system_executes_vendor_violators;
+allow radio vendor_file:file rx_file_perms;
