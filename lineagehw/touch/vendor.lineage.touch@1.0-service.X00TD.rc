@@ -1,0 +1,11 @@
+on boot
+    chown system system /sys/kernel/touchpanel/dclicknode
+    chmod 0660 /sys/kernel/touchpanel/dclicknode
+
+    chown system system /sys/kernel/touchpanel/gesture_node
+    chmod 0660 /sys/kernel/touchpanel/gesture_node
+
+service touch-hal-1-0 /vendor/bin/hw/vendor.lineage.touch@1.0-service.X00TD
+    class hal
+    user system
+    group system
