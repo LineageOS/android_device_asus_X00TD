@@ -17,7 +17,7 @@ allow hal_fingerprint_default hal_perf_hwservice:hwservice_manager find;
 allow hal_fingerprint_default goodix_fingerprint_vndservice:service_manager add;
 
 allow hal_fingerprint_default cdfinger_data_file:dir rw_dir_perms;
-allow hal_fingerprint_default cdfinger_data_file:file create_file_perms;
+allow hal_fingerprint_default cdfinger_data_file:file { create_file_perms };
 
 allow hal_fingerprint_default firmware_file:dir search;
 allow hal_fingerprint_default firmware_file:file r_file_perms;

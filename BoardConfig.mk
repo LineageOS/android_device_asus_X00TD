@@ -239,6 +239,7 @@ VENDOR_SECURITY_PATCH := 2019-03-01
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true

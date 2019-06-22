@@ -4,3 +4,4 @@ type debugfs_power_stats, fs_type, debugfs_type;
 
 # sysfs
 type sysfs_touchpanel, sysfs_type, fs_type;
+type sysfs_usb_rndis, sysfs_type, fs_type;

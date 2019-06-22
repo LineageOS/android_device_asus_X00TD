@@ -1,16 +1,17 @@
 typeattribute vendor_init data_between_core_and_vendor_violators;
 
 allow vendor_init {
-  camera_data_file
-  dhcp_data_file
-  media_rw_data_file
   system_data_file
-  time_data_file
   tombstone_data_file
+  camera_data_file
+  media_rw_data_file
+  rootfs
+  time_data_file
   wifi_data_file
+  wpa_socket
+  dhcp_data_file
+  nfc_data_file
 }:dir { create search getattr open read setattr ioctl write add_name remove_name rmdir relabelfrom };
 
-allow vendor_init system_data_file:dir { add_name create };
-allow vendor_init tombstone_data_file:dir setattr;
-allow vendor_init rootfs:dir { add_name setattr write };
-allow vendor_init wpa_socket:dir setattr;
+allow vendor_init media_rw_data_file:file { create_file_perms };
+allow vendor_init system_data_file:lnk_file create;
