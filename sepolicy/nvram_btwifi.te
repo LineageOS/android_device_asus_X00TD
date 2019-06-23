@@ -11,5 +11,4 @@ allow nvram_btwifi nvram_btwifi_exec:file entrypoint;
 allow nvram_btwifi nvram_btwifi_tmpfs:file rw_file_perms;
 allow nvram_btwifi persist_file:dir create_dir_perms;
 allow nvram_btwifi persist_file:file create_file_perms;
-allow nvram_btwifi property_socket:sock_file write;
-allow nvram_btwifi system_prop:property_service set;
+set_prop(nvram_btwifi, system_prop);

@@ -2,7 +2,7 @@
 # tee no longer directly accesses /data owned by the frameworks.
 type_transition tee system_data_file:{ dir file } cdfinger_data_file;
 typeattribute tee data_between_core_and_vendor_violators;
-allow tee system_prop:property_service set;
+set_prop(tee, system_prop);
 allow tee system_data_file:dir create_dir_perms;
 allow tee cdfinger_data_file:dir create_dir_perms;
 allow tee cdfinger_data_file:file create_file_perms;

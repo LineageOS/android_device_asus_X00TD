@@ -1,2 +1,2 @@
 r_dir_file(system_server, keylayout_file)
-allow system_server vendor_camera_prop:file { getattr open read };
+get_prop(system_server, vendor_camera_prop);
