@@ -1,14 +1,12 @@
 type nvram_btwifi, domain;
 type nvram_btwifi_exec, exec_type, vendor_file_type, file_type;
-init_daemon_domain(nvram_btwifi)
 
-type_transition nvram_btwifi tmpfs:file nvram_btwifi_tmpfs;
+init_daemon_domain(nvram_btwifi)
 
 allow nvram_btwifi block_device:dir search;
 allow nvram_btwifi diag_device:chr_file rw_file_perms;
-allow nvram_btwifi init:unix_stream_socket connectto;
-allow nvram_btwifi nvram_btwifi_exec:file entrypoint;
-allow nvram_btwifi nvram_btwifi_tmpfs:file rw_file_perms;
+
 allow nvram_btwifi persist_file:dir create_dir_perms;
 allow nvram_btwifi persist_file:file create_file_perms;
-set_prop(nvram_btwifi, system_prop);
+
+set_prop(nvram_btwifi, system_prop)

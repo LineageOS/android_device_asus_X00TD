@@ -1,2 +1,2 @@
-type cdfinger_service,        service_manager_type;
+type cdfinger_service, service_manager_type;
 type goodix_fingerprint_service, service_manager_type;

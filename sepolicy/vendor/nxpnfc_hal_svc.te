@@ -2,5 +2,7 @@ type nxpnfc_hal_svc, domain;
 type nxpnfc_hal_svc_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(nxpnfc_hal_svc)
-get_prop(nxpnfc_hal_svc, hwservicemanager_prop)
+
 binder_call(nxpnfc_hal_svc, hwservicemanager)
+
+get_prop(nxpnfc_hal_svc, hwservicemanager_prop)

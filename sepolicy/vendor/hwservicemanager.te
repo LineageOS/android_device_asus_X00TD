@@ -1,2 +1,0 @@
-allow hwservicemanager init:dir search;
-allow hwservicemanager init:file { open read };
