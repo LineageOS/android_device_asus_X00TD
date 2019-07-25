@@ -56,8 +56,9 @@ BiometricsFingerprint::~BiometricsFingerprint() {
         return;
     }
     int err;
-    if (0 != (err = mDevice->common.close(
-            reinterpret_cast<hw_device_t*>(mDevice)))) {
+
+    err = mDevice->common.close(reinterpret_cast<hw_device_t*>(mDevice));
+    if (err) {
         ALOGE("Can't close fingerprint module, error: %d", err);
         return;
     }
@@ -225,7 +226,8 @@ fingerprint_device_t* BiometricsFingerprint::openHal() {
     fp_id = "fingerprint";
     fp_vendor = "goodix";
 
-    if (0 != (err = hw_get_module(fp_id, &hw_mdl))) {
+    err = hw_get_module(fp_id, &hw_mdl);
+    if (err) {
         ALOGE("Can't open fingerprint HW Module, error: %d", err);
         goto cd_fp;
     }
@@ -253,29 +255,30 @@ cd_fp:
     fp_id = "cdfinger.fingerprint";
     fp_vendor = "cdfinger";
 
-    if (0 != (err = hw_get_module(fp_id, &hw_mdl))) {
+    err = hw_get_module(fp_id, &hw_mdl);
+    if (err) {
         ALOGE("Can't open fingerprint HW Module, error: %d", err);
-        goto init_err;
+        return nullptr;
     }
 
     if (hw_mdl == nullptr) {
         ALOGE("No valid fingerprint module");
-        goto init_err;
+        return nullptr;
     }
 
     module = reinterpret_cast<const fingerprint_module_t*>(hw_mdl);
     if (module->common.methods->open == nullptr) {
         ALOGE("No valid open method");
-        goto init_err;
+        return nullptr;
     }
 
     device = nullptr;
 
-    if (0 != (err = module->common.methods->open(hw_mdl, nullptr, &device))) {
+    err = module->common.methods->open(hw_mdl, nullptr, &device);
+    if (err) {
         ALOGE("Can't open fingerprint methods, error: %d", err);
-        goto init_err;
+        return nullptr;
     }
-
 init_ok:
     ALOGD("%s module is working", fp_vendor);
     property_set("persist.vendor.runin.fp", fp_vendor);
@@ -283,22 +286,18 @@ init_ok:
     if (kVersion != device->version) {
         // enforce version on new devices because of HIDL@2.1 translation layer
         ALOGE("Wrong fp version. Expected %d, got %d", kVersion, device->version);
-        goto init_err;
+        return nullptr;
     }
 
     fp_device = reinterpret_cast<fingerprint_device_t*>(device);
 
-    if (0 != (err =
-            fp_device->set_notify(fp_device, BiometricsFingerprint::notify))) {
+    err = fp_device->set_notify(fp_device, BiometricsFingerprint::notify);
+    if (err) {
         ALOGE("Can't register fingerprint module callback, error: %d", err);
-        goto init_err;
+        return nullptr;
     }
 
     return fp_device;
-
-init_err:
-    property_set("persist.vendor.runin.fp", "unkown");
-    return nullptr;
 }
 
 void BiometricsFingerprint::notify(const fingerprint_msg_t *msg) {
