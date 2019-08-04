@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6a837659_11727bfc",
+        "filename": "BoardConfig.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 233,
+      "author": {
+        "id": 18796
+      },
+      "writtenOn": "2019-08-04T05:43:36Z",
+      "side": 1,
+      "message": "it must be 2019 now",
+      "revId": "640d74e11a12ed84ffcdacd76d6b31e6f7b45ede",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
