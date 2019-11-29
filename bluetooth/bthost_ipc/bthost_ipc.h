@@ -99,7 +99,7 @@ typedef enum {
     A2DP_CTRL_GET_CONNECTION_STATUS,
 } tA2DP_CTRL_EXT_CMD;
 
-#define  MAX_CODEC_CFG_SIZE  34
+#define  MAX_CODEC_CFG_SIZE  64
 struct a2dp_config {
     uint32_t                rate;
     uint32_t                channel_flags;
@@ -154,6 +154,9 @@ codec specific definitions
 #endif
 #ifndef APTX_ADAPTIVE_CODEC_ID
 #define APTX_ADAPTIVE_CODEC_ID 0xAD
+#endif
+#ifndef APTX_ADAPTIVE_RESERVED_BITS
+#define APTX_ADAPTIVE_RESERVED_BITS 23
 #endif
 #ifndef APTX_TWS_CODEC_ID
 #define APTX_TWS_CODEC_ID 0x25
@@ -240,6 +243,9 @@ codec specific definitions
 
 #define A2D_AAC_IE_VBR_MSK                     0x80
 #define A2D_AAC_IE_VBR                         0x80    /* supported */
+
+#define A2D_AAC_FRAME_PEAK_MTU       0  /* Configure peak MTU */
+#define A2D_AAC_FRAME_PEAK_BITRATE   1  /* Configure peak bitrate */
 
 #define A2DP_DEFAULT_SINK_LATENCY 0
 
@@ -352,6 +358,17 @@ typedef struct {
     uint32_t bits_per_sample;
 } audio_ldac_encoder_config_t;
 
+/* Structure to control frame size of AAC encoded frames. */
+struct aac_frame_size_control_t {
+    /* Type of frame size control: MTU_SIZE / PEAK_BIT_RATE */
+    uint32_t ctl_type;
+    /* Control value
+     * MTU_SIZE: MTU size in bytes
+     * PEAK_BIT_RATE: Peak bitrate in bits per second.
+     */
+    uint32_t ctl_value;
+};
+
 /* Information about BT AAC encoder configuration
  * This data is used between audio HAL module and
  * BT IPC library to configure DSP encoder
@@ -364,6 +381,20 @@ typedef struct {
     uint32_t bitrate;
     uint32_t bits_per_sample;
 } audio_aac_encoder_config_t;
+
+/* Information about BT AAC encoder configuration
+ * This data is used between audio HAL module and
+ * BT IPC library to configure DSP encoder with frame control
+ */
+typedef struct {
+    uint32_t enc_mode; /* LC, SBR, PS */
+    uint16_t format_flag; /* RAW, ADTS */
+    uint16_t channels; /* 1-Mono, 2-Stereo */
+    uint32_t sampling_rate;
+    uint32_t bitrate;
+    uint32_t bits_per_sample;
+    struct aac_frame_size_control_t frame_ctl;
+} audio_aac_encoder_config_v2_t;
 
 typedef struct {
     uint32_t sampling_rate; /* 32000 - 48000, 48000 */
@@ -423,5 +454,6 @@ int audio_check_a2dp_ready(void);
 uint16_t audio_get_a2dp_sink_latency();
 bool audio_is_scrambling_enabled(void);
 int wait_for_stack_response(uint8_t duration);
+bool isTwsMonomodeEnable(void);
 #endif
 

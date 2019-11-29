@@ -101,7 +101,9 @@ static int test = 0;
 static bool update_initial_sink_latency = false;
 int wait_for_stack_response(uint8_t time_to_wait);
 bool resp_received = false;
+uint8_t tws_channelmode = 0;
 static char a2dp_hal_imp[PROPERTY_VALUE_MAX] = "false";
+static char AAC_frame_ctrl_val[PROPERTY_VALUE_MAX] = "false";
 /*****************************************************************************
 **  Static functions
 ******************************************************************************/
@@ -111,6 +113,7 @@ audio_aptx_encoder_config_t aptx_codec;
 audio_aptx_adaptive_encoder_config_t aptx_adaptive_codec;
 audio_aptx_tws_encoder_config_t aptx_tws_codec;
 audio_aac_encoder_config_t aac_codec;
+audio_aac_encoder_config_v2_t aac_codec_v2;
 audio_ldac_encoder_config_t ldac_codec;
 audio_celt_encoder_config_t celt_codec;
 /*****************************************************************************
@@ -178,7 +181,6 @@ static void* a2dp_codec_parser(uint8_t *codec_cfg, audio_format_t *codec_type,
 {
     char byte,len;
     uint8_t *p_cfg = codec_cfg;
-    ALOGW("%s",__func__);
     ALOGW("%s: codec_type = %x",__func__, codec_cfg[CODEC_OFFSET]);
     if (codec_cfg[CODEC_OFFSET] == CODEC_TYPE_PCM)
     {
@@ -295,103 +297,233 @@ static void* a2dp_codec_parser(uint8_t *codec_cfg, audio_format_t *codec_type,
         return ((void *)(&sbc_codec));
     } else if (codec_cfg[CODEC_OFFSET] == CODEC_TYPE_AAC)
     {
-        uint16_t aac_samp_freq = 0;
-        uint32_t aac_bit_rate = 0;
-        memset(&aac_codec,0,sizeof(audio_aac_encoder_config_t));
-        p_cfg++;//skip dev idx
-        len = *p_cfg++;
-        p_cfg++;//skip media type
-        len--;
-        p_cfg++;//skip codec type
-        len--;
-        byte = *p_cfg++;
-        len--;
-        switch (byte & A2D_AAC_IE_OBJ_TYPE_MSK)
-        {
-            case A2D_AAC_IE_OBJ_TYPE_MPEG_2_AAC_LC:
-                aac_codec.enc_mode = AUDIO_FORMAT_AAC_SUB_LC;
-                break;
-            case A2D_AAC_IE_OBJ_TYPE_MPEG_4_AAC_LC:
-                aac_codec.enc_mode = AUDIO_FORMAT_AAC_SUB_LC;
-                break;
-            case A2D_AAC_IE_OBJ_TYPE_MPEG_4_AAC_LTP:
-                aac_codec.enc_mode = AUDIO_FORMAT_AAC_SUB_LTP;
-                break;
-            case A2D_AAC_IE_OBJ_TYPE_MPEG_4_AAC_SCA:
-                aac_codec.enc_mode = AUDIO_FORMAT_AAC_SUB_SCALABLE;
-                break;
-            default:
-                ALOGE("AAC:Unknown encoder mode");
+        bool is_AAC_frame_ctrl_enable = false;
+        property_get("persist.vendor.bt.aac_frm_ctl.enabled", AAC_frame_ctrl_val, "false");
+        if (!strcmp(AAC_frame_ctrl_val, "true"))
+          is_AAC_frame_ctrl_enable = true;
+        ALOGW("%s: AAC frame control enabled: %d", __func__, is_AAC_frame_ctrl_enable);
+        if (is_AAC_frame_ctrl_enable) {
+          uint16_t aac_samp_freq = 0;
+          uint32_t aac_bit_rate = 0;
+          uint32_t aac_bit_rate_mtu_based = 0;
+          memset(&aac_codec_v2,0,sizeof(audio_aac_encoder_config_v2_t));
+          p_cfg++;//skip dev idx
+          len = *p_cfg++;
+          p_cfg++;//skip media type
+          len--;
+          p_cfg++;//skip codec type
+          len--;
+          byte = *p_cfg++;
+          len--;
+          switch (byte & A2D_AAC_IE_OBJ_TYPE_MSK)
+          {
+              case A2D_AAC_IE_OBJ_TYPE_MPEG_2_AAC_LC:
+                  aac_codec_v2.enc_mode = AUDIO_FORMAT_AAC_SUB_LC;
+                  break;
+              case A2D_AAC_IE_OBJ_TYPE_MPEG_4_AAC_LC:
+                  aac_codec_v2.enc_mode = AUDIO_FORMAT_AAC_SUB_LC;
+                  break;
+              case A2D_AAC_IE_OBJ_TYPE_MPEG_4_AAC_LTP:
+                  aac_codec_v2.enc_mode = AUDIO_FORMAT_AAC_SUB_LTP;
+                  break;
+              case A2D_AAC_IE_OBJ_TYPE_MPEG_4_AAC_SCA:
+                  aac_codec_v2.enc_mode = AUDIO_FORMAT_AAC_SUB_SCALABLE;
+                  break;
+              default:
+                  ALOGE("AAC:Unknown encoder mode");
+          }
+          //USE 0 (AAC_LC) as hardcoded value till Audio
+          //define constants
+          aac_codec_v2.enc_mode = 0;
+          //USE LOAS(1) or LATM(4) hardcoded values till
+          //Audio define proper constants
+          aac_codec_v2.format_flag = 4;
+          byte = *p_cfg++;
+          len--;
+          aac_samp_freq = byte << 8; //1st byte of sample_freq
+          byte = *p_cfg++;
+          len--;
+          aac_samp_freq |= byte & 0x00F0; //1st nibble of second byte of samp_freq
+
+          switch (aac_samp_freq) {
+              case 0x8000: aac_codec_v2.sampling_rate = 8000; break;
+              case 0x4000: aac_codec_v2.sampling_rate = 11025; break;
+              case 0x2000: aac_codec_v2.sampling_rate = 12000; break;
+              case 0x1000: aac_codec_v2.sampling_rate = 16000; break;
+              case 0x0800: aac_codec_v2.sampling_rate = 22050; break;
+              case 0x0400: aac_codec_v2.sampling_rate = 24000; break;
+              case 0x0200: aac_codec_v2.sampling_rate = 32000; break;
+              case 0x0100: aac_codec_v2.sampling_rate = 44100; break;
+              case 0x0080: aac_codec_v2.sampling_rate = 48000; break;
+              case 0x0040: aac_codec_v2.sampling_rate = 64000; break;
+              case 0x0020: aac_codec_v2.sampling_rate = 88200; break;
+              case 0x0010: aac_codec_v2.sampling_rate = 96000; break;
+              default:
+                  ALOGE("Invalid sample_freq: %x", aac_samp_freq);
+          }
+
+          switch (byte & A2D_AAC_IE_CHANNELS_MSK)
+          {
+              case A2D_AAC_IE_CHANNELS_1:
+                   aac_codec_v2.channels = 1;
+                   break;
+              case A2D_AAC_IE_CHANNELS_2:
+                   aac_codec_v2.channels = 2;
+                   break;
+              default:
+                   ALOGE("AAC:Unknown channel mode");
+          }
+          byte = *p_cfg++; //Move to VBR byte
+          len--;
+          switch (byte & A2D_AAC_IE_VBR_MSK)
+          {
+              case A2D_AAC_IE_VBR:
+                  break;
+              default:
+                  ALOGE("AAC:VBR not supported");
+          }
+          aac_bit_rate = 0x7F&byte;
+          //Move it 2nd byte of 32 bit word. leaving the VBR bit
+          aac_bit_rate = aac_bit_rate << 16;
+          byte = *p_cfg++; //Move to 2nd byteof bitrate
+          len--;
+
+          //Move it to 3rd byte of 32bit word
+          aac_bit_rate |= 0x0000FF00 & (((uint32_t)byte)<<8);
+          byte = *p_cfg++; //Move to 3rd byte of bitrate
+          len--;
+
+          aac_bit_rate |= 0x000000FF & (((uint32_t)byte));
+          aac_codec_v2.bitrate = aac_bit_rate;
+          ALOGW("%s: Final AAC bitrate: %d",__func__, aac_bit_rate);
+
+          aac_codec_v2.frame_ctl.ctl_type = A2D_AAC_FRAME_PEAK_MTU;
+          aac_codec_v2.frame_ctl.ctl_value = *(uint16_t *)p_cfg;
+          //(p_cfg(+2 is because of mtu filled in stack is of 2bytes)
+          p_cfg = p_cfg + 2;
+
+          aac_bit_rate_mtu_based = *(uint32_t *)p_cfg;
+          ALOGW("%s: MTU based bitrate from stack: %d",__func__, aac_bit_rate_mtu_based);
+          if ((aac_bit_rate <= 0) || (aac_bit_rate > aac_bit_rate_mtu_based)) {
+            aac_codec_v2.bitrate = aac_bit_rate_mtu_based;
+            ALOGW("%s:AAC bitrate overwritten with actual value fetched frm stack based on MTU: %d",
+                        __func__, aac_codec_v2.bitrate);
+          }
+          //p_cfg(+4 is because of bitrate filled in stack is occupying 4 bytes.
+          p_cfg = p_cfg + 4;
+
+          aac_codec_v2.bits_per_sample = *(uint32_t *)p_cfg;
+          *codec_type = AUDIO_FORMAT_AAC;
+
+          if(sample_freq) *sample_freq = aac_codec_v2.sampling_rate;
+          ALOGW("%s: Copied full codec config bits_per_sample : %d, ctl_type : %d, ctl_value : %d",
+                 __func__, aac_codec_v2.bits_per_sample, aac_codec_v2.frame_ctl.ctl_type,
+                           aac_codec_v2.frame_ctl.ctl_value );
+          return ((void *)(&aac_codec_v2));
+        } else {
+          uint16_t aac_samp_freq = 0;
+          uint32_t aac_bit_rate = 0;
+          memset(&aac_codec,0,sizeof(audio_aac_encoder_config_t));
+          p_cfg++;//skip dev idx
+          len = *p_cfg++;
+          p_cfg++;//skip media type
+          len--;
+          p_cfg++;//skip codec type
+          len--;
+          byte = *p_cfg++;
+          len--;
+          switch (byte & A2D_AAC_IE_OBJ_TYPE_MSK)
+          {
+              case A2D_AAC_IE_OBJ_TYPE_MPEG_2_AAC_LC:
+                  aac_codec.enc_mode = AUDIO_FORMAT_AAC_SUB_LC;
+                  break;
+              case A2D_AAC_IE_OBJ_TYPE_MPEG_4_AAC_LC:
+                  aac_codec.enc_mode = AUDIO_FORMAT_AAC_SUB_LC;
+                  break;
+              case A2D_AAC_IE_OBJ_TYPE_MPEG_4_AAC_LTP:
+                  aac_codec.enc_mode = AUDIO_FORMAT_AAC_SUB_LTP;
+                  break;
+              case A2D_AAC_IE_OBJ_TYPE_MPEG_4_AAC_SCA:
+                  aac_codec.enc_mode = AUDIO_FORMAT_AAC_SUB_SCALABLE;
+                  break;
+              default:
+                  ALOGE("AAC:Unknown encoder mode");
+          }
+          //USE 0 (AAC_LC) as hardcoded value till Audio
+          //define constants
+          aac_codec.enc_mode = 0;
+          //USE LOAS(1) or LATM(4) hardcoded values till
+          //Audio define proper constants
+          aac_codec.format_flag = 4;
+          byte = *p_cfg++;
+          len--;
+          aac_samp_freq = byte << 8; //1st byte of sample_freq
+          byte = *p_cfg++;
+          len--;
+          aac_samp_freq |= byte & 0x00F0; //1st nibble of second byte of samp_freq
+
+          switch (aac_samp_freq) {
+              case 0x8000: aac_codec.sampling_rate = 8000; break;
+              case 0x4000: aac_codec.sampling_rate = 11025; break;
+              case 0x2000: aac_codec.sampling_rate = 12000; break;
+              case 0x1000: aac_codec.sampling_rate = 16000; break;
+              case 0x0800: aac_codec.sampling_rate = 22050; break;
+              case 0x0400: aac_codec.sampling_rate = 24000; break;
+              case 0x0200: aac_codec.sampling_rate = 32000; break;
+              case 0x0100: aac_codec.sampling_rate = 44100; break;
+              case 0x0080: aac_codec.sampling_rate = 48000; break;
+              case 0x0040: aac_codec.sampling_rate = 64000; break;
+              case 0x0020: aac_codec.sampling_rate = 88200; break;
+              case 0x0010: aac_codec.sampling_rate = 96000; break;
+              default:
+                  ALOGE("Invalid sample_freq: %x", aac_samp_freq);
+          }
+
+          switch (byte & A2D_AAC_IE_CHANNELS_MSK)
+          {
+              case A2D_AAC_IE_CHANNELS_1:
+                   aac_codec.channels = 1;
+                   break;
+              case A2D_AAC_IE_CHANNELS_2:
+                   aac_codec.channels = 2;
+                   break;
+              default:
+                   ALOGE("AAC:Unknown channel mode");
+          }
+          byte = *p_cfg++; //Move to VBR byte
+          len--;
+          switch (byte & A2D_AAC_IE_VBR_MSK)
+          {
+              case A2D_AAC_IE_VBR:
+                  break;
+              default:
+                  ALOGE("AAC:VBR not supported");
+          }
+          aac_bit_rate = 0x7F&byte;
+          //Move it 2nd byte of 32 bit word. leaving the VBR bit
+          aac_bit_rate = aac_bit_rate << 16;
+          byte = *p_cfg++; //Move to 2nd byteof bitrate
+          len--;
+
+          //Move it to 3rd byte of 32bit word
+          aac_bit_rate |= 0x0000FF00 & (((uint32_t)byte)<<8);
+          byte = *p_cfg++; //Move to 3rd byte of bitrate
+          len--;
+
+          aac_bit_rate |= 0x000000FF & (((uint32_t)byte));
+          aac_codec.bitrate = aac_bit_rate;
+          ALOGW("%s: Final AAC bitrate: %d",__func__, aac_bit_rate);
+          //+2 because 2 bytes occupying by MTU
+          //+4 because 4 bytes occupying by bitrate
+          p_cfg = p_cfg + 2 + 4;
+          aac_codec.bits_per_sample = *(uint32_t *)p_cfg;
+          *codec_type = AUDIO_FORMAT_AAC;
+
+          if(sample_freq) *sample_freq = aac_codec.sampling_rate;
+          ALOGW("%s: AAC: Done copying full codec config bits_per_sample : %d",
+                               __func__, aac_codec.bits_per_sample );
+          return ((void *)(&aac_codec));
         }
-        //USE 0 (AAC_LC) as hardcoded value till Audio
-        //define constants
-        aac_codec.enc_mode = 0;
-        //USE LOAS(1) or LATM(4) hardcoded values till
-        //Audio define proper constants
-        aac_codec.format_flag = 4;
-        byte = *p_cfg++;
-        len--;
-        aac_samp_freq = byte << 8; //1st byte of sample_freq
-        byte = *p_cfg++;
-        len--;
-        aac_samp_freq |= byte & 0x00F0; //1st nibble of second byte of samp_freq
-
-        switch (aac_samp_freq) {
-            case 0x8000: aac_codec.sampling_rate = 8000; break;
-            case 0x4000: aac_codec.sampling_rate = 11025; break;
-            case 0x2000: aac_codec.sampling_rate = 12000; break;
-            case 0x1000: aac_codec.sampling_rate = 16000; break;
-            case 0x0800: aac_codec.sampling_rate = 22050; break;
-            case 0x0400: aac_codec.sampling_rate = 24000; break;
-            case 0x0200: aac_codec.sampling_rate = 32000; break;
-            case 0x0100: aac_codec.sampling_rate = 44100; break;
-            case 0x0080: aac_codec.sampling_rate = 48000; break;
-            case 0x0040: aac_codec.sampling_rate = 64000; break;
-            case 0x0020: aac_codec.sampling_rate = 88200; break;
-            case 0x0010: aac_codec.sampling_rate = 96000; break;
-            default:
-                ALOGE("Invalid sample_freq: %x", aac_samp_freq);
-        }
-
-        switch (byte & A2D_AAC_IE_CHANNELS_MSK)
-        {
-            case A2D_AAC_IE_CHANNELS_1:
-                 aac_codec.channels = 1;
-                 break;
-            case A2D_AAC_IE_CHANNELS_2:
-                 aac_codec.channels = 2;
-                 break;
-            default:
-                 ALOGE("AAC:Unknown channel mode");
-        }
-        byte = *p_cfg++; //Move to VBR byte
-        len--;
-        switch (byte & A2D_AAC_IE_VBR_MSK)
-        {
-            case A2D_AAC_IE_VBR:
-                break;
-            default:
-                ALOGE("AAC:VBR not supported");
-        }
-        aac_bit_rate = 0x7F&byte;
-        //Move it 2nd byte of 32 bit word. leaving the VBR bit
-        aac_bit_rate = aac_bit_rate << 16;
-        byte = *p_cfg++; //Move to 2nd byteof bitrate
-        len--;
-
-        //Move it to 3rd byte of 32bit word
-        aac_bit_rate |= 0x0000FF00 & (((uint32_t)byte)<<8);
-        byte = *p_cfg++; //Move to 3rd byte of bitrate
-        len--;
-
-        aac_bit_rate |= 0x000000FF & (((uint32_t)byte));
-        aac_codec.bitrate = aac_bit_rate;
-        aac_codec.bits_per_sample = *(uint32_t *)p_cfg;
-        *codec_type = AUDIO_FORMAT_AAC;
-
-        if(sample_freq) *sample_freq = aac_codec.sampling_rate;
-        ALOGW("AAC: Done copying full codec config bits_per_sample : %d", aac_codec.bits_per_sample);
-        return ((void *)(&aac_codec));
     }
     else if (codec_cfg[CODEC_OFFSET] == NON_A2DP_CODEC_TYPE)
     {
@@ -489,6 +621,8 @@ static void* a2dp_codec_parser(uint8_t *codec_cfg, audio_format_t *codec_type,
 
             p_cfg += 3; // ignoring eoc bits
             len -= 3;
+            p_cfg += APTX_ADAPTIVE_RESERVED_BITS;
+            len -= APTX_ADAPTIVE_RESERVED_BITS;
             ALOGW("%s: ## aptXAdaptive ## sampleRate 0x%x", __func__, aptx_adaptive_codec.sampling_rate);
             ALOGW("%s: ## aptXAdaptive ## channelMode 0x%x", __func__, aptx_adaptive_codec.channel_mode);
             ALOGW("%s: ## aptXAdaptive ## ttp_ll_0 0x%x", __func__, aptx_adaptive_codec.TTP_LL_low);
@@ -583,6 +717,8 @@ static void* a2dp_codec_parser(uint8_t *codec_cfg, audio_format_t *codec_type,
         aptx_codec.bitrate |= (*p_cfg++ << 16);
         aptx_codec.bitrate |= (*p_cfg++ << 24);
         aptx_codec.bits_per_sample = *(uint32_t *)p_cfg;
+        tws_channelmode = *(p_cfg+4);
+        ALOGW("APTx: tws channel mode =%d\n", tws_channelmode);
         if(sample_freq) *sample_freq = aptx_codec.sampling_rate;
         ALOGW("APTx: Done copying full codec config bits_per_sample : %d", aptx_codec.bits_per_sample);
         if (*codec_type == ENC_CODEC_TYPE_APTX_DUAL_MONO)
@@ -1490,6 +1626,16 @@ uint16_t audio_get_a2dp_sink_latency()
     }
     pthread_mutex_unlock(&audio_stream.lock);
     return audio_stream.sink_latency;
+}
+
+/* Returns true if TWS encoder to be configure with mono mode
+        False if TWS encoder to be configured with stereo mode */
+bool isTwsMonomodeEnable(void)
+{
+   if (tws_channelmode)
+        return true;
+   else
+       return false;
 }
 
 bool audio_is_scrambling_enabled(void)
