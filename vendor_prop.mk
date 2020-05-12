@@ -114,6 +114,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     sdm.debug.rotator_downscale=1 \
     vendor.display.enable_default_color_mode=1
 
+# IMS
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.dbg.volte_avail_ovr=1 \
+    persist.dbg.wfc_avail_ovr=1
+
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true \
