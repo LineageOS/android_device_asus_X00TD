@@ -16,5 +16,8 @@ TARGET_OTA_ASSERT_DEVICE := ASUS_X00TD,X00TD,X00T
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sdm636
 
+# Kernel
+TARGET_KERNEL_CONFIG := X00TD_defconfig
+
 # Inherit the proprietary files
 -include vendor/asus/X00TD/BoardConfigVendor.mk
