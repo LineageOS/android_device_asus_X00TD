@@ -1,6 +1,7 @@
 #!/bin/bash
 #
-# Copyright (C) 2020 The LineageOS Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017-2020 The LineageOS Project
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -23,7 +24,7 @@ function blob_fixup() {
 
     # remove android.hidl.base dependency
     vendor/lib/hw/camera.sdm660.so)
-        patchelf --remove-needed "android.hidl.base@1.0.so" "${2}"
+        "${PATCHELF}" --remove-needed "android.hidl.base@1.0.so" "${2}"
         ;;
 
     esac
@@ -35,11 +36,8 @@ fi
 
 set -e
 
-# Required
 export DEVICE=X00TD
 export DEVICE_COMMON=sdm660-common
 export VENDOR=asus
-
-export DEVICE_BRINGUP_YEAR=2020
 
 "./../../${VENDOR}/${DEVICE_COMMON}/extract-files.sh" "$@"
