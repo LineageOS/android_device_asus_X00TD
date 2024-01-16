@@ -22,5 +22,8 @@ DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 # Kernel
 TARGET_KERNEL_CONFIG := vendor/X00TD_defconfig vendor/debugfs.config
 
+# Sepolicy
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+
 # Inherit the proprietary files
 include vendor/asus/X00TD/BoardConfigVendor.mk
