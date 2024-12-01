@@ -15,6 +15,10 @@ TARGET_SCREEN_WIDTH := 1080
 PRODUCT_PACKAGES += \
     libhidlbase-v32.vendor
 
+# Init
+PRODUCT_PACKAGES += \
+    init.device.rc
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay
@@ -22,10 +26,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Power
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
-
-# Ramdisk
-PRODUCT_PACKAGES += \
-    init.device.rc
 
 # Thermal configs
 PRODUCT_COPY_FILES += \
