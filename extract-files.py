@@ -32,6 +32,10 @@ blob_fixups: blob_fixups_user_type = {
         .regex_replace('/system/framework/', '/system/product/framework/'),
     'vendor/etc/init/android.hardware.biometrics.fingerprint@2.1-service_asus.rc': blob_fixup()
         .regex_replace('android.hardware.biometrics.fingerprint@2.1-service', 'android.hardware.biometrics.fingerprint@2.1-service_asus'),
+    ('vendor/lib/libmmcamera_faceproc.so', 'vendor/lib/libmmcamera_faceproc2.so'): blob_fixup()
+        .clear_symbol_version('__aeabi_memcpy')
+        .clear_symbol_version('__aeabi_memset')
+        .clear_symbol_version('__gnu_Unwind_Find_exidx'),
     'vendor/lib64/hw/cdfinger.fingerprint.default.so': blob_fixup()
         .add_needed('liblog.so'),
     ('vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0.so', 'vendor/lib64/libvendor.goodix.hardware.fingerprint@1.0-service.so'): blob_fixup()
