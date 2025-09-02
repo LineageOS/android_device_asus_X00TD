@@ -2,7 +2,7 @@
     Input:
         manifest.xml
 -->
-<manifest version="5.0" type="device" target-level="5">
+<manifest version="5.0" type="device">
     <hal format="hidl">
         <name>vendor.goodix.hardware.fingerprint</name>
         <transport>hwbinder</transport>
