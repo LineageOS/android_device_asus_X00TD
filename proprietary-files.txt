@@ -50,7 +50,6 @@ vendor/lib/libmmcamera_arcsoftbokeh_lib.so
 vendor/lib/libmmcamera_atmel_at24c32e_eeprom.so
 vendor/lib/libmmcamera_bokeh.so
 vendor/lib/libmmcamera_csidtg.so
-vendor/lib/libmmcamera_dbg.so
 vendor/lib/libmmcamera_depth_map.so
 vendor/lib/libmmcamera_dummyalgo.so
 vendor/lib/libmmcamera_dw9761b_2d_eeprom.so
