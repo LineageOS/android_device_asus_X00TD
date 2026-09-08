@@ -19,7 +19,11 @@ TARGET_BOOTLOADER_BOARD_NAME := sdm636
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 
 # Kernel
-TARGET_KERNEL_CONFIG := vendor/X00TD_defconfig vendor/debugfs.config
+TARGET_KERNEL_CONFIG := \
+    vendor/sdm660-perf_defconfig \
+    vendor/common.config \
+    vendor/debugfs.config \
+    vendor/X00TD.config
 
 # Inherit the proprietary files
 include vendor/asus/X00TD/BoardConfigVendor.mk
